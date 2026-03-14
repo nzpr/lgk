@@ -10,3 +10,4 @@
 | 2026-03-14T11:42:01+00:00 | [20260314-114201-polish-player-experience-and-ship-v1.md](./20260314-114201-polish-player-experience-and-ship-v1.md) | polish player experience and ship v1 |
 | 2026-03-14T11:01:25+00:00 | [20260314-110125-distribution-hardening-and-frictionless-launch.md](./20260314-110125-distribution-hardening-and-frictionless-launch.md) | distribution hardening and frictionless launch |
 | 2026-03-14T16:42:26+00:00 | [20260314-164226-pivot-to-pseudo-2d-adventure-game.md](./20260314-164226-pivot-to-pseudo-2d-adventure-game.md) | pivot to pseudo-2d adventure game |
+| 2026-03-14T17:19:50+00:00 | [20260314-171950-pivot-to-godot-browser-game.md](./20260314-171950-pivot-to-godot-browser-game.md) | pivot to Godot browser game |
