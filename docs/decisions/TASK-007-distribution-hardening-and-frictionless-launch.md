@@ -17,7 +17,7 @@ The product was locally validated and visually polished, but public distribution
 First harden the release path. Then add a zero-signup demo entry and the minimum outward-facing launch kit needed to distribute the game without manual explanation.
 
 ## Reasoning
-Distribution materials are useless if the public build is brittle. Once deployment is deterministic, the next highest-leverage move is to eliminate evaluation friction and package the product with the copy, metadata, and support docs needed for external sharing. For hosted CI specifically, the safer path is to avoid `npx` in browser-install and browser-test flows and to run all npm-based build steps before browser installation, so the runner is not dependent on mutable npm-exec or browser-install side effects between steps.
+Distribution materials are useless if the public build is brittle. Once deployment is deterministic, the next highest-leverage move is to eliminate evaluation friction and package the product with the copy, metadata, and support docs needed for external sharing. For hosted CI specifically, the safer path is to avoid `npx` in browser-install and browser-test flows, run all build gates before browser installation, and invoke local binaries directly instead of layering `npm run` on top of already-installed tools.
 
 ## Consequences
 The release stack is now safer for GitHub-hosted distribution and more reliable on shared runners. Reviewers can enter the product instantly through a scripted demo household, launch operators have reusable copy, link strategy, and support guidance for distribution, and GitHub Actions now exposes validation failures at a finer grain instead of collapsing them into a single opaque step.

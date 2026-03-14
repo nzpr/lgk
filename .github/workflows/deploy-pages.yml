@@ -36,22 +36,22 @@ jobs:
         run: npm ci
 
       - name: Generate content
-        run: npm run generate:content
+        run: node scripts/generate-task-bank.mjs
 
       - name: Lint app
-        run: npm run lint
+        run: ./node_modules/.bin/eslint .
 
       - name: Run unit tests
-        run: npm run test:unit
+        run: ./node_modules/.bin/vitest run
 
       - name: Validate reviewed content
         run: node scripts/validate-content.mjs
 
       - name: Build product
-        run: npm run build
+        run: node scripts/generate-task-bank.mjs && ./node_modules/.bin/tsc -b && ./node_modules/.bin/vite build
 
       - name: Smoke check dist output
-        run: npm run smoke
+        run: node scripts/smoke-check.mjs
 
       - name: Install Playwright browsers
         run: ./node_modules/.bin/playwright install --with-deps chromium
