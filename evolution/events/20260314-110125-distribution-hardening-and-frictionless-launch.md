@@ -19,6 +19,7 @@ Reordered the workflows so all npm-driven generation/build checks complete befor
 Replaced post-install `npm run` workflow invocations with direct local binary and Node commands so GitHub-hosted validation depends only on the checked-out toolchain, not npm task orchestration state.
 Instrumented the content-generation workflow step to surface stderr through public GitHub Action annotations, because the hosted-run failure remained reproducible but the raw logs were not available through anonymous APIs.
 Confirmed the hosted-run failure was a hardcoded `/workspace` path in build/validation scripts, then rewired those scripts to resolve paths from their own file locations so GitHub-hosted checkouts can build and validate normally.
+Confirmed the remaining deploy failure was repository Pages not being enabled, then switched the Pages workflow to request enablement directly through `actions/configure-pages`.
 
 ## Decision Link
 - ADR: [0001-local-first-logic-learning-web-app.md](../../docs/adr/0001-local-first-logic-learning-web-app.md)
