@@ -22,6 +22,13 @@ The user is right about the current product shape: it is not a game in the stron
 ## Consequences
 This task becomes a directed redesign rather than a minor enhancement. Existing trusted infrastructure stays, but most of the player-facing application flow will be rewritten. The new bar is whether the product reads first as an adventure game and second as a logic system.
 
+## Implementation Notes
+The pivot now includes a dedicated campaign runtime:
+- a landing screen that sells the plot and campaign fantasy immediately
+- an atlas screen with authored route cards and journal continuity
+- a pseudo-2D route scene with visible landmarks, route choices, shrine encounters, and persistence
+- browser coverage for demo entry, full first-route completion, and in-progress reload recovery
+
 ## Scope
 Task-specific
 
