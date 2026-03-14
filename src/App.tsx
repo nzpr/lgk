@@ -357,7 +357,11 @@ function App() {
                     reward spam, and no worksheet energy.
                   </p>
                   <div className="hero-actions">
-                    <button className="primary-button" onClick={() => setView('onboarding')}>
+                    <button
+                      className="primary-button"
+                      data-testid="start-household-setup"
+                      onClick={() => setView('onboarding')}
+                    >
                       Start the household setup
                     </button>
                     <div className="trust-band">
@@ -392,6 +396,7 @@ function App() {
                   <label>
                     <span>Parent name</span>
                     <input
+                      data-testid="parent-name-input"
                       value={parentForm.name}
                       onChange={(event) =>
                         setParentForm({ ...parentForm, name: event.target.value })
@@ -403,6 +408,7 @@ function App() {
                     <span>Parent email</span>
                     <input
                       type="email"
+                      data-testid="parent-email-input"
                       value={parentForm.email}
                       onChange={(event) =>
                         setParentForm({ ...parentForm, email: event.target.value })
@@ -413,6 +419,7 @@ function App() {
                   <label>
                     <span>Child name or nickname</span>
                     <input
+                      data-testid="child-name-input"
                       value={childForm.name}
                       onChange={(event) =>
                         setChildForm({ ...childForm, name: event.target.value })
@@ -424,6 +431,7 @@ function App() {
                     <span>Child age</span>
                     <input
                       type="number"
+                      data-testid="child-age-input"
                       min={8}
                       max={10}
                       value={childForm.age}
@@ -435,6 +443,7 @@ function App() {
                   <label className="form-span">
                     <span>Family goal</span>
                     <select
+                      data-testid="family-goal-select"
                       value={childForm.goal}
                       onChange={(event) =>
                         setChildForm({ ...childForm, goal: event.target.value })
@@ -458,6 +467,7 @@ function App() {
                   </button>
                   <button
                     className="primary-button"
+                    data-testid="create-household"
                     onClick={submitOnboarding}
                     disabled={!parentForm.name || !parentForm.email || !childForm.name}
                   >
@@ -483,12 +493,14 @@ function App() {
                 </button>
                 <button
                   className={view === 'parent' ? 'nav-pill active' : 'nav-pill'}
+                  data-testid="nav-parent"
                   onClick={() => setView('parent')}
                 >
                   Parent
                 </button>
                 <button
                   className={view === 'qa' ? 'nav-pill active' : 'nav-pill'}
+                  data-testid="nav-qa"
                   onClick={() => setView('qa')}
                 >
                   QA / Ops
@@ -512,7 +524,11 @@ function App() {
                   <li>Easy early win and visible progress bar</li>
                   <li>Parent summary immediately after completion</li>
                 </ul>
-                <button className="primary-button" onClick={() => startRun('diagnostic')}>
+                <button
+                  className="primary-button"
+                  data-testid="start-diagnostic"
+                  onClick={() => startRun('diagnostic')}
+                >
                   Start the diagnostic
                 </button>
               </section>
@@ -558,6 +574,7 @@ function App() {
                       return (
                         <button
                           key={choice}
+                          data-testid={`choice-${index}`}
                           className={[
                             'choice-card',
                             selected ? 'selected' : '',
@@ -625,18 +642,30 @@ function App() {
                         <button className="ghost-button" onClick={() => showHint(2)}>
                           Hint 2
                         </button>
-                        <button className="ghost-button" onClick={showExplanation}>
+                        <button
+                          className="ghost-button"
+                          data-testid="show-final-explanation"
+                          onClick={showExplanation}
+                        >
                           Final explanation
                         </button>
                       </>
                     )}
                     {currentTask.status === 'correct' && (
-                      <button className="primary-button" onClick={continueRun}>
+                      <button
+                        className="primary-button"
+                        data-testid="continue-expedition"
+                        onClick={continueRun}
+                      >
                         Continue the expedition
                       </button>
                     )}
                     {currentTask.hintLevel === 3 && (
-                      <button className="primary-button" onClick={continueRun}>
+                      <button
+                        className="primary-button"
+                        data-testid="continue-with-support"
+                        onClick={continueRun}
+                      >
                         Continue with support
                       </button>
                     )}
@@ -644,11 +673,16 @@ function App() {
 
                   <div className="flag-box">
                     <input
+                      data-testid="flag-reason-input"
                       value={flagReason}
                       onChange={(event) => setFlagReason(event.target.value)}
                       placeholder="Flag this output for review"
                     />
-                    <button className="ghost-button" onClick={reportCurrentOutput}>
+                    <button
+                      className="ghost-button"
+                      data-testid="flag-output"
+                      onClick={reportCurrentOutput}
+                    >
                       Flag
                     </button>
                   </div>
@@ -666,6 +700,7 @@ function App() {
                     <div className="hero-actions">
                       <button
                         className="primary-button"
+                        data-testid="start-expedition"
                         onClick={() => startRun(state.diagnosticComplete ? 'daily' : 'diagnostic')}
                       >
                         {state.diagnosticComplete ? 'Start today’s expedition' : 'Start the diagnostic'}
@@ -702,7 +737,7 @@ function App() {
                 </section>
 
                 {sessionResult && (
-                  <section className="panel celebration-panel">
+                  <section className="panel celebration-panel" data-testid="session-result">
                     <span className="eyebrow">Session result</span>
                     <h2>{sessionResult.title}</h2>
                     <p>{sessionResult.landmark}</p>
@@ -892,7 +927,11 @@ function App() {
                       </article>
                     ))}
                   </div>
-                  <button className="ghost-button" onClick={resetExperience}>
+                  <button
+                    className="ghost-button"
+                    data-testid="reset-household-state"
+                    onClick={resetExperience}
+                  >
                     Reset local household state
                   </button>
                 </section>

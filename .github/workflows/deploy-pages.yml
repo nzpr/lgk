@@ -18,6 +18,8 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      PLAYWRIGHT_BROWSERS_PATH: .playwright-browsers
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -31,8 +33,11 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build product
-        run: npm run build
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: Validate and build product
+        run: npm run validate
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
