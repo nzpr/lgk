@@ -37,14 +37,20 @@ jobs:
         continue-on-error: true
         run: |
           set -o pipefail
-          node scripts/generate-task-bank.mjs 2>&1 | tee generate-content.log
+          {
+            echo "pwd=$(pwd)"
+            node -v
+            ls -ld . scripts src src/generated || true
+            ls -l scripts/generate-task-bank.mjs package.json
+          } | tee generate-content.log
+          node scripts/generate-task-bank.mjs 2>&1 | tee -a generate-content.log
           echo "exit_code=${PIPESTATUS[0]}" >> "$GITHUB_OUTPUT"
 
       - name: Fail on content generation error
         if: steps.generate_content.outputs.exit_code != '0'
         run: |
-          summary=$(tail -n 20 generate-content.log | tr '\n' ' ' | sed 's/"/\\"/g')
-          echo "::error title=Generate content failed::$summary"
+          summary=$(tail -n 40 generate-content.log | tr '\n' ' ' | tr -s ' ' | sed 's/"/\\"/g')
+          echo "::error file=scripts/generate-task-bank.mjs,line=1,title=Generate content failed::$summary"
           exit 1
 
       - name: Lint app
