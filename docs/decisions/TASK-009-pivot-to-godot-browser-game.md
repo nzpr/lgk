@@ -29,6 +29,8 @@ The user’s bar is correct: a real game should be built in an actual game engin
 - Created the first Godot project skeleton and a browser-exportable vertical slice route scene.
 - Confirmed local headless boot and Godot Web export using the committed project files.
 - Replaced GitHub validation, Pages deploy, and release packaging flows to target the Godot Web build instead of the React dist output.
+- Added a Godot campaign data export path that converts the authored 20-level route set into browser-shippable Godot JSON content.
+- Rebuilt the main Godot controller around campaign loading, save-backed progression, route resume, upgrades, and atlas-level completion states.
 
 ## Scope
 Task-specific
