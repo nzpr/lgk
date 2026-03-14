@@ -1,6 +1,7 @@
 import { spawn } from 'node:child_process'
 import { createServer } from 'node:net'
 import process from 'node:process'
+import { resolve } from 'node:path'
 
 const DEFAULT_PORT = 4173
 const TIMEOUT_MS = 120_000
@@ -9,8 +10,13 @@ function npmCommand() {
   return process.platform === 'win32' ? 'npm.cmd' : 'npm'
 }
 
-function npxCommand() {
-  return process.platform === 'win32' ? 'npx.cmd' : 'npx'
+function playwrightCommand() {
+  return resolve(
+    process.cwd(),
+    'node_modules',
+    '.bin',
+    process.platform === 'win32' ? 'playwright.cmd' : 'playwright',
+  )
 }
 
 function wait(ms) {
@@ -120,8 +126,8 @@ async function main() {
   try {
     await waitForServer(previewUrl, TIMEOUT_MS)
     const code = await runCommand(
-      npxCommand(),
-      ['playwright', 'test', '--config', 'playwright.config.ts'],
+      playwrightCommand(),
+      ['test', '--config', 'playwright.config.ts'],
       {
         PLAYWRIGHT_BROWSERS_PATH: process.env.PLAYWRIGHT_BROWSERS_PATH ?? '.playwright-browsers',
         E2E_BASE_URL: previewUrl,

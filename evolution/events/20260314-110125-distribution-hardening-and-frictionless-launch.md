@@ -14,6 +14,7 @@ Added a no-signup demo household path that can be entered from the landing page 
 Added launch-facing metadata and distribution materials: social card, robots/sitemap, store listing copy, and launch/support notes.
 Aligned the E2E base URL with the preview server address to avoid localhost resolution mismatches on GitHub-hosted runners.
 Split CI and deploy validation into explicit gates so future failures show the exact broken stage instead of a single opaque validation step.
+Replaced `npx playwright` usage in CI-sensitive paths with the checked-in local Playwright binary to avoid npm exec cache/ownership drift between GitHub-hosted runner steps.
 
 ## Decision Link
 - ADR: [0001-local-first-logic-learning-web-app.md](../../docs/adr/0001-local-first-logic-learning-web-app.md)
