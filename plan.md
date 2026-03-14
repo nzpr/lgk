@@ -118,3 +118,7 @@ graph TD
 - Content proof: reviewed launch pack, traceable source IDs, reject path for bad outputs
 - Ops proof: staging path, production path, smoke checklist, rollback note, ownership note
 - Replacement-team proof: architecture note, content schema, state model, release playbook
+
+## Current Slice
+- `Slice A`: `N04` `N07` `N08` `N09` `N10` `N11` `N12`
+- Deliverable: runnable product shell, runtime architecture note, content schema, progression model, and build/validate path

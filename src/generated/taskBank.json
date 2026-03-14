@@ -1,0 +1,4102 @@
+[
+  {
+    "id": "classification-repair-tools-odd",
+    "title": "Sort the repair tools",
+    "skill": "classification",
+    "subskill": "odd-one-out",
+    "difficulty": 1,
+    "ageBand": "9-11",
+    "region": "Lantern Reach",
+    "chapter": 1,
+    "missionType": "repair quest",
+    "prompt": "Mira is packing bridge repair tools. Which item does not belong with the others?",
+    "choices": [
+      "rope clamp",
+      "cloud pear",
+      "gear key",
+      "glass wrench"
+    ],
+    "correctIndex": 1,
+    "hintSteps": [
+      "Three choices all help with the same job: bridge repair tools.",
+      "Look for the one item that cannot be used in that kind of kit."
+    ],
+    "explanation": {
+      "summary": "cloud pear does not belong because the other three are all part of bridge repair tools.",
+      "steps": [
+        "First notice what the matching items have in common.",
+        "Then remove the one choice that breaks that shared rule."
+      ],
+      "whyNow": "Classification means finding the rule first, then checking each item against it."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        1,
+        3,
+        11
+      ],
+      "note": "Reviewed classification exercise adapted from the logic corpus into expedition inventory sorting."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "A bridge lock clicks into place."
+  },
+  {
+    "id": "classification-repair-tools-label",
+    "title": "Name the right bundle",
+    "skill": "classification",
+    "subskill": "group-label",
+    "difficulty": 2,
+    "ageBand": "9-11",
+    "region": "Lantern Reach",
+    "chapter": 1,
+    "missionType": "repair quest",
+    "prompt": "These items belong together: rope clamp, gear key, glass wrench, and signal hammer. Which label fits that set best?",
+    "choices": [
+      "bridge repair tools",
+      "camp snacks",
+      "storm creatures",
+      "festival music"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "Do not look at the items one by one. Look for the one job they all share.",
+      "Only one answer names the whole group instead of a random theme."
+    ],
+    "explanation": {
+      "summary": "bridge repair tools is correct because every item in the set helps with that same mission role.",
+      "steps": [
+        "A category label should cover every example in the group.",
+        "If one item would not fit the label, the label is too broad or wrong."
+      ],
+      "whyNow": "Strong classification uses one clean rule that works for every example."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        1,
+        3,
+        11
+      ],
+      "note": "Reviewed category-label task using corpus-inspired sorting and grouping patterns."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "A bridge lock clicks into place."
+  },
+  {
+    "id": "classification-repair-tools-fit",
+    "title": "Complete the kit",
+    "skill": "classification",
+    "subskill": "set-completion",
+    "difficulty": 3,
+    "ageBand": "9-11",
+    "region": "Lantern Reach",
+    "chapter": 1,
+    "missionType": "repair quest",
+    "prompt": "Tala already packed rope clamp, gear key, glass wrench. Which choice should join them to keep the same kind of kit?",
+    "choices": [
+      "signal hammer",
+      "feather pillow",
+      "festival ribbon",
+      "tea biscuit"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "Ask which option matches the same mission use as the packed items.",
+      "Three options are harmless, but only one truly belongs in the same kit."
+    ],
+    "explanation": {
+      "summary": "signal hammer matches the same category as the packed items, so it completes the kit.",
+      "steps": [
+        "Good classification can work in reverse: once you know the category, add the matching item.",
+        "Ignore choices that are nice to have but serve a different purpose."
+      ],
+      "whyNow": "This helps a Pathfinder add the right tool instead of grabbing something random."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        1,
+        3,
+        11
+      ],
+      "note": "Reviewed set-completion task grounded in curated classification practice."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "A bridge lock clicks into place."
+  },
+  {
+    "id": "classification-repair-tools-belongs",
+    "title": "Choose the right pile",
+    "skill": "classification",
+    "subskill": "placement-by-rule",
+    "difficulty": 4,
+    "ageBand": "9-11",
+    "region": "Lantern Reach",
+    "chapter": 1,
+    "missionType": "repair quest",
+    "prompt": "Orin places signal hammer on the table. Which pile should it go into?",
+    "choices": [
+      "bridge repair tools",
+      "meal basket",
+      "festival extras",
+      "animal care"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "Think about the rule behind signal hammer, not what it looks like.",
+      "The right pile is the one whose purpose matches the item’s job."
+    ],
+    "explanation": {
+      "summary": "signal hammer belongs with bridge repair tools because it serves that same expedition role.",
+      "steps": [
+        "A classification rule should guide where a new item goes.",
+        "The best answer is the pile that would still make sense for every item in the set."
+      ],
+      "whyNow": "This is how Pathfinders keep fast-moving missions organized without guesswork."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        1,
+        3,
+        11
+      ],
+      "note": "Reviewed placement-by-rule task with explicit category reasoning and source trace."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "A bridge lock clicks into place."
+  },
+  {
+    "id": "classification-weather-readers-odd",
+    "title": "Sort the weather readers",
+    "skill": "classification",
+    "subskill": "odd-one-out",
+    "difficulty": 1,
+    "ageBand": "9-11",
+    "region": "Lantern Reach",
+    "chapter": 2,
+    "missionType": "route quest",
+    "prompt": "Mira is packing weather-reading tools. Which item does not belong with the others?",
+    "choices": [
+      "wind vane",
+      "soup ladle",
+      "storm dial",
+      "mist ribbon"
+    ],
+    "correctIndex": 1,
+    "hintSteps": [
+      "Three choices all help with the same job: weather-reading tools.",
+      "Look for the one item that cannot be used in that kind of kit."
+    ],
+    "explanation": {
+      "summary": "soup ladle does not belong because the other three are all part of weather-reading tools.",
+      "steps": [
+        "First notice what the matching items have in common.",
+        "Then remove the one choice that breaks that shared rule."
+      ],
+      "whyNow": "Classification means finding the rule first, then checking each item against it."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        1,
+        3,
+        11
+      ],
+      "note": "Reviewed classification exercise adapted from the logic corpus into expedition inventory sorting."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "The beacon can read the sky again."
+  },
+  {
+    "id": "classification-weather-readers-label",
+    "title": "Name the right bundle",
+    "skill": "classification",
+    "subskill": "group-label",
+    "difficulty": 2,
+    "ageBand": "9-11",
+    "region": "Lantern Reach",
+    "chapter": 2,
+    "missionType": "route quest",
+    "prompt": "These items belong together: wind vane, storm dial, mist ribbon, and rain gauge. Which label fits that set best?",
+    "choices": [
+      "weather-reading tools",
+      "camp snacks",
+      "storm creatures",
+      "festival music"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "Do not look at the items one by one. Look for the one job they all share.",
+      "Only one answer names the whole group instead of a random theme."
+    ],
+    "explanation": {
+      "summary": "weather-reading tools is correct because every item in the set helps with that same mission role.",
+      "steps": [
+        "A category label should cover every example in the group.",
+        "If one item would not fit the label, the label is too broad or wrong."
+      ],
+      "whyNow": "Strong classification uses one clean rule that works for every example."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        1,
+        3,
+        11
+      ],
+      "note": "Reviewed category-label task using corpus-inspired sorting and grouping patterns."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "The beacon can read the sky again."
+  },
+  {
+    "id": "classification-weather-readers-fit",
+    "title": "Complete the kit",
+    "skill": "classification",
+    "subskill": "set-completion",
+    "difficulty": 3,
+    "ageBand": "9-11",
+    "region": "Lantern Reach",
+    "chapter": 2,
+    "missionType": "route quest",
+    "prompt": "Tala already packed wind vane, storm dial, mist ribbon. Which choice should join them to keep the same kind of kit?",
+    "choices": [
+      "rain gauge",
+      "feather pillow",
+      "festival ribbon",
+      "tea biscuit"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "Ask which option matches the same mission use as the packed items.",
+      "Three options are harmless, but only one truly belongs in the same kit."
+    ],
+    "explanation": {
+      "summary": "rain gauge matches the same category as the packed items, so it completes the kit.",
+      "steps": [
+        "Good classification can work in reverse: once you know the category, add the matching item.",
+        "Ignore choices that are nice to have but serve a different purpose."
+      ],
+      "whyNow": "This helps a Pathfinder add the right tool instead of grabbing something random."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        1,
+        3,
+        11
+      ],
+      "note": "Reviewed set-completion task grounded in curated classification practice."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "The beacon can read the sky again."
+  },
+  {
+    "id": "classification-weather-readers-belongs",
+    "title": "Choose the right pile",
+    "skill": "classification",
+    "subskill": "placement-by-rule",
+    "difficulty": 4,
+    "ageBand": "9-11",
+    "region": "Lantern Reach",
+    "chapter": 2,
+    "missionType": "route quest",
+    "prompt": "Orin places rain gauge on the table. Which pile should it go into?",
+    "choices": [
+      "weather-reading tools",
+      "meal basket",
+      "festival extras",
+      "animal care"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "Think about the rule behind rain gauge, not what it looks like.",
+      "The right pile is the one whose purpose matches the item’s job."
+    ],
+    "explanation": {
+      "summary": "rain gauge belongs with weather-reading tools because it serves that same expedition role.",
+      "steps": [
+        "A classification rule should guide where a new item goes.",
+        "The best answer is the pile that would still make sense for every item in the set."
+      ],
+      "whyNow": "This is how Pathfinders keep fast-moving missions organized without guesswork."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        1,
+        3,
+        11
+      ],
+      "note": "Reviewed placement-by-rule task with explicit category reasoning and source trace."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "The beacon can read the sky again."
+  },
+  {
+    "id": "classification-archive-notes-odd",
+    "title": "Sort the archive notes",
+    "skill": "classification",
+    "subskill": "odd-one-out",
+    "difficulty": 1,
+    "ageBand": "9-11",
+    "region": "Lantern Reach",
+    "chapter": 3,
+    "missionType": "investigation quest",
+    "prompt": "Mira is packing archive records. Which item does not belong with the others?",
+    "choices": [
+      "route log",
+      "glider wheel",
+      "beacon sketch",
+      "village message"
+    ],
+    "correctIndex": 1,
+    "hintSteps": [
+      "Three choices all help with the same job: archive records.",
+      "Look for the one item that cannot be used in that kind of kit."
+    ],
+    "explanation": {
+      "summary": "glider wheel does not belong because the other three are all part of archive records.",
+      "steps": [
+        "First notice what the matching items have in common.",
+        "Then remove the one choice that breaks that shared rule."
+      ],
+      "whyNow": "Classification means finding the rule first, then checking each item against it."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        1,
+        3,
+        11
+      ],
+      "note": "Reviewed classification exercise adapted from the logic corpus into expedition inventory sorting."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "A hidden shelf slides open."
+  },
+  {
+    "id": "classification-archive-notes-label",
+    "title": "Name the right bundle",
+    "skill": "classification",
+    "subskill": "group-label",
+    "difficulty": 2,
+    "ageBand": "9-11",
+    "region": "Lantern Reach",
+    "chapter": 3,
+    "missionType": "investigation quest",
+    "prompt": "These items belong together: route log, beacon sketch, village message, and signal journal. Which label fits that set best?",
+    "choices": [
+      "archive records",
+      "camp snacks",
+      "storm creatures",
+      "festival music"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "Do not look at the items one by one. Look for the one job they all share.",
+      "Only one answer names the whole group instead of a random theme."
+    ],
+    "explanation": {
+      "summary": "archive records is correct because every item in the set helps with that same mission role.",
+      "steps": [
+        "A category label should cover every example in the group.",
+        "If one item would not fit the label, the label is too broad or wrong."
+      ],
+      "whyNow": "Strong classification uses one clean rule that works for every example."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        1,
+        3,
+        11
+      ],
+      "note": "Reviewed category-label task using corpus-inspired sorting and grouping patterns."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "A hidden shelf slides open."
+  },
+  {
+    "id": "classification-archive-notes-fit",
+    "title": "Complete the kit",
+    "skill": "classification",
+    "subskill": "set-completion",
+    "difficulty": 3,
+    "ageBand": "9-11",
+    "region": "Lantern Reach",
+    "chapter": 3,
+    "missionType": "investigation quest",
+    "prompt": "Tala already packed route log, beacon sketch, village message. Which choice should join them to keep the same kind of kit?",
+    "choices": [
+      "signal journal",
+      "feather pillow",
+      "festival ribbon",
+      "tea biscuit"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "Ask which option matches the same mission use as the packed items.",
+      "Three options are harmless, but only one truly belongs in the same kit."
+    ],
+    "explanation": {
+      "summary": "signal journal matches the same category as the packed items, so it completes the kit.",
+      "steps": [
+        "Good classification can work in reverse: once you know the category, add the matching item.",
+        "Ignore choices that are nice to have but serve a different purpose."
+      ],
+      "whyNow": "This helps a Pathfinder add the right tool instead of grabbing something random."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        1,
+        3,
+        11
+      ],
+      "note": "Reviewed set-completion task grounded in curated classification practice."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "A hidden shelf slides open."
+  },
+  {
+    "id": "classification-archive-notes-belongs",
+    "title": "Choose the right pile",
+    "skill": "classification",
+    "subskill": "placement-by-rule",
+    "difficulty": 4,
+    "ageBand": "9-11",
+    "region": "Lantern Reach",
+    "chapter": 3,
+    "missionType": "investigation quest",
+    "prompt": "Orin places signal journal on the table. Which pile should it go into?",
+    "choices": [
+      "archive records",
+      "meal basket",
+      "festival extras",
+      "animal care"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "Think about the rule behind signal journal, not what it looks like.",
+      "The right pile is the one whose purpose matches the item’s job."
+    ],
+    "explanation": {
+      "summary": "signal journal belongs with archive records because it serves that same expedition role.",
+      "steps": [
+        "A classification rule should guide where a new item goes.",
+        "The best answer is the pile that would still make sense for every item in the set."
+      ],
+      "whyNow": "This is how Pathfinders keep fast-moving missions organized without guesswork."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        1,
+        3,
+        11
+      ],
+      "note": "Reviewed placement-by-rule task with explicit category reasoning and source trace."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "A hidden shelf slides open."
+  },
+  {
+    "id": "classification-lantern-parts-odd",
+    "title": "Sort the lantern parts",
+    "skill": "classification",
+    "subskill": "odd-one-out",
+    "difficulty": 1,
+    "ageBand": "9-11",
+    "region": "The Wind Archive",
+    "chapter": 1,
+    "missionType": "repair quest",
+    "prompt": "Mira is packing lantern parts. Which item does not belong with the others?",
+    "choices": [
+      "glass lens",
+      "bread basket",
+      "light wick",
+      "brass ring"
+    ],
+    "correctIndex": 1,
+    "hintSteps": [
+      "Three choices all help with the same job: lantern parts.",
+      "Look for the one item that cannot be used in that kind of kit."
+    ],
+    "explanation": {
+      "summary": "bread basket does not belong because the other three are all part of lantern parts.",
+      "steps": [
+        "First notice what the matching items have in common.",
+        "Then remove the one choice that breaks that shared rule."
+      ],
+      "whyNow": "Classification means finding the rule first, then checking each item against it."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        1,
+        3,
+        11
+      ],
+      "note": "Reviewed classification exercise adapted from the logic corpus into expedition inventory sorting."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "A lantern frame steadies in Tala’s hands."
+  },
+  {
+    "id": "classification-lantern-parts-label",
+    "title": "Name the right bundle",
+    "skill": "classification",
+    "subskill": "group-label",
+    "difficulty": 2,
+    "ageBand": "9-11",
+    "region": "The Wind Archive",
+    "chapter": 1,
+    "missionType": "repair quest",
+    "prompt": "These items belong together: glass lens, light wick, brass ring, and glow filament. Which label fits that set best?",
+    "choices": [
+      "lantern parts",
+      "camp snacks",
+      "storm creatures",
+      "festival music"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "Do not look at the items one by one. Look for the one job they all share.",
+      "Only one answer names the whole group instead of a random theme."
+    ],
+    "explanation": {
+      "summary": "lantern parts is correct because every item in the set helps with that same mission role.",
+      "steps": [
+        "A category label should cover every example in the group.",
+        "If one item would not fit the label, the label is too broad or wrong."
+      ],
+      "whyNow": "Strong classification uses one clean rule that works for every example."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        1,
+        3,
+        11
+      ],
+      "note": "Reviewed category-label task using corpus-inspired sorting and grouping patterns."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "A lantern frame steadies in Tala’s hands."
+  },
+  {
+    "id": "classification-lantern-parts-fit",
+    "title": "Complete the kit",
+    "skill": "classification",
+    "subskill": "set-completion",
+    "difficulty": 3,
+    "ageBand": "9-11",
+    "region": "The Wind Archive",
+    "chapter": 1,
+    "missionType": "repair quest",
+    "prompt": "Tala already packed glass lens, light wick, brass ring. Which choice should join them to keep the same kind of kit?",
+    "choices": [
+      "glow filament",
+      "feather pillow",
+      "festival ribbon",
+      "tea biscuit"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "Ask which option matches the same mission use as the packed items.",
+      "Three options are harmless, but only one truly belongs in the same kit."
+    ],
+    "explanation": {
+      "summary": "glow filament matches the same category as the packed items, so it completes the kit.",
+      "steps": [
+        "Good classification can work in reverse: once you know the category, add the matching item.",
+        "Ignore choices that are nice to have but serve a different purpose."
+      ],
+      "whyNow": "This helps a Pathfinder add the right tool instead of grabbing something random."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        1,
+        3,
+        11
+      ],
+      "note": "Reviewed set-completion task grounded in curated classification practice."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "A lantern frame steadies in Tala’s hands."
+  },
+  {
+    "id": "classification-lantern-parts-belongs",
+    "title": "Choose the right pile",
+    "skill": "classification",
+    "subskill": "placement-by-rule",
+    "difficulty": 4,
+    "ageBand": "9-11",
+    "region": "The Wind Archive",
+    "chapter": 1,
+    "missionType": "repair quest",
+    "prompt": "Orin places glow filament on the table. Which pile should it go into?",
+    "choices": [
+      "lantern parts",
+      "meal basket",
+      "festival extras",
+      "animal care"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "Think about the rule behind glow filament, not what it looks like.",
+      "The right pile is the one whose purpose matches the item’s job."
+    ],
+    "explanation": {
+      "summary": "glow filament belongs with lantern parts because it serves that same expedition role.",
+      "steps": [
+        "A classification rule should guide where a new item goes.",
+        "The best answer is the pile that would still make sense for every item in the set."
+      ],
+      "whyNow": "This is how Pathfinders keep fast-moving missions organized without guesswork."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        1,
+        3,
+        11
+      ],
+      "note": "Reviewed placement-by-rule task with explicit category reasoning and source trace."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "A lantern frame steadies in Tala’s hands."
+  },
+  {
+    "id": "classification-village-supplies-odd",
+    "title": "Sort the village supplies",
+    "skill": "classification",
+    "subskill": "odd-one-out",
+    "difficulty": 1,
+    "ageBand": "9-11",
+    "region": "The Wind Archive",
+    "chapter": 2,
+    "missionType": "service quest",
+    "prompt": "Mira is packing village supply bundles. Which item does not belong with the others?",
+    "choices": [
+      "grain sack",
+      "signal crystal",
+      "water jar",
+      "blanket roll"
+    ],
+    "correctIndex": 1,
+    "hintSteps": [
+      "Three choices all help with the same job: village supply bundles.",
+      "Look for the one item that cannot be used in that kind of kit."
+    ],
+    "explanation": {
+      "summary": "signal crystal does not belong because the other three are all part of village supply bundles.",
+      "steps": [
+        "First notice what the matching items have in common.",
+        "Then remove the one choice that breaks that shared rule."
+      ],
+      "whyNow": "Classification means finding the rule first, then checking each item against it."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        1,
+        3,
+        11
+      ],
+      "note": "Reviewed classification exercise adapted from the logic corpus into expedition inventory sorting."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "The village landing platform reopens."
+  },
+  {
+    "id": "classification-village-supplies-label",
+    "title": "Name the right bundle",
+    "skill": "classification",
+    "subskill": "group-label",
+    "difficulty": 2,
+    "ageBand": "9-11",
+    "region": "The Wind Archive",
+    "chapter": 2,
+    "missionType": "service quest",
+    "prompt": "These items belong together: grain sack, water jar, blanket roll, and fruit crate. Which label fits that set best?",
+    "choices": [
+      "village supply bundles",
+      "camp snacks",
+      "storm creatures",
+      "festival music"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "Do not look at the items one by one. Look for the one job they all share.",
+      "Only one answer names the whole group instead of a random theme."
+    ],
+    "explanation": {
+      "summary": "village supply bundles is correct because every item in the set helps with that same mission role.",
+      "steps": [
+        "A category label should cover every example in the group.",
+        "If one item would not fit the label, the label is too broad or wrong."
+      ],
+      "whyNow": "Strong classification uses one clean rule that works for every example."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        1,
+        3,
+        11
+      ],
+      "note": "Reviewed category-label task using corpus-inspired sorting and grouping patterns."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "The village landing platform reopens."
+  },
+  {
+    "id": "classification-village-supplies-fit",
+    "title": "Complete the kit",
+    "skill": "classification",
+    "subskill": "set-completion",
+    "difficulty": 3,
+    "ageBand": "9-11",
+    "region": "The Wind Archive",
+    "chapter": 2,
+    "missionType": "service quest",
+    "prompt": "Tala already packed grain sack, water jar, blanket roll. Which choice should join them to keep the same kind of kit?",
+    "choices": [
+      "fruit crate",
+      "feather pillow",
+      "festival ribbon",
+      "tea biscuit"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "Ask which option matches the same mission use as the packed items.",
+      "Three options are harmless, but only one truly belongs in the same kit."
+    ],
+    "explanation": {
+      "summary": "fruit crate matches the same category as the packed items, so it completes the kit.",
+      "steps": [
+        "Good classification can work in reverse: once you know the category, add the matching item.",
+        "Ignore choices that are nice to have but serve a different purpose."
+      ],
+      "whyNow": "This helps a Pathfinder add the right tool instead of grabbing something random."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        1,
+        3,
+        11
+      ],
+      "note": "Reviewed set-completion task grounded in curated classification practice."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "The village landing platform reopens."
+  },
+  {
+    "id": "classification-village-supplies-belongs",
+    "title": "Choose the right pile",
+    "skill": "classification",
+    "subskill": "placement-by-rule",
+    "difficulty": 4,
+    "ageBand": "9-11",
+    "region": "The Wind Archive",
+    "chapter": 2,
+    "missionType": "service quest",
+    "prompt": "Orin places fruit crate on the table. Which pile should it go into?",
+    "choices": [
+      "village supply bundles",
+      "meal basket",
+      "festival extras",
+      "animal care"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "Think about the rule behind fruit crate, not what it looks like.",
+      "The right pile is the one whose purpose matches the item’s job."
+    ],
+    "explanation": {
+      "summary": "fruit crate belongs with village supply bundles because it serves that same expedition role.",
+      "steps": [
+        "A classification rule should guide where a new item goes.",
+        "The best answer is the pile that would still make sense for every item in the set."
+      ],
+      "whyNow": "This is how Pathfinders keep fast-moving missions organized without guesswork."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        1,
+        3,
+        11
+      ],
+      "note": "Reviewed placement-by-rule task with explicit category reasoning and source trace."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "The village landing platform reopens."
+  },
+  {
+    "id": "patterns-amber-route-signal",
+    "title": "Read the lantern signal",
+    "skill": "patterns",
+    "subskill": "alternation",
+    "difficulty": 1,
+    "ageBand": "9-11",
+    "region": "Lantern Reach",
+    "chapter": 3,
+    "missionType": "route quest",
+    "prompt": "The lantern pulses go gold, silver, gold, silver. What comes next?",
+    "choices": [
+      "gold",
+      "double",
+      "quiet",
+      "turn"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "Say the pattern slowly and check which part keeps repeating.",
+      "The answer should continue the same rhythm, not start a new one."
+    ],
+    "explanation": {
+      "summary": "gold continues the repeated pattern exactly.",
+      "steps": [
+        "A pattern is a rule that repeats or grows in a steady way.",
+        "When the first four or six parts repeat, the next part follows that same rule."
+      ],
+      "whyNow": "Pattern reading helps Pathfinders decode route signals without guessing."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        3,
+        9,
+        10
+      ],
+      "note": "Reviewed pattern-extension task adapted from curated signal and sequence exercises."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "A route line draws itself across the map."
+  },
+  {
+    "id": "patterns-amber-route-number",
+    "title": "Restore the route count",
+    "skill": "patterns",
+    "subskill": "numeric-sequence",
+    "difficulty": 2,
+    "ageBand": "9-11",
+    "region": "Lantern Reach",
+    "chapter": 3,
+    "missionType": "route quest",
+    "prompt": "Route stones show 2, 4, 6, 8. Which number should come next?",
+    "choices": [
+      "10",
+      "6",
+      "11",
+      "14"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "Compare each pair of numbers. How much does the count change each time?",
+      "Once you see the step size, use it one more time."
+    ],
+    "explanation": {
+      "summary": "10 is correct because the numbers grow by the same amount each time.",
+      "steps": [
+        "Look at the difference between one number and the next.",
+        "Apply that same difference once more to continue the pattern."
+      ],
+      "whyNow": "This is the same skill the guild uses to predict route timing and pulse counts."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        3,
+        9,
+        10
+      ],
+      "note": "Reviewed numeric-pattern task drawn from logic and puzzle source material."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "A route line draws itself across the map."
+  },
+  {
+    "id": "patterns-amber-route-missing",
+    "title": "Find the missing pulse",
+    "skill": "patterns",
+    "subskill": "missing-step",
+    "difficulty": 3,
+    "ageBand": "9-11",
+    "region": "Lantern Reach",
+    "chapter": 3,
+    "missionType": "route quest",
+    "prompt": "A pulse strip reads gold, ?, gold, silver. Which piece fits the missing spot?",
+    "choices": [
+      "silver",
+      "gold",
+      "turn",
+      "quiet"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "Use the repeating rule from the pieces you can already see.",
+      "The missing part must make the full row repeat cleanly."
+    ],
+    "explanation": {
+      "summary": "silver completes the pattern and keeps the rule steady.",
+      "steps": [
+        "A missing-step problem still uses the same repeating or growing rule.",
+        "Test each option and keep the one that makes the whole row consistent."
+      ],
+      "whyNow": "This helps a Pathfinder repair broken signals when one lantern flickers out."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        3,
+        9,
+        10
+      ],
+      "note": "Reviewed missing-step pattern exercise with explicit continuation logic."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "A route line draws itself across the map."
+  },
+  {
+    "id": "patterns-amber-route-choice",
+    "title": "Choose the matching strip",
+    "skill": "patterns",
+    "subskill": "matching-rule",
+    "difficulty": 4,
+    "ageBand": "9-11",
+    "region": "Lantern Reach",
+    "chapter": 3,
+    "missionType": "route quest",
+    "prompt": "Which strip follows the same rule as gold, silver, gold, silver?",
+    "choices": [
+      "gold, silver, gold, silver",
+      "gold, gold, silver, silver",
+      "north, south, east, west",
+      "short, long, long, short"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "Ignore the exact words and compare the structure.",
+      "Only one answer repeats in the same order and rhythm."
+    ],
+    "explanation": {
+      "summary": "The first strip matches because it repeats using the same structure as the original.",
+      "steps": [
+        "Pattern matching is about the rule, not the decoration.",
+        "If the order changes, the rule changes too."
+      ],
+      "whyNow": "That is how the guild compares route codes even when the symbols look different."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        3,
+        9,
+        10
+      ],
+      "note": "Reviewed matching-rule task with structure-over-surface emphasis."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "A route line draws itself across the map."
+  },
+  {
+    "id": "patterns-echo-chimes-signal",
+    "title": "Read the lantern signal",
+    "skill": "patterns",
+    "subskill": "alternation",
+    "difficulty": 1,
+    "ageBand": "9-11",
+    "region": "The Wind Archive",
+    "chapter": 1,
+    "missionType": "investigation quest",
+    "prompt": "The lantern pulses go north, east, north, east. What comes next?",
+    "choices": [
+      "north",
+      "double",
+      "quiet",
+      "turn"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "Say the pattern slowly and check which part keeps repeating.",
+      "The answer should continue the same rhythm, not start a new one."
+    ],
+    "explanation": {
+      "summary": "north continues the repeated pattern exactly.",
+      "steps": [
+        "A pattern is a rule that repeats or grows in a steady way.",
+        "When the first four or six parts repeat, the next part follows that same rule."
+      ],
+      "whyNow": "Pattern reading helps Pathfinders decode route signals without guessing."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        3,
+        9,
+        10
+      ],
+      "note": "Reviewed pattern-extension task adapted from curated signal and sequence exercises."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "The echo tower answers in the right rhythm."
+  },
+  {
+    "id": "patterns-echo-chimes-number",
+    "title": "Restore the route count",
+    "skill": "patterns",
+    "subskill": "numeric-sequence",
+    "difficulty": 2,
+    "ageBand": "9-11",
+    "region": "The Wind Archive",
+    "chapter": 1,
+    "missionType": "investigation quest",
+    "prompt": "Route stones show 3, 6, 9, 12. Which number should come next?",
+    "choices": [
+      "15",
+      "6",
+      "11",
+      "14"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "Compare each pair of numbers. How much does the count change each time?",
+      "Once you see the step size, use it one more time."
+    ],
+    "explanation": {
+      "summary": "15 is correct because the numbers grow by the same amount each time.",
+      "steps": [
+        "Look at the difference between one number and the next.",
+        "Apply that same difference once more to continue the pattern."
+      ],
+      "whyNow": "This is the same skill the guild uses to predict route timing and pulse counts."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        3,
+        9,
+        10
+      ],
+      "note": "Reviewed numeric-pattern task drawn from logic and puzzle source material."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "The echo tower answers in the right rhythm."
+  },
+  {
+    "id": "patterns-echo-chimes-missing",
+    "title": "Find the missing pulse",
+    "skill": "patterns",
+    "subskill": "missing-step",
+    "difficulty": 3,
+    "ageBand": "9-11",
+    "region": "The Wind Archive",
+    "chapter": 1,
+    "missionType": "investigation quest",
+    "prompt": "A pulse strip reads north, ?, north, east. Which piece fits the missing spot?",
+    "choices": [
+      "east",
+      "north",
+      "turn",
+      "quiet"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "Use the repeating rule from the pieces you can already see.",
+      "The missing part must make the full row repeat cleanly."
+    ],
+    "explanation": {
+      "summary": "east completes the pattern and keeps the rule steady.",
+      "steps": [
+        "A missing-step problem still uses the same repeating or growing rule.",
+        "Test each option and keep the one that makes the whole row consistent."
+      ],
+      "whyNow": "This helps a Pathfinder repair broken signals when one lantern flickers out."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        3,
+        9,
+        10
+      ],
+      "note": "Reviewed missing-step pattern exercise with explicit continuation logic."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "The echo tower answers in the right rhythm."
+  },
+  {
+    "id": "patterns-echo-chimes-choice",
+    "title": "Choose the matching strip",
+    "skill": "patterns",
+    "subskill": "matching-rule",
+    "difficulty": 4,
+    "ageBand": "9-11",
+    "region": "The Wind Archive",
+    "chapter": 1,
+    "missionType": "investigation quest",
+    "prompt": "Which strip follows the same rule as north, east, north, east?",
+    "choices": [
+      "north, east, north, east",
+      "gold, gold, silver, silver",
+      "north, south, east, west",
+      "short, long, long, short"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "Ignore the exact words and compare the structure.",
+      "Only one answer repeats in the same order and rhythm."
+    ],
+    "explanation": {
+      "summary": "The first strip matches because it repeats using the same structure as the original.",
+      "steps": [
+        "Pattern matching is about the rule, not the decoration.",
+        "If the order changes, the rule changes too."
+      ],
+      "whyNow": "That is how the guild compares route codes even when the symbols look different."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        3,
+        9,
+        10
+      ],
+      "note": "Reviewed matching-rule task with structure-over-surface emphasis."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "The echo tower answers in the right rhythm."
+  },
+  {
+    "id": "patterns-mirror-pulses-signal",
+    "title": "Read the lantern signal",
+    "skill": "patterns",
+    "subskill": "alternation",
+    "difficulty": 1,
+    "ageBand": "9-11",
+    "region": "The Wind Archive",
+    "chapter": 2,
+    "missionType": "repair quest",
+    "prompt": "The lantern pulses go sun, moon, sun, moon. What comes next?",
+    "choices": [
+      "sun",
+      "double",
+      "quiet",
+      "turn"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "Say the pattern slowly and check which part keeps repeating.",
+      "The answer should continue the same rhythm, not start a new one."
+    ],
+    "explanation": {
+      "summary": "sun continues the repeated pattern exactly.",
+      "steps": [
+        "A pattern is a rule that repeats or grows in a steady way.",
+        "When the first four or six parts repeat, the next part follows that same rule."
+      ],
+      "whyNow": "Pattern reading helps Pathfinders decode route signals without guessing."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        3,
+        9,
+        10
+      ],
+      "note": "Reviewed pattern-extension task adapted from curated signal and sequence exercises."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "A mirror array flashes in sequence."
+  },
+  {
+    "id": "patterns-mirror-pulses-number",
+    "title": "Restore the route count",
+    "skill": "patterns",
+    "subskill": "numeric-sequence",
+    "difficulty": 2,
+    "ageBand": "9-11",
+    "region": "The Wind Archive",
+    "chapter": 2,
+    "missionType": "repair quest",
+    "prompt": "Route stones show 5, 7, 9, 11. Which number should come next?",
+    "choices": [
+      "13",
+      "6",
+      "11",
+      "14"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "Compare each pair of numbers. How much does the count change each time?",
+      "Once you see the step size, use it one more time."
+    ],
+    "explanation": {
+      "summary": "13 is correct because the numbers grow by the same amount each time.",
+      "steps": [
+        "Look at the difference between one number and the next.",
+        "Apply that same difference once more to continue the pattern."
+      ],
+      "whyNow": "This is the same skill the guild uses to predict route timing and pulse counts."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        3,
+        9,
+        10
+      ],
+      "note": "Reviewed numeric-pattern task drawn from logic and puzzle source material."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "A mirror array flashes in sequence."
+  },
+  {
+    "id": "patterns-mirror-pulses-missing",
+    "title": "Find the missing pulse",
+    "skill": "patterns",
+    "subskill": "missing-step",
+    "difficulty": 3,
+    "ageBand": "9-11",
+    "region": "The Wind Archive",
+    "chapter": 2,
+    "missionType": "repair quest",
+    "prompt": "A pulse strip reads sun, ?, sun, moon. Which piece fits the missing spot?",
+    "choices": [
+      "moon",
+      "sun",
+      "turn",
+      "quiet"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "Use the repeating rule from the pieces you can already see.",
+      "The missing part must make the full row repeat cleanly."
+    ],
+    "explanation": {
+      "summary": "moon completes the pattern and keeps the rule steady.",
+      "steps": [
+        "A missing-step problem still uses the same repeating or growing rule.",
+        "Test each option and keep the one that makes the whole row consistent."
+      ],
+      "whyNow": "This helps a Pathfinder repair broken signals when one lantern flickers out."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        3,
+        9,
+        10
+      ],
+      "note": "Reviewed missing-step pattern exercise with explicit continuation logic."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "A mirror array flashes in sequence."
+  },
+  {
+    "id": "patterns-mirror-pulses-choice",
+    "title": "Choose the matching strip",
+    "skill": "patterns",
+    "subskill": "matching-rule",
+    "difficulty": 4,
+    "ageBand": "9-11",
+    "region": "The Wind Archive",
+    "chapter": 2,
+    "missionType": "repair quest",
+    "prompt": "Which strip follows the same rule as sun, moon, sun, moon?",
+    "choices": [
+      "sun, moon, sun, moon",
+      "gold, gold, silver, silver",
+      "north, south, east, west",
+      "short, long, long, short"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "Ignore the exact words and compare the structure.",
+      "Only one answer repeats in the same order and rhythm."
+    ],
+    "explanation": {
+      "summary": "The first strip matches because it repeats using the same structure as the original.",
+      "steps": [
+        "Pattern matching is about the rule, not the decoration.",
+        "If the order changes, the rule changes too."
+      ],
+      "whyNow": "That is how the guild compares route codes even when the symbols look different."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        3,
+        9,
+        10
+      ],
+      "note": "Reviewed matching-rule task with structure-over-surface emphasis."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "A mirror array flashes in sequence."
+  },
+  {
+    "id": "patterns-bridge-lights-signal",
+    "title": "Read the lantern signal",
+    "skill": "patterns",
+    "subskill": "alternation",
+    "difficulty": 1,
+    "ageBand": "9-11",
+    "region": "The Wind Archive",
+    "chapter": 3,
+    "missionType": "service quest",
+    "prompt": "The lantern pulses go short, short, long, short, short, long. What comes next?",
+    "choices": [
+      "short",
+      "double",
+      "quiet",
+      "turn"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "Say the pattern slowly and check which part keeps repeating.",
+      "The answer should continue the same rhythm, not start a new one."
+    ],
+    "explanation": {
+      "summary": "short continues the repeated pattern exactly.",
+      "steps": [
+        "A pattern is a rule that repeats or grows in a steady way.",
+        "When the first four or six parts repeat, the next part follows that same rule."
+      ],
+      "whyNow": "Pattern reading helps Pathfinders decode route signals without guessing."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        3,
+        9,
+        10
+      ],
+      "note": "Reviewed pattern-extension task adapted from curated signal and sequence exercises."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "Bridge lights ripple in a clean wave."
+  },
+  {
+    "id": "patterns-bridge-lights-number",
+    "title": "Restore the route count",
+    "skill": "patterns",
+    "subskill": "numeric-sequence",
+    "difficulty": 2,
+    "ageBand": "9-11",
+    "region": "The Wind Archive",
+    "chapter": 3,
+    "missionType": "service quest",
+    "prompt": "Route stones show 4, 8, 12, 16. Which number should come next?",
+    "choices": [
+      "20",
+      "6",
+      "11",
+      "14"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "Compare each pair of numbers. How much does the count change each time?",
+      "Once you see the step size, use it one more time."
+    ],
+    "explanation": {
+      "summary": "20 is correct because the numbers grow by the same amount each time.",
+      "steps": [
+        "Look at the difference between one number and the next.",
+        "Apply that same difference once more to continue the pattern."
+      ],
+      "whyNow": "This is the same skill the guild uses to predict route timing and pulse counts."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        3,
+        9,
+        10
+      ],
+      "note": "Reviewed numeric-pattern task drawn from logic and puzzle source material."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "Bridge lights ripple in a clean wave."
+  },
+  {
+    "id": "patterns-bridge-lights-missing",
+    "title": "Find the missing pulse",
+    "skill": "patterns",
+    "subskill": "missing-step",
+    "difficulty": 3,
+    "ageBand": "9-11",
+    "region": "The Wind Archive",
+    "chapter": 3,
+    "missionType": "service quest",
+    "prompt": "A pulse strip reads short, ?, long, short. Which piece fits the missing spot?",
+    "choices": [
+      "short",
+      "long",
+      "turn",
+      "quiet"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "Use the repeating rule from the pieces you can already see.",
+      "The missing part must make the full row repeat cleanly."
+    ],
+    "explanation": {
+      "summary": "short completes the pattern and keeps the rule steady.",
+      "steps": [
+        "A missing-step problem still uses the same repeating or growing rule.",
+        "Test each option and keep the one that makes the whole row consistent."
+      ],
+      "whyNow": "This helps a Pathfinder repair broken signals when one lantern flickers out."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        3,
+        9,
+        10
+      ],
+      "note": "Reviewed missing-step pattern exercise with explicit continuation logic."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "Bridge lights ripple in a clean wave."
+  },
+  {
+    "id": "patterns-bridge-lights-choice",
+    "title": "Choose the matching strip",
+    "skill": "patterns",
+    "subskill": "matching-rule",
+    "difficulty": 4,
+    "ageBand": "9-11",
+    "region": "The Wind Archive",
+    "chapter": 3,
+    "missionType": "service quest",
+    "prompt": "Which strip follows the same rule as short, short, long, short, short, long?",
+    "choices": [
+      "short, short, short, short",
+      "gold, gold, silver, silver",
+      "north, south, east, west",
+      "short, long, long, short"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "Ignore the exact words and compare the structure.",
+      "Only one answer repeats in the same order and rhythm."
+    ],
+    "explanation": {
+      "summary": "The first strip matches because it repeats using the same structure as the original.",
+      "steps": [
+        "Pattern matching is about the rule, not the decoration.",
+        "If the order changes, the rule changes too."
+      ],
+      "whyNow": "That is how the guild compares route codes even when the symbols look different."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        3,
+        9,
+        10
+      ],
+      "note": "Reviewed matching-rule task with structure-over-surface emphasis."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "Bridge lights ripple in a clean wave."
+  },
+  {
+    "id": "patterns-storm-ribbon-signal",
+    "title": "Read the lantern signal",
+    "skill": "patterns",
+    "subskill": "alternation",
+    "difficulty": 1,
+    "ageBand": "9-11",
+    "region": "Stormglass Wilds",
+    "chapter": 1,
+    "missionType": "route quest",
+    "prompt": "The lantern pulses go left, right, left, right. What comes next?",
+    "choices": [
+      "left",
+      "double",
+      "quiet",
+      "turn"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "Say the pattern slowly and check which part keeps repeating.",
+      "The answer should continue the same rhythm, not start a new one."
+    ],
+    "explanation": {
+      "summary": "left continues the repeated pattern exactly.",
+      "steps": [
+        "A pattern is a rule that repeats or grows in a steady way.",
+        "When the first four or six parts repeat, the next part follows that same rule."
+      ],
+      "whyNow": "Pattern reading helps Pathfinders decode route signals without guessing."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        3,
+        9,
+        10
+      ],
+      "note": "Reviewed pattern-extension task adapted from curated signal and sequence exercises."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "A storm ribbon settles and points the safe way."
+  },
+  {
+    "id": "patterns-storm-ribbon-number",
+    "title": "Restore the route count",
+    "skill": "patterns",
+    "subskill": "numeric-sequence",
+    "difficulty": 2,
+    "ageBand": "9-11",
+    "region": "Stormglass Wilds",
+    "chapter": 1,
+    "missionType": "route quest",
+    "prompt": "Route stones show 1, 3, 5, 7. Which number should come next?",
+    "choices": [
+      "9",
+      "6",
+      "11",
+      "14"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "Compare each pair of numbers. How much does the count change each time?",
+      "Once you see the step size, use it one more time."
+    ],
+    "explanation": {
+      "summary": "9 is correct because the numbers grow by the same amount each time.",
+      "steps": [
+        "Look at the difference between one number and the next.",
+        "Apply that same difference once more to continue the pattern."
+      ],
+      "whyNow": "This is the same skill the guild uses to predict route timing and pulse counts."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        3,
+        9,
+        10
+      ],
+      "note": "Reviewed numeric-pattern task drawn from logic and puzzle source material."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "A storm ribbon settles and points the safe way."
+  },
+  {
+    "id": "patterns-storm-ribbon-missing",
+    "title": "Find the missing pulse",
+    "skill": "patterns",
+    "subskill": "missing-step",
+    "difficulty": 3,
+    "ageBand": "9-11",
+    "region": "Stormglass Wilds",
+    "chapter": 1,
+    "missionType": "route quest",
+    "prompt": "A pulse strip reads left, ?, left, right. Which piece fits the missing spot?",
+    "choices": [
+      "right",
+      "left",
+      "turn",
+      "quiet"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "Use the repeating rule from the pieces you can already see.",
+      "The missing part must make the full row repeat cleanly."
+    ],
+    "explanation": {
+      "summary": "right completes the pattern and keeps the rule steady.",
+      "steps": [
+        "A missing-step problem still uses the same repeating or growing rule.",
+        "Test each option and keep the one that makes the whole row consistent."
+      ],
+      "whyNow": "This helps a Pathfinder repair broken signals when one lantern flickers out."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        3,
+        9,
+        10
+      ],
+      "note": "Reviewed missing-step pattern exercise with explicit continuation logic."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "A storm ribbon settles and points the safe way."
+  },
+  {
+    "id": "patterns-storm-ribbon-choice",
+    "title": "Choose the matching strip",
+    "skill": "patterns",
+    "subskill": "matching-rule",
+    "difficulty": 4,
+    "ageBand": "9-11",
+    "region": "Stormglass Wilds",
+    "chapter": 1,
+    "missionType": "route quest",
+    "prompt": "Which strip follows the same rule as left, right, left, right?",
+    "choices": [
+      "left, right, left, right",
+      "gold, gold, silver, silver",
+      "north, south, east, west",
+      "short, long, long, short"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "Ignore the exact words and compare the structure.",
+      "Only one answer repeats in the same order and rhythm."
+    ],
+    "explanation": {
+      "summary": "The first strip matches because it repeats using the same structure as the original.",
+      "steps": [
+        "Pattern matching is about the rule, not the decoration.",
+        "If the order changes, the rule changes too."
+      ],
+      "whyNow": "That is how the guild compares route codes even when the symbols look different."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        3,
+        9,
+        10
+      ],
+      "note": "Reviewed matching-rule task with structure-over-surface emphasis."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "A storm ribbon settles and points the safe way."
+  },
+  {
+    "id": "ifthen-bridge-switch-basic",
+    "title": "Read the machine rule",
+    "skill": "ifThen",
+    "subskill": "single-condition",
+    "difficulty": 1,
+    "ageBand": "9-11",
+    "region": "The Wind Archive",
+    "chapter": 2,
+    "missionType": "repair quest",
+    "prompt": "If the bridge lantern is blue, reopen the west bridge. If it is amber, check the rope wheel. The bridge lantern is blue. What should Mira do?",
+    "choices": [
+      "Reopen the west bridge.",
+      "Wait and watch",
+      "Do both actions",
+      "Ask a villager"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "Find the condition that is true right now.",
+      "Then follow only the action attached to that condition."
+    ],
+    "explanation": {
+      "summary": "Reopen the west bridge.",
+      "steps": [
+        "An if/then rule only tells you what to do when its condition is true.",
+        "Ignore the other branch because its condition did not happen."
+      ],
+      "whyNow": "Pathfinders use this skill to operate calm, rule-based machines safely."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        2,
+        12,
+        17
+      ],
+      "note": "Reviewed conditional-reasoning task using machine control rules inspired by the logic corpus."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "The west bridge unfolds over the clouds."
+  },
+  {
+    "id": "ifthen-bridge-switch-reverse",
+    "title": "Match the condition",
+    "skill": "ifThen",
+    "subskill": "condition-action-match",
+    "difficulty": 2,
+    "ageBand": "9-11",
+    "region": "The Wind Archive",
+    "chapter": 2,
+    "missionType": "repair quest",
+    "prompt": "The crew just did this action: \"Reopen the west bridge.\" Which condition must have been true?",
+    "choices": [
+      "The bridge lantern is blue",
+      "The opposite signal appeared",
+      "Both signals appeared",
+      "No signal appeared"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "Work backward from the action to the rule that caused it.",
+      "Only one condition points to that exact move."
+    ],
+    "explanation": {
+      "summary": "The bridge lantern is blue. leads to that action, so it must have been the true condition.",
+      "steps": [
+        "Conditional reasoning can move backward too: action tells you which rule branch was used.",
+        "Choose the condition linked to the exact action you saw."
+      ],
+      "whyNow": "That lets a Pathfinder explain why a machine acted a certain way."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        2,
+        12,
+        17
+      ],
+      "note": "Reviewed reverse-condition task built from constrained logic rules."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "The west bridge unfolds over the clouds."
+  },
+  {
+    "id": "ifthen-bridge-switch-block",
+    "title": "Avoid the wrong branch",
+    "skill": "ifThen",
+    "subskill": "branch-discrimination",
+    "difficulty": 3,
+    "ageBand": "9-11",
+    "region": "The Wind Archive",
+    "chapter": 2,
+    "missionType": "repair quest",
+    "prompt": "Tala says: \"If the bridge lantern is blue, reopen the west bridge. If it is amber, check the rope wheel.\" The bridge lantern is blue. Which action should the crew NOT do first?",
+    "choices": [
+      "Do the other branch from the rule.",
+      "Reopen the west bridge.",
+      "Mark the result in the log",
+      "Stay calm"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "One choice breaks the rule because it belongs to the other branch.",
+      "The other answers could still happen, but only one is wrong first."
+    ],
+    "explanation": {
+      "summary": "The other branch is wrong because it belongs to a condition that is not true.",
+      "steps": [
+        "If/then reasoning means following the branch that matches the current signal.",
+        "Using the wrong branch can undo the repair or send the crew the wrong way."
+      ],
+      "whyNow": "That is why calm rule reading matters more than speed."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        2,
+        12,
+        17
+      ],
+      "note": "Reviewed branch-discrimination task tied to safe machine handling."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "The west bridge unfolds over the clouds."
+  },
+  {
+    "id": "ifthen-bridge-switch-two-step",
+    "title": "Plan the first move",
+    "skill": "ifThen",
+    "subskill": "conditional-planning",
+    "difficulty": 4,
+    "ageBand": "9-11",
+    "region": "The Wind Archive",
+    "chapter": 2,
+    "missionType": "repair quest",
+    "prompt": "The rule decides the first move, and after that Orin will record the result. If the bridge lantern is blue, reopen the west bridge. If it is amber, check the rope wheel. The bridge lantern is blue. What is the first move?",
+    "choices": [
+      "Reopen the west bridge.",
+      "Record the result first",
+      "Use both branches at once",
+      "Skip to the reward scene"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "Sequence matters. The rule controls the first move before anything else.",
+      "Pick the action linked to the true condition, not the step that happens later."
+    ],
+    "explanation": {
+      "summary": "The first move is \"Reopen the west bridge.\" because the true condition selects that branch before any later step.",
+      "steps": [
+        "Conditional planning starts by checking which condition is active.",
+        "Only then do you take the matching action and move to later tasks."
+      ],
+      "whyNow": "This keeps Pathfinder repairs steady even when missions feel busy."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        2,
+        12,
+        17
+      ],
+      "note": "Reviewed two-step conditional-planning task grounded in deterministic rules."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "The west bridge unfolds over the clouds."
+  },
+  {
+    "id": "ifthen-storm-beacon-basic",
+    "title": "Read the machine rule",
+    "skill": "ifThen",
+    "subskill": "single-condition",
+    "difficulty": 1,
+    "ageBand": "9-11",
+    "region": "The Wind Archive",
+    "chapter": 3,
+    "missionType": "route quest",
+    "prompt": "If the storm dial points east, lower the silver vane. If it points west, raise the copper vane. The storm dial points west. What should Mira do?",
+    "choices": [
+      "Raise the copper vane.",
+      "Wait and watch",
+      "Do both actions",
+      "Ask a villager"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "Find the condition that is true right now.",
+      "Then follow only the action attached to that condition."
+    ],
+    "explanation": {
+      "summary": "Raise the copper vane.",
+      "steps": [
+        "An if/then rule only tells you what to do when its condition is true.",
+        "Ignore the other branch because its condition did not happen."
+      ],
+      "whyNow": "Pathfinders use this skill to operate calm, rule-based machines safely."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        2,
+        12,
+        17
+      ],
+      "note": "Reviewed conditional-reasoning task using machine control rules inspired by the logic corpus."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "A safe wind lane steadies for the gliders."
+  },
+  {
+    "id": "ifthen-storm-beacon-reverse",
+    "title": "Match the condition",
+    "skill": "ifThen",
+    "subskill": "condition-action-match",
+    "difficulty": 2,
+    "ageBand": "9-11",
+    "region": "The Wind Archive",
+    "chapter": 3,
+    "missionType": "route quest",
+    "prompt": "The crew just did this action: \"Raise the copper vane.\" Which condition must have been true?",
+    "choices": [
+      "The storm dial points west",
+      "The opposite signal appeared",
+      "Both signals appeared",
+      "No signal appeared"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "Work backward from the action to the rule that caused it.",
+      "Only one condition points to that exact move."
+    ],
+    "explanation": {
+      "summary": "The storm dial points west. leads to that action, so it must have been the true condition.",
+      "steps": [
+        "Conditional reasoning can move backward too: action tells you which rule branch was used.",
+        "Choose the condition linked to the exact action you saw."
+      ],
+      "whyNow": "That lets a Pathfinder explain why a machine acted a certain way."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        2,
+        12,
+        17
+      ],
+      "note": "Reviewed reverse-condition task built from constrained logic rules."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "A safe wind lane steadies for the gliders."
+  },
+  {
+    "id": "ifthen-storm-beacon-block",
+    "title": "Avoid the wrong branch",
+    "skill": "ifThen",
+    "subskill": "branch-discrimination",
+    "difficulty": 3,
+    "ageBand": "9-11",
+    "region": "The Wind Archive",
+    "chapter": 3,
+    "missionType": "route quest",
+    "prompt": "Tala says: \"If the storm dial points east, lower the silver vane. If it points west, raise the copper vane.\" The storm dial points west. Which action should the crew NOT do first?",
+    "choices": [
+      "Do the other branch from the rule.",
+      "Raise the copper vane.",
+      "Mark the result in the log",
+      "Stay calm"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "One choice breaks the rule because it belongs to the other branch.",
+      "The other answers could still happen, but only one is wrong first."
+    ],
+    "explanation": {
+      "summary": "The other branch is wrong because it belongs to a condition that is not true.",
+      "steps": [
+        "If/then reasoning means following the branch that matches the current signal.",
+        "Using the wrong branch can undo the repair or send the crew the wrong way."
+      ],
+      "whyNow": "That is why calm rule reading matters more than speed."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        2,
+        12,
+        17
+      ],
+      "note": "Reviewed branch-discrimination task tied to safe machine handling."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "A safe wind lane steadies for the gliders."
+  },
+  {
+    "id": "ifthen-storm-beacon-two-step",
+    "title": "Plan the first move",
+    "skill": "ifThen",
+    "subskill": "conditional-planning",
+    "difficulty": 4,
+    "ageBand": "9-11",
+    "region": "The Wind Archive",
+    "chapter": 3,
+    "missionType": "route quest",
+    "prompt": "The rule decides the first move, and after that Orin will record the result. If the storm dial points east, lower the silver vane. If it points west, raise the copper vane. The storm dial points west. What is the first move?",
+    "choices": [
+      "Raise the copper vane.",
+      "Record the result first",
+      "Use both branches at once",
+      "Skip to the reward scene"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "Sequence matters. The rule controls the first move before anything else.",
+      "Pick the action linked to the true condition, not the step that happens later."
+    ],
+    "explanation": {
+      "summary": "The first move is \"Raise the copper vane.\" because the true condition selects that branch before any later step.",
+      "steps": [
+        "Conditional planning starts by checking which condition is active.",
+        "Only then do you take the matching action and move to later tasks."
+      ],
+      "whyNow": "This keeps Pathfinder repairs steady even when missions feel busy."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        2,
+        12,
+        17
+      ],
+      "note": "Reviewed two-step conditional-planning task grounded in deterministic rules."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "A safe wind lane steadies for the gliders."
+  },
+  {
+    "id": "ifthen-archive-lock-basic",
+    "title": "Read the machine rule",
+    "skill": "ifThen",
+    "subskill": "single-condition",
+    "difficulty": 1,
+    "ageBand": "9-11",
+    "region": "Stormglass Wilds",
+    "chapter": 1,
+    "missionType": "investigation quest",
+    "prompt": "If the archive key glows green, open shelf three. If it glows violet, open shelf five. The key glows green. What should Mira do?",
+    "choices": [
+      "Open shelf three.",
+      "Wait and watch",
+      "Do both actions",
+      "Ask a villager"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "Find the condition that is true right now.",
+      "Then follow only the action attached to that condition."
+    ],
+    "explanation": {
+      "summary": "Open shelf three.",
+      "steps": [
+        "An if/then rule only tells you what to do when its condition is true.",
+        "Ignore the other branch because its condition did not happen."
+      ],
+      "whyNow": "Pathfinders use this skill to operate calm, rule-based machines safely."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        2,
+        12,
+        17
+      ],
+      "note": "Reviewed conditional-reasoning task using machine control rules inspired by the logic corpus."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "A hidden row of maps slides forward."
+  },
+  {
+    "id": "ifthen-archive-lock-reverse",
+    "title": "Match the condition",
+    "skill": "ifThen",
+    "subskill": "condition-action-match",
+    "difficulty": 2,
+    "ageBand": "9-11",
+    "region": "Stormglass Wilds",
+    "chapter": 1,
+    "missionType": "investigation quest",
+    "prompt": "The crew just did this action: \"Open shelf three.\" Which condition must have been true?",
+    "choices": [
+      "The key glows green",
+      "The opposite signal appeared",
+      "Both signals appeared",
+      "No signal appeared"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "Work backward from the action to the rule that caused it.",
+      "Only one condition points to that exact move."
+    ],
+    "explanation": {
+      "summary": "The key glows green. leads to that action, so it must have been the true condition.",
+      "steps": [
+        "Conditional reasoning can move backward too: action tells you which rule branch was used.",
+        "Choose the condition linked to the exact action you saw."
+      ],
+      "whyNow": "That lets a Pathfinder explain why a machine acted a certain way."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        2,
+        12,
+        17
+      ],
+      "note": "Reviewed reverse-condition task built from constrained logic rules."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "A hidden row of maps slides forward."
+  },
+  {
+    "id": "ifthen-archive-lock-block",
+    "title": "Avoid the wrong branch",
+    "skill": "ifThen",
+    "subskill": "branch-discrimination",
+    "difficulty": 3,
+    "ageBand": "9-11",
+    "region": "Stormglass Wilds",
+    "chapter": 1,
+    "missionType": "investigation quest",
+    "prompt": "Tala says: \"If the archive key glows green, open shelf three. If it glows violet, open shelf five.\" The key glows green. Which action should the crew NOT do first?",
+    "choices": [
+      "Do the other branch from the rule.",
+      "Open shelf three.",
+      "Mark the result in the log",
+      "Stay calm"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "One choice breaks the rule because it belongs to the other branch.",
+      "The other answers could still happen, but only one is wrong first."
+    ],
+    "explanation": {
+      "summary": "The other branch is wrong because it belongs to a condition that is not true.",
+      "steps": [
+        "If/then reasoning means following the branch that matches the current signal.",
+        "Using the wrong branch can undo the repair or send the crew the wrong way."
+      ],
+      "whyNow": "That is why calm rule reading matters more than speed."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        2,
+        12,
+        17
+      ],
+      "note": "Reviewed branch-discrimination task tied to safe machine handling."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "A hidden row of maps slides forward."
+  },
+  {
+    "id": "ifthen-archive-lock-two-step",
+    "title": "Plan the first move",
+    "skill": "ifThen",
+    "subskill": "conditional-planning",
+    "difficulty": 4,
+    "ageBand": "9-11",
+    "region": "Stormglass Wilds",
+    "chapter": 1,
+    "missionType": "investigation quest",
+    "prompt": "The rule decides the first move, and after that Orin will record the result. If the archive key glows green, open shelf three. If it glows violet, open shelf five. The key glows green. What is the first move?",
+    "choices": [
+      "Open shelf three.",
+      "Record the result first",
+      "Use both branches at once",
+      "Skip to the reward scene"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "Sequence matters. The rule controls the first move before anything else.",
+      "Pick the action linked to the true condition, not the step that happens later."
+    ],
+    "explanation": {
+      "summary": "The first move is \"Open shelf three.\" because the true condition selects that branch before any later step.",
+      "steps": [
+        "Conditional planning starts by checking which condition is active.",
+        "Only then do you take the matching action and move to later tasks."
+      ],
+      "whyNow": "This keeps Pathfinder repairs steady even when missions feel busy."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        2,
+        12,
+        17
+      ],
+      "note": "Reviewed two-step conditional-planning task grounded in deterministic rules."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "A hidden row of maps slides forward."
+  },
+  {
+    "id": "ifthen-garden-tubes-basic",
+    "title": "Read the machine rule",
+    "skill": "ifThen",
+    "subskill": "single-condition",
+    "difficulty": 1,
+    "ageBand": "9-11",
+    "region": "Stormglass Wilds",
+    "chapter": 2,
+    "missionType": "service quest",
+    "prompt": "If the tube is marked sunrise, send water north. If it is marked moonrise, send water south. The tube is marked moonrise. What should Mira do?",
+    "choices": [
+      "Send water south.",
+      "Wait and watch",
+      "Do both actions",
+      "Ask a villager"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "Find the condition that is true right now.",
+      "Then follow only the action attached to that condition."
+    ],
+    "explanation": {
+      "summary": "Send water south.",
+      "steps": [
+        "An if/then rule only tells you what to do when its condition is true.",
+        "Ignore the other branch because its condition did not happen."
+      ],
+      "whyNow": "Pathfinders use this skill to operate calm, rule-based machines safely."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        2,
+        12,
+        17
+      ],
+      "note": "Reviewed conditional-reasoning task using machine control rules inspired by the logic corpus."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "The glow vines begin to brighten again."
+  },
+  {
+    "id": "ifthen-garden-tubes-reverse",
+    "title": "Match the condition",
+    "skill": "ifThen",
+    "subskill": "condition-action-match",
+    "difficulty": 2,
+    "ageBand": "9-11",
+    "region": "Stormglass Wilds",
+    "chapter": 2,
+    "missionType": "service quest",
+    "prompt": "The crew just did this action: \"Send water south.\" Which condition must have been true?",
+    "choices": [
+      "The tube is marked moonrise",
+      "The opposite signal appeared",
+      "Both signals appeared",
+      "No signal appeared"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "Work backward from the action to the rule that caused it.",
+      "Only one condition points to that exact move."
+    ],
+    "explanation": {
+      "summary": "The tube is marked moonrise. leads to that action, so it must have been the true condition.",
+      "steps": [
+        "Conditional reasoning can move backward too: action tells you which rule branch was used.",
+        "Choose the condition linked to the exact action you saw."
+      ],
+      "whyNow": "That lets a Pathfinder explain why a machine acted a certain way."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        2,
+        12,
+        17
+      ],
+      "note": "Reviewed reverse-condition task built from constrained logic rules."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "The glow vines begin to brighten again."
+  },
+  {
+    "id": "ifthen-garden-tubes-block",
+    "title": "Avoid the wrong branch",
+    "skill": "ifThen",
+    "subskill": "branch-discrimination",
+    "difficulty": 3,
+    "ageBand": "9-11",
+    "region": "Stormglass Wilds",
+    "chapter": 2,
+    "missionType": "service quest",
+    "prompt": "Tala says: \"If the tube is marked sunrise, send water north. If it is marked moonrise, send water south.\" The tube is marked moonrise. Which action should the crew NOT do first?",
+    "choices": [
+      "Do the other branch from the rule.",
+      "Send water south.",
+      "Mark the result in the log",
+      "Stay calm"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "One choice breaks the rule because it belongs to the other branch.",
+      "The other answers could still happen, but only one is wrong first."
+    ],
+    "explanation": {
+      "summary": "The other branch is wrong because it belongs to a condition that is not true.",
+      "steps": [
+        "If/then reasoning means following the branch that matches the current signal.",
+        "Using the wrong branch can undo the repair or send the crew the wrong way."
+      ],
+      "whyNow": "That is why calm rule reading matters more than speed."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        2,
+        12,
+        17
+      ],
+      "note": "Reviewed branch-discrimination task tied to safe machine handling."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "The glow vines begin to brighten again."
+  },
+  {
+    "id": "ifthen-garden-tubes-two-step",
+    "title": "Plan the first move",
+    "skill": "ifThen",
+    "subskill": "conditional-planning",
+    "difficulty": 4,
+    "ageBand": "9-11",
+    "region": "Stormglass Wilds",
+    "chapter": 2,
+    "missionType": "service quest",
+    "prompt": "The rule decides the first move, and after that Orin will record the result. If the tube is marked sunrise, send water north. If it is marked moonrise, send water south. The tube is marked moonrise. What is the first move?",
+    "choices": [
+      "Send water south.",
+      "Record the result first",
+      "Use both branches at once",
+      "Skip to the reward scene"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "Sequence matters. The rule controls the first move before anything else.",
+      "Pick the action linked to the true condition, not the step that happens later."
+    ],
+    "explanation": {
+      "summary": "The first move is \"Send water south.\" because the true condition selects that branch before any later step.",
+      "steps": [
+        "Conditional planning starts by checking which condition is active.",
+        "Only then do you take the matching action and move to later tasks."
+      ],
+      "whyNow": "This keeps Pathfinder repairs steady even when missions feel busy."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        2,
+        12,
+        17
+      ],
+      "note": "Reviewed two-step conditional-planning task grounded in deterministic rules."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "The glow vines begin to brighten again."
+  },
+  {
+    "id": "ifthen-mirror-gate-basic",
+    "title": "Read the machine rule",
+    "skill": "ifThen",
+    "subskill": "single-condition",
+    "difficulty": 1,
+    "ageBand": "9-11",
+    "region": "Stormglass Wilds",
+    "chapter": 3,
+    "missionType": "route quest",
+    "prompt": "If the mirror shows a star, angle it high. If it shows a circle, angle it low. The mirror shows a star. What should Mira do?",
+    "choices": [
+      "Angle it high.",
+      "Wait and watch",
+      "Do both actions",
+      "Ask a villager"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "Find the condition that is true right now.",
+      "Then follow only the action attached to that condition."
+    ],
+    "explanation": {
+      "summary": "Angle it high.",
+      "steps": [
+        "An if/then rule only tells you what to do when its condition is true.",
+        "Ignore the other branch because its condition did not happen."
+      ],
+      "whyNow": "Pathfinders use this skill to operate calm, rule-based machines safely."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        2,
+        12,
+        17
+      ],
+      "note": "Reviewed conditional-reasoning task using machine control rules inspired by the logic corpus."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "The observatory gate unlocks with a quiet click."
+  },
+  {
+    "id": "ifthen-mirror-gate-reverse",
+    "title": "Match the condition",
+    "skill": "ifThen",
+    "subskill": "condition-action-match",
+    "difficulty": 2,
+    "ageBand": "9-11",
+    "region": "Stormglass Wilds",
+    "chapter": 3,
+    "missionType": "route quest",
+    "prompt": "The crew just did this action: \"Angle it high.\" Which condition must have been true?",
+    "choices": [
+      "The mirror shows a star",
+      "The opposite signal appeared",
+      "Both signals appeared",
+      "No signal appeared"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "Work backward from the action to the rule that caused it.",
+      "Only one condition points to that exact move."
+    ],
+    "explanation": {
+      "summary": "The mirror shows a star. leads to that action, so it must have been the true condition.",
+      "steps": [
+        "Conditional reasoning can move backward too: action tells you which rule branch was used.",
+        "Choose the condition linked to the exact action you saw."
+      ],
+      "whyNow": "That lets a Pathfinder explain why a machine acted a certain way."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        2,
+        12,
+        17
+      ],
+      "note": "Reviewed reverse-condition task built from constrained logic rules."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "The observatory gate unlocks with a quiet click."
+  },
+  {
+    "id": "ifthen-mirror-gate-block",
+    "title": "Avoid the wrong branch",
+    "skill": "ifThen",
+    "subskill": "branch-discrimination",
+    "difficulty": 3,
+    "ageBand": "9-11",
+    "region": "Stormglass Wilds",
+    "chapter": 3,
+    "missionType": "route quest",
+    "prompt": "Tala says: \"If the mirror shows a star, angle it high. If it shows a circle, angle it low.\" The mirror shows a star. Which action should the crew NOT do first?",
+    "choices": [
+      "Do the other branch from the rule.",
+      "Angle it high.",
+      "Mark the result in the log",
+      "Stay calm"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "One choice breaks the rule because it belongs to the other branch.",
+      "The other answers could still happen, but only one is wrong first."
+    ],
+    "explanation": {
+      "summary": "The other branch is wrong because it belongs to a condition that is not true.",
+      "steps": [
+        "If/then reasoning means following the branch that matches the current signal.",
+        "Using the wrong branch can undo the repair or send the crew the wrong way."
+      ],
+      "whyNow": "That is why calm rule reading matters more than speed."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        2,
+        12,
+        17
+      ],
+      "note": "Reviewed branch-discrimination task tied to safe machine handling."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "The observatory gate unlocks with a quiet click."
+  },
+  {
+    "id": "ifthen-mirror-gate-two-step",
+    "title": "Plan the first move",
+    "skill": "ifThen",
+    "subskill": "conditional-planning",
+    "difficulty": 4,
+    "ageBand": "9-11",
+    "region": "Stormglass Wilds",
+    "chapter": 3,
+    "missionType": "route quest",
+    "prompt": "The rule decides the first move, and after that Orin will record the result. If the mirror shows a star, angle it high. If it shows a circle, angle it low. The mirror shows a star. What is the first move?",
+    "choices": [
+      "Angle it high.",
+      "Record the result first",
+      "Use both branches at once",
+      "Skip to the reward scene"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "Sequence matters. The rule controls the first move before anything else.",
+      "Pick the action linked to the true condition, not the step that happens later."
+    ],
+    "explanation": {
+      "summary": "The first move is \"Angle it high.\" because the true condition selects that branch before any later step.",
+      "steps": [
+        "Conditional planning starts by checking which condition is active.",
+        "Only then do you take the matching action and move to later tasks."
+      ],
+      "whyNow": "This keeps Pathfinder repairs steady even when missions feel busy."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        2,
+        12,
+        17
+      ],
+      "note": "Reviewed two-step conditional-planning task grounded in deterministic rules."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "The observatory gate unlocks with a quiet click."
+  },
+  {
+    "id": "contradiction-tower-notes-which",
+    "title": "Catch the false note",
+    "skill": "contradiction",
+    "subskill": "incompatible-claim",
+    "difficulty": 2,
+    "ageBand": "9-11",
+    "region": "Stormglass Wilds",
+    "chapter": 1,
+    "missionType": "investigation quest",
+    "prompt": "Three notes should describe the same event. Which one cannot fit with the others?\n1. The west tower lantern was dark all morning.\n2. The west tower lantern was glowing at sunrise.\n3. The tower keeper had not repaired the lantern yet.",
+    "choices": [
+      "The west tower lantern was dark all morning.",
+      "The west tower lantern was glowing at sunrise.",
+      "The tower keeper had not repaired the lantern yet.",
+      "All three can fit"
+    ],
+    "correctIndex": 1,
+    "hintSteps": [
+      "Find the claim that breaks what the other notes say happened.",
+      "If two notes make one timeline, the contradiction is the one that cannot fit into it."
+    ],
+    "explanation": {
+      "summary": "\"The west tower lantern was glowing at sunrise.\" contradicts the other notes, so it cannot be true at the same time.",
+      "steps": [
+        "A contradiction means two statements cannot both be true together.",
+        "Keep the notes that form one consistent story and remove the one that breaks it."
+      ],
+      "whyNow": "That helps Pathfinders trust the right report before acting."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        4,
+        6,
+        14
+      ],
+      "note": "Reviewed contradiction-detection task adapted into guild-note auditing."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "A false report gets cleared from the tower log."
+  },
+  {
+    "id": "contradiction-tower-notes-repair",
+    "title": "Repair the report",
+    "skill": "contradiction",
+    "subskill": "report-repair",
+    "difficulty": 3,
+    "ageBand": "9-11",
+    "region": "Stormglass Wilds",
+    "chapter": 1,
+    "missionType": "investigation quest",
+    "prompt": "Which note should Tala remove to make the report consistent?",
+    "choices": [
+      "The west tower lantern was dark all morning.",
+      "The west tower lantern was glowing at sunrise.",
+      "The tower keeper had not repaired the lantern yet.",
+      "Remove nothing"
+    ],
+    "correctIndex": 1,
+    "hintSteps": [
+      "You only need to remove one note to make the story fit again.",
+      "Choose the note that fights with the timeline built by the other two."
+    ],
+    "explanation": {
+      "summary": "Removing \"The west tower lantern was glowing at sunrise.\" leaves a consistent report behind.",
+      "steps": [
+        "Report repair is contradiction detection with a clear action: remove the impossible claim.",
+        "The best answer is the note that prevents the other facts from fitting together."
+      ],
+      "whyNow": "This keeps the guild from making decisions using bad evidence."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        4,
+        6,
+        14
+      ],
+      "note": "Reviewed report-repair exercise tied to conflict resolution in evidence."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "A false report gets cleared from the tower log."
+  },
+  {
+    "id": "contradiction-tower-notes-question",
+    "title": "Ask the right question",
+    "skill": "contradiction",
+    "subskill": "conflict-check",
+    "difficulty": 4,
+    "ageBand": "9-11",
+    "region": "Stormglass Wilds",
+    "chapter": 1,
+    "missionType": "investigation quest",
+    "prompt": "Which question would help check the contradiction fastest?",
+    "choices": [
+      "Which note talks about the same moment in time?",
+      "What color was the tower paint?",
+      "Who likes soup for lunch?",
+      "How high are the clouds today?"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "A good contradiction question checks whether the notes really describe the same time or event.",
+      "Only one choice helps compare the claims directly."
+    ],
+    "explanation": {
+      "summary": "Checking whether the notes describe the same moment helps expose the contradiction quickly.",
+      "steps": [
+        "Contradiction spotting gets easier when you compare time, place, and event carefully.",
+        "Questions about unrelated details do not help you test the conflict."
+      ],
+      "whyNow": "This is how a calm investigator keeps the mission focused."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        4,
+        6,
+        14
+      ],
+      "note": "Reviewed conflict-check task emphasizing useful verification questions."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "A false report gets cleared from the tower log."
+  },
+  {
+    "id": "contradiction-tower-notes-fit",
+    "title": "Choose the safe conclusion",
+    "skill": "contradiction",
+    "subskill": "safe-inference",
+    "difficulty": 5,
+    "ageBand": "9-11",
+    "region": "Stormglass Wilds",
+    "chapter": 1,
+    "missionType": "investigation quest",
+    "prompt": "Until the contradiction is fixed, what is the safest conclusion?",
+    "choices": [
+      "One note is wrong, so the crew should check before acting.",
+      "Every note must be true somehow.",
+      "The loudest speaker is always correct.",
+      "Contradictions never matter in real missions."
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "A contradiction means you should slow down and verify, not guess.",
+      "The safe conclusion respects uncertainty instead of pretending it is solved."
+    ],
+    "explanation": {
+      "summary": "The safest conclusion is that one note is wrong and the crew should verify before acting.",
+      "steps": [
+        "Contradictions are a signal to pause and check evidence.",
+        "Good reasoning protects the mission from fast but careless decisions."
+      ],
+      "whyNow": "That is part of what makes a Pathfinder trustworthy."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        4,
+        6,
+        14
+      ],
+      "note": "Reviewed safe-inference task tied to contradiction handling and mission safety."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "A false report gets cleared from the tower log."
+  },
+  {
+    "id": "contradiction-bridge-messages-which",
+    "title": "Catch the false note",
+    "skill": "contradiction",
+    "subskill": "incompatible-claim",
+    "difficulty": 2,
+    "ageBand": "9-11",
+    "region": "Stormglass Wilds",
+    "chapter": 2,
+    "missionType": "service quest",
+    "prompt": "Three notes should describe the same event. Which one cannot fit with the others?\n1. No cargo crossed the bridge before lunch.\n2. A grain cart crossed the bridge at dawn.\n3. The bridge gate stayed closed until lunch.",
+    "choices": [
+      "No cargo crossed the bridge before lunch.",
+      "A grain cart crossed the bridge at dawn.",
+      "The bridge gate stayed closed until lunch.",
+      "All three can fit"
+    ],
+    "correctIndex": 1,
+    "hintSteps": [
+      "Find the claim that breaks what the other notes say happened.",
+      "If two notes make one timeline, the contradiction is the one that cannot fit into it."
+    ],
+    "explanation": {
+      "summary": "\"A grain cart crossed the bridge at dawn.\" contradicts the other notes, so it cannot be true at the same time.",
+      "steps": [
+        "A contradiction means two statements cannot both be true together.",
+        "Keep the notes that form one consistent story and remove the one that breaks it."
+      ],
+      "whyNow": "That helps Pathfinders trust the right report before acting."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        4,
+        6,
+        14
+      ],
+      "note": "Reviewed contradiction-detection task adapted into guild-note auditing."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "The bridge report becomes trustworthy again."
+  },
+  {
+    "id": "contradiction-bridge-messages-repair",
+    "title": "Repair the report",
+    "skill": "contradiction",
+    "subskill": "report-repair",
+    "difficulty": 3,
+    "ageBand": "9-11",
+    "region": "Stormglass Wilds",
+    "chapter": 2,
+    "missionType": "service quest",
+    "prompt": "Which note should Tala remove to make the report consistent?",
+    "choices": [
+      "No cargo crossed the bridge before lunch.",
+      "A grain cart crossed the bridge at dawn.",
+      "The bridge gate stayed closed until lunch.",
+      "Remove nothing"
+    ],
+    "correctIndex": 1,
+    "hintSteps": [
+      "You only need to remove one note to make the story fit again.",
+      "Choose the note that fights with the timeline built by the other two."
+    ],
+    "explanation": {
+      "summary": "Removing \"A grain cart crossed the bridge at dawn.\" leaves a consistent report behind.",
+      "steps": [
+        "Report repair is contradiction detection with a clear action: remove the impossible claim.",
+        "The best answer is the note that prevents the other facts from fitting together."
+      ],
+      "whyNow": "This keeps the guild from making decisions using bad evidence."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        4,
+        6,
+        14
+      ],
+      "note": "Reviewed report-repair exercise tied to conflict resolution in evidence."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "The bridge report becomes trustworthy again."
+  },
+  {
+    "id": "contradiction-bridge-messages-question",
+    "title": "Ask the right question",
+    "skill": "contradiction",
+    "subskill": "conflict-check",
+    "difficulty": 4,
+    "ageBand": "9-11",
+    "region": "Stormglass Wilds",
+    "chapter": 2,
+    "missionType": "service quest",
+    "prompt": "Which question would help check the contradiction fastest?",
+    "choices": [
+      "Which note talks about the same moment in time?",
+      "What color was the tower paint?",
+      "Who likes soup for lunch?",
+      "How high are the clouds today?"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "A good contradiction question checks whether the notes really describe the same time or event.",
+      "Only one choice helps compare the claims directly."
+    ],
+    "explanation": {
+      "summary": "Checking whether the notes describe the same moment helps expose the contradiction quickly.",
+      "steps": [
+        "Contradiction spotting gets easier when you compare time, place, and event carefully.",
+        "Questions about unrelated details do not help you test the conflict."
+      ],
+      "whyNow": "This is how a calm investigator keeps the mission focused."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        4,
+        6,
+        14
+      ],
+      "note": "Reviewed conflict-check task emphasizing useful verification questions."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "The bridge report becomes trustworthy again."
+  },
+  {
+    "id": "contradiction-bridge-messages-fit",
+    "title": "Choose the safe conclusion",
+    "skill": "contradiction",
+    "subskill": "safe-inference",
+    "difficulty": 5,
+    "ageBand": "9-11",
+    "region": "Stormglass Wilds",
+    "chapter": 2,
+    "missionType": "service quest",
+    "prompt": "Until the contradiction is fixed, what is the safest conclusion?",
+    "choices": [
+      "One note is wrong, so the crew should check before acting.",
+      "Every note must be true somehow.",
+      "The loudest speaker is always correct.",
+      "Contradictions never matter in real missions."
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "A contradiction means you should slow down and verify, not guess.",
+      "The safe conclusion respects uncertainty instead of pretending it is solved."
+    ],
+    "explanation": {
+      "summary": "The safest conclusion is that one note is wrong and the crew should verify before acting.",
+      "steps": [
+        "Contradictions are a signal to pause and check evidence.",
+        "Good reasoning protects the mission from fast but careless decisions."
+      ],
+      "whyNow": "That is part of what makes a Pathfinder trustworthy."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        4,
+        6,
+        14
+      ],
+      "note": "Reviewed safe-inference task tied to contradiction handling and mission safety."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "The bridge report becomes trustworthy again."
+  },
+  {
+    "id": "contradiction-archive-pages-which",
+    "title": "Catch the false note",
+    "skill": "contradiction",
+    "subskill": "incompatible-claim",
+    "difficulty": 2,
+    "ageBand": "9-11",
+    "region": "Stormglass Wilds",
+    "chapter": 3,
+    "missionType": "investigation quest",
+    "prompt": "Three notes should describe the same event. Which one cannot fit with the others?\n1. Shelf five stayed locked all day.\n2. Mira removed a journal from shelf five at noon.\n3. Nobody had the spare key at noon.",
+    "choices": [
+      "Shelf five stayed locked all day.",
+      "Mira removed a journal from shelf five at noon.",
+      "Nobody had the spare key at noon.",
+      "All three can fit"
+    ],
+    "correctIndex": 1,
+    "hintSteps": [
+      "Find the claim that breaks what the other notes say happened.",
+      "If two notes make one timeline, the contradiction is the one that cannot fit into it."
+    ],
+    "explanation": {
+      "summary": "\"Mira removed a journal from shelf five at noon.\" contradicts the other notes, so it cannot be true at the same time.",
+      "steps": [
+        "A contradiction means two statements cannot both be true together.",
+        "Keep the notes that form one consistent story and remove the one that breaks it."
+      ],
+      "whyNow": "That helps Pathfinders trust the right report before acting."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        4,
+        6,
+        14
+      ],
+      "note": "Reviewed contradiction-detection task adapted into guild-note auditing."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "The archive timeline finally fits together."
+  },
+  {
+    "id": "contradiction-archive-pages-repair",
+    "title": "Repair the report",
+    "skill": "contradiction",
+    "subskill": "report-repair",
+    "difficulty": 3,
+    "ageBand": "9-11",
+    "region": "Stormglass Wilds",
+    "chapter": 3,
+    "missionType": "investigation quest",
+    "prompt": "Which note should Tala remove to make the report consistent?",
+    "choices": [
+      "Shelf five stayed locked all day.",
+      "Mira removed a journal from shelf five at noon.",
+      "Nobody had the spare key at noon.",
+      "Remove nothing"
+    ],
+    "correctIndex": 1,
+    "hintSteps": [
+      "You only need to remove one note to make the story fit again.",
+      "Choose the note that fights with the timeline built by the other two."
+    ],
+    "explanation": {
+      "summary": "Removing \"Mira removed a journal from shelf five at noon.\" leaves a consistent report behind.",
+      "steps": [
+        "Report repair is contradiction detection with a clear action: remove the impossible claim.",
+        "The best answer is the note that prevents the other facts from fitting together."
+      ],
+      "whyNow": "This keeps the guild from making decisions using bad evidence."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        4,
+        6,
+        14
+      ],
+      "note": "Reviewed report-repair exercise tied to conflict resolution in evidence."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "The archive timeline finally fits together."
+  },
+  {
+    "id": "contradiction-archive-pages-question",
+    "title": "Ask the right question",
+    "skill": "contradiction",
+    "subskill": "conflict-check",
+    "difficulty": 4,
+    "ageBand": "9-11",
+    "region": "Stormglass Wilds",
+    "chapter": 3,
+    "missionType": "investigation quest",
+    "prompt": "Which question would help check the contradiction fastest?",
+    "choices": [
+      "Which note talks about the same moment in time?",
+      "What color was the tower paint?",
+      "Who likes soup for lunch?",
+      "How high are the clouds today?"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "A good contradiction question checks whether the notes really describe the same time or event.",
+      "Only one choice helps compare the claims directly."
+    ],
+    "explanation": {
+      "summary": "Checking whether the notes describe the same moment helps expose the contradiction quickly.",
+      "steps": [
+        "Contradiction spotting gets easier when you compare time, place, and event carefully.",
+        "Questions about unrelated details do not help you test the conflict."
+      ],
+      "whyNow": "This is how a calm investigator keeps the mission focused."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        4,
+        6,
+        14
+      ],
+      "note": "Reviewed conflict-check task emphasizing useful verification questions."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "The archive timeline finally fits together."
+  },
+  {
+    "id": "contradiction-archive-pages-fit",
+    "title": "Choose the safe conclusion",
+    "skill": "contradiction",
+    "subskill": "safe-inference",
+    "difficulty": 5,
+    "ageBand": "9-11",
+    "region": "Stormglass Wilds",
+    "chapter": 3,
+    "missionType": "investigation quest",
+    "prompt": "Until the contradiction is fixed, what is the safest conclusion?",
+    "choices": [
+      "One note is wrong, so the crew should check before acting.",
+      "Every note must be true somehow.",
+      "The loudest speaker is always correct.",
+      "Contradictions never matter in real missions."
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "A contradiction means you should slow down and verify, not guess.",
+      "The safe conclusion respects uncertainty instead of pretending it is solved."
+    ],
+    "explanation": {
+      "summary": "The safest conclusion is that one note is wrong and the crew should verify before acting.",
+      "steps": [
+        "Contradictions are a signal to pause and check evidence.",
+        "Good reasoning protects the mission from fast but careless decisions."
+      ],
+      "whyNow": "That is part of what makes a Pathfinder trustworthy."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        4,
+        6,
+        14
+      ],
+      "note": "Reviewed safe-inference task tied to contradiction handling and mission safety."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "The archive timeline finally fits together."
+  },
+  {
+    "id": "contradiction-storm-dial-which",
+    "title": "Catch the false note",
+    "skill": "contradiction",
+    "subskill": "incompatible-claim",
+    "difficulty": 2,
+    "ageBand": "9-11",
+    "region": "The High Observatory",
+    "chapter": 1,
+    "missionType": "route quest",
+    "prompt": "Three notes should describe the same event. Which one cannot fit with the others?\n1. The storm dial pointed east the whole time.\n2. No one touched the dial after breakfast.\n3. At noon the dial pointed west.",
+    "choices": [
+      "The storm dial pointed east the whole time.",
+      "No one touched the dial after breakfast.",
+      "At noon the dial pointed west.",
+      "All three can fit"
+    ],
+    "correctIndex": 1,
+    "hintSteps": [
+      "Find the claim that breaks what the other notes say happened.",
+      "If two notes make one timeline, the contradiction is the one that cannot fit into it."
+    ],
+    "explanation": {
+      "summary": "\"At noon the dial pointed west.\" contradicts the other notes, so it cannot be true at the same time.",
+      "steps": [
+        "A contradiction means two statements cannot both be true together.",
+        "Keep the notes that form one consistent story and remove the one that breaks it."
+      ],
+      "whyNow": "That helps Pathfinders trust the right report before acting."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        4,
+        6,
+        14
+      ],
+      "note": "Reviewed contradiction-detection task adapted into guild-note auditing."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "The weather log stops sending mixed warnings."
+  },
+  {
+    "id": "contradiction-storm-dial-repair",
+    "title": "Repair the report",
+    "skill": "contradiction",
+    "subskill": "report-repair",
+    "difficulty": 3,
+    "ageBand": "9-11",
+    "region": "The High Observatory",
+    "chapter": 1,
+    "missionType": "route quest",
+    "prompt": "Which note should Tala remove to make the report consistent?",
+    "choices": [
+      "The storm dial pointed east the whole time.",
+      "At noon the dial pointed west.",
+      "At noon the dial pointed west.",
+      "Remove nothing"
+    ],
+    "correctIndex": 1,
+    "hintSteps": [
+      "You only need to remove one note to make the story fit again.",
+      "Choose the note that fights with the timeline built by the other two."
+    ],
+    "explanation": {
+      "summary": "Removing \"At noon the dial pointed west.\" leaves a consistent report behind.",
+      "steps": [
+        "Report repair is contradiction detection with a clear action: remove the impossible claim.",
+        "The best answer is the note that prevents the other facts from fitting together."
+      ],
+      "whyNow": "This keeps the guild from making decisions using bad evidence."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        4,
+        6,
+        14
+      ],
+      "note": "Reviewed report-repair exercise tied to conflict resolution in evidence."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "The weather log stops sending mixed warnings."
+  },
+  {
+    "id": "contradiction-storm-dial-question",
+    "title": "Ask the right question",
+    "skill": "contradiction",
+    "subskill": "conflict-check",
+    "difficulty": 4,
+    "ageBand": "9-11",
+    "region": "The High Observatory",
+    "chapter": 1,
+    "missionType": "route quest",
+    "prompt": "Which question would help check the contradiction fastest?",
+    "choices": [
+      "Which note talks about the same moment in time?",
+      "What color was the tower paint?",
+      "Who likes soup for lunch?",
+      "How high are the clouds today?"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "A good contradiction question checks whether the notes really describe the same time or event.",
+      "Only one choice helps compare the claims directly."
+    ],
+    "explanation": {
+      "summary": "Checking whether the notes describe the same moment helps expose the contradiction quickly.",
+      "steps": [
+        "Contradiction spotting gets easier when you compare time, place, and event carefully.",
+        "Questions about unrelated details do not help you test the conflict."
+      ],
+      "whyNow": "This is how a calm investigator keeps the mission focused."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        4,
+        6,
+        14
+      ],
+      "note": "Reviewed conflict-check task emphasizing useful verification questions."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "The weather log stops sending mixed warnings."
+  },
+  {
+    "id": "contradiction-storm-dial-fit",
+    "title": "Choose the safe conclusion",
+    "skill": "contradiction",
+    "subskill": "safe-inference",
+    "difficulty": 5,
+    "ageBand": "9-11",
+    "region": "The High Observatory",
+    "chapter": 1,
+    "missionType": "route quest",
+    "prompt": "Until the contradiction is fixed, what is the safest conclusion?",
+    "choices": [
+      "One note is wrong, so the crew should check before acting.",
+      "Every note must be true somehow.",
+      "The loudest speaker is always correct.",
+      "Contradictions never matter in real missions."
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "A contradiction means you should slow down and verify, not guess.",
+      "The safe conclusion respects uncertainty instead of pretending it is solved."
+    ],
+    "explanation": {
+      "summary": "The safest conclusion is that one note is wrong and the crew should verify before acting.",
+      "steps": [
+        "Contradictions are a signal to pause and check evidence.",
+        "Good reasoning protects the mission from fast but careless decisions."
+      ],
+      "whyNow": "That is part of what makes a Pathfinder trustworthy."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        4,
+        6,
+        14
+      ],
+      "note": "Reviewed safe-inference task tied to contradiction handling and mission safety."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "The weather log stops sending mixed warnings."
+  },
+  {
+    "id": "contradiction-village-lights-which",
+    "title": "Catch the false note",
+    "skill": "contradiction",
+    "subskill": "incompatible-claim",
+    "difficulty": 2,
+    "ageBand": "9-11",
+    "region": "The High Observatory",
+    "chapter": 2,
+    "missionType": "service quest",
+    "prompt": "Three notes should describe the same event. Which one cannot fit with the others?\n1. Every lantern in the lane was dark at dusk.\n2. The baker said the lane glowed brightly at dusk.\n3. The lantern relight had not started yet.",
+    "choices": [
+      "Every lantern in the lane was dark at dusk.",
+      "The baker said the lane glowed brightly at dusk.",
+      "The lantern relight had not started yet.",
+      "All three can fit"
+    ],
+    "correctIndex": 1,
+    "hintSteps": [
+      "Find the claim that breaks what the other notes say happened.",
+      "If two notes make one timeline, the contradiction is the one that cannot fit into it."
+    ],
+    "explanation": {
+      "summary": "\"The baker said the lane glowed brightly at dusk.\" contradicts the other notes, so it cannot be true at the same time.",
+      "steps": [
+        "A contradiction means two statements cannot both be true together.",
+        "Keep the notes that form one consistent story and remove the one that breaks it."
+      ],
+      "whyNow": "That helps Pathfinders trust the right report before acting."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        4,
+        6,
+        14
+      ],
+      "note": "Reviewed contradiction-detection task adapted into guild-note auditing."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "The lane report reads clearly at last."
+  },
+  {
+    "id": "contradiction-village-lights-repair",
+    "title": "Repair the report",
+    "skill": "contradiction",
+    "subskill": "report-repair",
+    "difficulty": 3,
+    "ageBand": "9-11",
+    "region": "The High Observatory",
+    "chapter": 2,
+    "missionType": "service quest",
+    "prompt": "Which note should Tala remove to make the report consistent?",
+    "choices": [
+      "Every lantern in the lane was dark at dusk.",
+      "The baker said the lane glowed brightly at dusk.",
+      "The lantern relight had not started yet.",
+      "Remove nothing"
+    ],
+    "correctIndex": 1,
+    "hintSteps": [
+      "You only need to remove one note to make the story fit again.",
+      "Choose the note that fights with the timeline built by the other two."
+    ],
+    "explanation": {
+      "summary": "Removing \"The baker said the lane glowed brightly at dusk.\" leaves a consistent report behind.",
+      "steps": [
+        "Report repair is contradiction detection with a clear action: remove the impossible claim.",
+        "The best answer is the note that prevents the other facts from fitting together."
+      ],
+      "whyNow": "This keeps the guild from making decisions using bad evidence."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        4,
+        6,
+        14
+      ],
+      "note": "Reviewed report-repair exercise tied to conflict resolution in evidence."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "The lane report reads clearly at last."
+  },
+  {
+    "id": "contradiction-village-lights-question",
+    "title": "Ask the right question",
+    "skill": "contradiction",
+    "subskill": "conflict-check",
+    "difficulty": 4,
+    "ageBand": "9-11",
+    "region": "The High Observatory",
+    "chapter": 2,
+    "missionType": "service quest",
+    "prompt": "Which question would help check the contradiction fastest?",
+    "choices": [
+      "Which note talks about the same moment in time?",
+      "What color was the tower paint?",
+      "Who likes soup for lunch?",
+      "How high are the clouds today?"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "A good contradiction question checks whether the notes really describe the same time or event.",
+      "Only one choice helps compare the claims directly."
+    ],
+    "explanation": {
+      "summary": "Checking whether the notes describe the same moment helps expose the contradiction quickly.",
+      "steps": [
+        "Contradiction spotting gets easier when you compare time, place, and event carefully.",
+        "Questions about unrelated details do not help you test the conflict."
+      ],
+      "whyNow": "This is how a calm investigator keeps the mission focused."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        4,
+        6,
+        14
+      ],
+      "note": "Reviewed conflict-check task emphasizing useful verification questions."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "The lane report reads clearly at last."
+  },
+  {
+    "id": "contradiction-village-lights-fit",
+    "title": "Choose the safe conclusion",
+    "skill": "contradiction",
+    "subskill": "safe-inference",
+    "difficulty": 5,
+    "ageBand": "9-11",
+    "region": "The High Observatory",
+    "chapter": 2,
+    "missionType": "service quest",
+    "prompt": "Until the contradiction is fixed, what is the safest conclusion?",
+    "choices": [
+      "One note is wrong, so the crew should check before acting.",
+      "Every note must be true somehow.",
+      "The loudest speaker is always correct.",
+      "Contradictions never matter in real missions."
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "A contradiction means you should slow down and verify, not guess.",
+      "The safe conclusion respects uncertainty instead of pretending it is solved."
+    ],
+    "explanation": {
+      "summary": "The safest conclusion is that one note is wrong and the crew should verify before acting.",
+      "steps": [
+        "Contradictions are a signal to pause and check evidence.",
+        "Good reasoning protects the mission from fast but careless decisions."
+      ],
+      "whyNow": "That is part of what makes a Pathfinder trustworthy."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        4,
+        6,
+        14
+      ],
+      "note": "Reviewed safe-inference task tied to contradiction handling and mission safety."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "The lane report reads clearly at last."
+  },
+  {
+    "id": "deduction-glider-docks-solve",
+    "title": "Use every clue",
+    "skill": "deduction",
+    "subskill": "multi-clue-choice",
+    "difficulty": 2,
+    "ageBand": "9-11",
+    "region": "Stormglass Wilds",
+    "chapter": 2,
+    "missionType": "route quest",
+    "prompt": "The supply glider did not land at the north dock. The glider carrying grain landed beside the green banner. The east dock has the green banner. What can Tala conclude?",
+    "choices": [
+      "The grain glider landed at the east dock.",
+      "No clue helps",
+      "The opposite must be true",
+      "Every choice could work"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "Do not use one clue alone. Stack them together.",
+      "The answer must fit all the clues, not just the loudest one."
+    ],
+    "explanation": {
+      "summary": "The grain glider landed at the east dock.",
+      "steps": [
+        "Deduction combines several true clues until only one answer remains.",
+        "If an answer breaks even one clue, remove it."
+      ],
+      "whyNow": "That is how Pathfinders make solid choices under pressure."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        10,
+        11,
+        15
+      ],
+      "note": "Reviewed multi-clue deduction task adapted from the curated logic corpus."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "The dock ledger finally points to the right island."
+  },
+  {
+    "id": "deduction-glider-docks-reject",
+    "title": "Reject the wrong answer",
+    "skill": "deduction",
+    "subskill": "elimination",
+    "difficulty": 3,
+    "ageBand": "9-11",
+    "region": "Stormglass Wilds",
+    "chapter": 2,
+    "missionType": "route quest",
+    "prompt": "The supply glider did not land at the north dock. The glider carrying grain landed beside the green banner. The east dock has the green banner. Which answer should Orin reject first?",
+    "choices": [
+      "Any choice that breaks a clue",
+      "The grain glider landed at the east dock.",
+      "The last thing someone said",
+      "The prettiest option"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "Elimination comes before guessing.",
+      "The first answer to reject is the one that does not fit the clues."
+    ],
+    "explanation": {
+      "summary": "Reject any choice that breaks a clue first, then keep narrowing the options.",
+      "steps": [
+        "Deduction often works by removing impossible answers.",
+        "That leaves the one answer that still fits everything."
+      ],
+      "whyNow": "This keeps route decisions calm and evidence-based."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        10,
+        11,
+        15
+      ],
+      "note": "Reviewed elimination-style deduction task with explicit evidence filtering."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "The dock ledger finally points to the right island."
+  },
+  {
+    "id": "deduction-glider-docks-question",
+    "title": "Find the useful clue",
+    "skill": "deduction",
+    "subskill": "supporting-clue",
+    "difficulty": 4,
+    "ageBand": "9-11",
+    "region": "Stormglass Wilds",
+    "chapter": 2,
+    "missionType": "route quest",
+    "prompt": "Which kind of clue helps deduction the most in this mission?",
+    "choices": [
+      "A clue that removes one option and supports another",
+      "A clue about someone’s favorite dessert",
+      "A clue that changes every minute for no reason",
+      "A clue about the weather last year"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "Useful deduction clues narrow the options.",
+      "A clue is helpful when it rules something out or confirms a needed match."
+    ],
+    "explanation": {
+      "summary": "The best clue removes one option and supports another, because deduction gets stronger as the choices narrow.",
+      "steps": [
+        "Good clues change the answer space.",
+        "Fun but unrelated facts do not help you conclude anything."
+      ],
+      "whyNow": "That is why the guild records mission facts carefully instead of collecting random details."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        10,
+        11,
+        15
+      ],
+      "note": "Reviewed supporting-clue task tied to deductive narrowing and evidence quality."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "The dock ledger finally points to the right island."
+  },
+  {
+    "id": "deduction-glider-docks-confidence",
+    "title": "Explain the conclusion",
+    "skill": "deduction",
+    "subskill": "reasoned-conclusion",
+    "difficulty": 5,
+    "ageBand": "9-11",
+    "region": "Stormglass Wilds",
+    "chapter": 2,
+    "missionType": "route quest",
+    "prompt": "Why is the best answer in this mission trustworthy?",
+    "choices": [
+      "Because it fits every clue at the same time",
+      "Because it sounds exciting",
+      "Because Tala likes it best",
+      "Because it appeared first on the list"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "A trustworthy conclusion is supported by all the clues together.",
+      "Reasoning beats popularity, order, and excitement."
+    ],
+    "explanation": {
+      "summary": "The best answer is trustworthy because it fits every clue at the same time.",
+      "steps": [
+        "Deduction is stronger than guessing because the evidence holds the answer up.",
+        "If an answer relies on feelings alone, it is not a real deduction."
+      ],
+      "whyNow": "That is the habit the Pathfinder guild wants to grow session after session."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        10,
+        11,
+        15
+      ],
+      "note": "Reviewed reasoned-conclusion task aligned with deductive justification."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "The dock ledger finally points to the right island."
+  },
+  {
+    "id": "deduction-tool-crate-solve",
+    "title": "Use every clue",
+    "skill": "deduction",
+    "subskill": "multi-clue-choice",
+    "difficulty": 2,
+    "ageBand": "9-11",
+    "region": "Stormglass Wilds",
+    "chapter": 3,
+    "missionType": "repair quest",
+    "prompt": "The repair crystal is not in the blue crate. The crate on the top shelf holds the repair crystal. The green crate is on the top shelf. What can Tala conclude?",
+    "choices": [
+      "The repair crystal is in the green crate.",
+      "No clue helps",
+      "The opposite must be true",
+      "Every choice could work"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "Do not use one clue alone. Stack them together.",
+      "The answer must fit all the clues, not just the loudest one."
+    ],
+    "explanation": {
+      "summary": "The repair crystal is in the green crate.",
+      "steps": [
+        "Deduction combines several true clues until only one answer remains.",
+        "If an answer breaks even one clue, remove it."
+      ],
+      "whyNow": "That is how Pathfinders make solid choices under pressure."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        10,
+        11,
+        15
+      ],
+      "note": "Reviewed multi-clue deduction task adapted from the curated logic corpus."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "Mira grabs the right crate on the first try."
+  },
+  {
+    "id": "deduction-tool-crate-reject",
+    "title": "Reject the wrong answer",
+    "skill": "deduction",
+    "subskill": "elimination",
+    "difficulty": 3,
+    "ageBand": "9-11",
+    "region": "Stormglass Wilds",
+    "chapter": 3,
+    "missionType": "repair quest",
+    "prompt": "The repair crystal is not in the blue crate. The crate on the top shelf holds the repair crystal. The green crate is on the top shelf. Which answer should Orin reject first?",
+    "choices": [
+      "Any choice that breaks a clue",
+      "The repair crystal is in the green crate.",
+      "The last thing someone said",
+      "The prettiest option"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "Elimination comes before guessing.",
+      "The first answer to reject is the one that does not fit the clues."
+    ],
+    "explanation": {
+      "summary": "Reject any choice that breaks a clue first, then keep narrowing the options.",
+      "steps": [
+        "Deduction often works by removing impossible answers.",
+        "That leaves the one answer that still fits everything."
+      ],
+      "whyNow": "This keeps route decisions calm and evidence-based."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        10,
+        11,
+        15
+      ],
+      "note": "Reviewed elimination-style deduction task with explicit evidence filtering."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "Mira grabs the right crate on the first try."
+  },
+  {
+    "id": "deduction-tool-crate-question",
+    "title": "Find the useful clue",
+    "skill": "deduction",
+    "subskill": "supporting-clue",
+    "difficulty": 4,
+    "ageBand": "9-11",
+    "region": "Stormglass Wilds",
+    "chapter": 3,
+    "missionType": "repair quest",
+    "prompt": "Which kind of clue helps deduction the most in this mission?",
+    "choices": [
+      "A clue that removes one option and supports another",
+      "A clue about someone’s favorite dessert",
+      "A clue that changes every minute for no reason",
+      "A clue about the weather last year"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "Useful deduction clues narrow the options.",
+      "A clue is helpful when it rules something out or confirms a needed match."
+    ],
+    "explanation": {
+      "summary": "The best clue removes one option and supports another, because deduction gets stronger as the choices narrow.",
+      "steps": [
+        "Good clues change the answer space.",
+        "Fun but unrelated facts do not help you conclude anything."
+      ],
+      "whyNow": "That is why the guild records mission facts carefully instead of collecting random details."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        10,
+        11,
+        15
+      ],
+      "note": "Reviewed supporting-clue task tied to deductive narrowing and evidence quality."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "Mira grabs the right crate on the first try."
+  },
+  {
+    "id": "deduction-tool-crate-confidence",
+    "title": "Explain the conclusion",
+    "skill": "deduction",
+    "subskill": "reasoned-conclusion",
+    "difficulty": 5,
+    "ageBand": "9-11",
+    "region": "Stormglass Wilds",
+    "chapter": 3,
+    "missionType": "repair quest",
+    "prompt": "Why is the best answer in this mission trustworthy?",
+    "choices": [
+      "Because it fits every clue at the same time",
+      "Because it sounds exciting",
+      "Because Tala likes it best",
+      "Because it appeared first on the list"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "A trustworthy conclusion is supported by all the clues together.",
+      "Reasoning beats popularity, order, and excitement."
+    ],
+    "explanation": {
+      "summary": "The best answer is trustworthy because it fits every clue at the same time.",
+      "steps": [
+        "Deduction is stronger than guessing because the evidence holds the answer up.",
+        "If an answer relies on feelings alone, it is not a real deduction."
+      ],
+      "whyNow": "That is the habit the Pathfinder guild wants to grow session after session."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        10,
+        11,
+        15
+      ],
+      "note": "Reviewed reasoned-conclusion task aligned with deductive justification."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "Mira grabs the right crate on the first try."
+  },
+  {
+    "id": "deduction-signal-route-solve",
+    "title": "Use every clue",
+    "skill": "deduction",
+    "subskill": "multi-clue-choice",
+    "difficulty": 2,
+    "ageBand": "9-11",
+    "region": "The High Observatory",
+    "chapter": 1,
+    "missionType": "route quest",
+    "prompt": "The true route avoids the fog bridge. Only the south route avoids the fog bridge and reaches the tower. The crew must reach the tower today. What can Tala conclude?",
+    "choices": [
+      "The crew should take the south route.",
+      "No clue helps",
+      "The opposite must be true",
+      "Every choice could work"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "Do not use one clue alone. Stack them together.",
+      "The answer must fit all the clues, not just the loudest one."
+    ],
+    "explanation": {
+      "summary": "The crew should take the south route.",
+      "steps": [
+        "Deduction combines several true clues until only one answer remains.",
+        "If an answer breaks even one clue, remove it."
+      ],
+      "whyNow": "That is how Pathfinders make solid choices under pressure."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        10,
+        11,
+        15
+      ],
+      "note": "Reviewed multi-clue deduction task adapted from the curated logic corpus."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "The route line reaches the tower without delay."
+  },
+  {
+    "id": "deduction-signal-route-reject",
+    "title": "Reject the wrong answer",
+    "skill": "deduction",
+    "subskill": "elimination",
+    "difficulty": 3,
+    "ageBand": "9-11",
+    "region": "The High Observatory",
+    "chapter": 1,
+    "missionType": "route quest",
+    "prompt": "The true route avoids the fog bridge. Only the south route avoids the fog bridge and reaches the tower. The crew must reach the tower today. Which answer should Orin reject first?",
+    "choices": [
+      "Any choice that breaks a clue",
+      "The crew should take the south route.",
+      "The last thing someone said",
+      "The prettiest option"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "Elimination comes before guessing.",
+      "The first answer to reject is the one that does not fit the clues."
+    ],
+    "explanation": {
+      "summary": "Reject any choice that breaks a clue first, then keep narrowing the options.",
+      "steps": [
+        "Deduction often works by removing impossible answers.",
+        "That leaves the one answer that still fits everything."
+      ],
+      "whyNow": "This keeps route decisions calm and evidence-based."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        10,
+        11,
+        15
+      ],
+      "note": "Reviewed elimination-style deduction task with explicit evidence filtering."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "The route line reaches the tower without delay."
+  },
+  {
+    "id": "deduction-signal-route-question",
+    "title": "Find the useful clue",
+    "skill": "deduction",
+    "subskill": "supporting-clue",
+    "difficulty": 4,
+    "ageBand": "9-11",
+    "region": "The High Observatory",
+    "chapter": 1,
+    "missionType": "route quest",
+    "prompt": "Which kind of clue helps deduction the most in this mission?",
+    "choices": [
+      "A clue that removes one option and supports another",
+      "A clue about someone’s favorite dessert",
+      "A clue that changes every minute for no reason",
+      "A clue about the weather last year"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "Useful deduction clues narrow the options.",
+      "A clue is helpful when it rules something out or confirms a needed match."
+    ],
+    "explanation": {
+      "summary": "The best clue removes one option and supports another, because deduction gets stronger as the choices narrow.",
+      "steps": [
+        "Good clues change the answer space.",
+        "Fun but unrelated facts do not help you conclude anything."
+      ],
+      "whyNow": "That is why the guild records mission facts carefully instead of collecting random details."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        10,
+        11,
+        15
+      ],
+      "note": "Reviewed supporting-clue task tied to deductive narrowing and evidence quality."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "The route line reaches the tower without delay."
+  },
+  {
+    "id": "deduction-signal-route-confidence",
+    "title": "Explain the conclusion",
+    "skill": "deduction",
+    "subskill": "reasoned-conclusion",
+    "difficulty": 5,
+    "ageBand": "9-11",
+    "region": "The High Observatory",
+    "chapter": 1,
+    "missionType": "route quest",
+    "prompt": "Why is the best answer in this mission trustworthy?",
+    "choices": [
+      "Because it fits every clue at the same time",
+      "Because it sounds exciting",
+      "Because Tala likes it best",
+      "Because it appeared first on the list"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "A trustworthy conclusion is supported by all the clues together.",
+      "Reasoning beats popularity, order, and excitement."
+    ],
+    "explanation": {
+      "summary": "The best answer is trustworthy because it fits every clue at the same time.",
+      "steps": [
+        "Deduction is stronger than guessing because the evidence holds the answer up.",
+        "If an answer relies on feelings alone, it is not a real deduction."
+      ],
+      "whyNow": "That is the habit the Pathfinder guild wants to grow session after session."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        10,
+        11,
+        15
+      ],
+      "note": "Reviewed reasoned-conclusion task aligned with deductive justification."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "The route line reaches the tower without delay."
+  },
+  {
+    "id": "deduction-archive-key-solve",
+    "title": "Use every clue",
+    "skill": "deduction",
+    "subskill": "multi-clue-choice",
+    "difficulty": 2,
+    "ageBand": "9-11",
+    "region": "The High Observatory",
+    "chapter": 2,
+    "missionType": "investigation quest",
+    "prompt": "The silver key is not in Mira’s pocket. The key in Tala’s satchel opens shelf seven. The silver key opens shelf seven. What can Tala conclude?",
+    "choices": [
+      "The silver key is in Tala’s satchel.",
+      "No clue helps",
+      "The opposite must be true",
+      "Every choice could work"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "Do not use one clue alone. Stack them together.",
+      "The answer must fit all the clues, not just the loudest one."
+    ],
+    "explanation": {
+      "summary": "The silver key is in Tala’s satchel.",
+      "steps": [
+        "Deduction combines several true clues until only one answer remains.",
+        "If an answer breaks even one clue, remove it."
+      ],
+      "whyNow": "That is how Pathfinders make solid choices under pressure."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        10,
+        11,
+        15
+      ],
+      "note": "Reviewed multi-clue deduction task adapted from the curated logic corpus."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "Shelf seven opens with a quiet flash."
+  },
+  {
+    "id": "deduction-archive-key-reject",
+    "title": "Reject the wrong answer",
+    "skill": "deduction",
+    "subskill": "elimination",
+    "difficulty": 3,
+    "ageBand": "9-11",
+    "region": "The High Observatory",
+    "chapter": 2,
+    "missionType": "investigation quest",
+    "prompt": "The silver key is not in Mira’s pocket. The key in Tala’s satchel opens shelf seven. The silver key opens shelf seven. Which answer should Orin reject first?",
+    "choices": [
+      "Any choice that breaks a clue",
+      "The silver key is in Tala’s satchel.",
+      "The last thing someone said",
+      "The prettiest option"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "Elimination comes before guessing.",
+      "The first answer to reject is the one that does not fit the clues."
+    ],
+    "explanation": {
+      "summary": "Reject any choice that breaks a clue first, then keep narrowing the options.",
+      "steps": [
+        "Deduction often works by removing impossible answers.",
+        "That leaves the one answer that still fits everything."
+      ],
+      "whyNow": "This keeps route decisions calm and evidence-based."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        10,
+        11,
+        15
+      ],
+      "note": "Reviewed elimination-style deduction task with explicit evidence filtering."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "Shelf seven opens with a quiet flash."
+  },
+  {
+    "id": "deduction-archive-key-question",
+    "title": "Find the useful clue",
+    "skill": "deduction",
+    "subskill": "supporting-clue",
+    "difficulty": 4,
+    "ageBand": "9-11",
+    "region": "The High Observatory",
+    "chapter": 2,
+    "missionType": "investigation quest",
+    "prompt": "Which kind of clue helps deduction the most in this mission?",
+    "choices": [
+      "A clue that removes one option and supports another",
+      "A clue about someone’s favorite dessert",
+      "A clue that changes every minute for no reason",
+      "A clue about the weather last year"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "Useful deduction clues narrow the options.",
+      "A clue is helpful when it rules something out or confirms a needed match."
+    ],
+    "explanation": {
+      "summary": "The best clue removes one option and supports another, because deduction gets stronger as the choices narrow.",
+      "steps": [
+        "Good clues change the answer space.",
+        "Fun but unrelated facts do not help you conclude anything."
+      ],
+      "whyNow": "That is why the guild records mission facts carefully instead of collecting random details."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        10,
+        11,
+        15
+      ],
+      "note": "Reviewed supporting-clue task tied to deductive narrowing and evidence quality."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "Shelf seven opens with a quiet flash."
+  },
+  {
+    "id": "deduction-archive-key-confidence",
+    "title": "Explain the conclusion",
+    "skill": "deduction",
+    "subskill": "reasoned-conclusion",
+    "difficulty": 5,
+    "ageBand": "9-11",
+    "region": "The High Observatory",
+    "chapter": 2,
+    "missionType": "investigation quest",
+    "prompt": "Why is the best answer in this mission trustworthy?",
+    "choices": [
+      "Because it fits every clue at the same time",
+      "Because it sounds exciting",
+      "Because Tala likes it best",
+      "Because it appeared first on the list"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "A trustworthy conclusion is supported by all the clues together.",
+      "Reasoning beats popularity, order, and excitement."
+    ],
+    "explanation": {
+      "summary": "The best answer is trustworthy because it fits every clue at the same time.",
+      "steps": [
+        "Deduction is stronger than guessing because the evidence holds the answer up.",
+        "If an answer relies on feelings alone, it is not a real deduction."
+      ],
+      "whyNow": "That is the habit the Pathfinder guild wants to grow session after session."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        10,
+        11,
+        15
+      ],
+      "note": "Reviewed reasoned-conclusion task aligned with deductive justification."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "Shelf seven opens with a quiet flash."
+  },
+  {
+    "id": "deduction-lantern-lens-solve",
+    "title": "Use every clue",
+    "skill": "deduction",
+    "subskill": "multi-clue-choice",
+    "difficulty": 2,
+    "ageBand": "9-11",
+    "region": "The High Observatory",
+    "chapter": 3,
+    "missionType": "repair quest",
+    "prompt": "The cracked lens cannot go on the main beacon. Only the clear lens is safe for the main beacon. The clear lens is in Orin’s wrapped case. What can Tala conclude?",
+    "choices": [
+      "Use the lens from Orin’s wrapped case.",
+      "No clue helps",
+      "The opposite must be true",
+      "Every choice could work"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "Do not use one clue alone. Stack them together.",
+      "The answer must fit all the clues, not just the loudest one."
+    ],
+    "explanation": {
+      "summary": "Use the lens from Orin’s wrapped case.",
+      "steps": [
+        "Deduction combines several true clues until only one answer remains.",
+        "If an answer breaks even one clue, remove it."
+      ],
+      "whyNow": "That is how Pathfinders make solid choices under pressure."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        10,
+        11,
+        15
+      ],
+      "note": "Reviewed multi-clue deduction task adapted from the curated logic corpus."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "The main beacon shines without flicker."
+  },
+  {
+    "id": "deduction-lantern-lens-reject",
+    "title": "Reject the wrong answer",
+    "skill": "deduction",
+    "subskill": "elimination",
+    "difficulty": 3,
+    "ageBand": "9-11",
+    "region": "The High Observatory",
+    "chapter": 3,
+    "missionType": "repair quest",
+    "prompt": "The cracked lens cannot go on the main beacon. Only the clear lens is safe for the main beacon. The clear lens is in Orin’s wrapped case. Which answer should Orin reject first?",
+    "choices": [
+      "Any choice that breaks a clue",
+      "Use the lens from Orin’s wrapped case.",
+      "The last thing someone said",
+      "The prettiest option"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "Elimination comes before guessing.",
+      "The first answer to reject is the one that does not fit the clues."
+    ],
+    "explanation": {
+      "summary": "Reject any choice that breaks a clue first, then keep narrowing the options.",
+      "steps": [
+        "Deduction often works by removing impossible answers.",
+        "That leaves the one answer that still fits everything."
+      ],
+      "whyNow": "This keeps route decisions calm and evidence-based."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        10,
+        11,
+        15
+      ],
+      "note": "Reviewed elimination-style deduction task with explicit evidence filtering."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "The main beacon shines without flicker."
+  },
+  {
+    "id": "deduction-lantern-lens-question",
+    "title": "Find the useful clue",
+    "skill": "deduction",
+    "subskill": "supporting-clue",
+    "difficulty": 4,
+    "ageBand": "9-11",
+    "region": "The High Observatory",
+    "chapter": 3,
+    "missionType": "repair quest",
+    "prompt": "Which kind of clue helps deduction the most in this mission?",
+    "choices": [
+      "A clue that removes one option and supports another",
+      "A clue about someone’s favorite dessert",
+      "A clue that changes every minute for no reason",
+      "A clue about the weather last year"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "Useful deduction clues narrow the options.",
+      "A clue is helpful when it rules something out or confirms a needed match."
+    ],
+    "explanation": {
+      "summary": "The best clue removes one option and supports another, because deduction gets stronger as the choices narrow.",
+      "steps": [
+        "Good clues change the answer space.",
+        "Fun but unrelated facts do not help you conclude anything."
+      ],
+      "whyNow": "That is why the guild records mission facts carefully instead of collecting random details."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        10,
+        11,
+        15
+      ],
+      "note": "Reviewed supporting-clue task tied to deductive narrowing and evidence quality."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "The main beacon shines without flicker."
+  },
+  {
+    "id": "deduction-lantern-lens-confidence",
+    "title": "Explain the conclusion",
+    "skill": "deduction",
+    "subskill": "reasoned-conclusion",
+    "difficulty": 5,
+    "ageBand": "9-11",
+    "region": "The High Observatory",
+    "chapter": 3,
+    "missionType": "repair quest",
+    "prompt": "Why is the best answer in this mission trustworthy?",
+    "choices": [
+      "Because it fits every clue at the same time",
+      "Because it sounds exciting",
+      "Because Tala likes it best",
+      "Because it appeared first on the list"
+    ],
+    "correctIndex": 0,
+    "hintSteps": [
+      "A trustworthy conclusion is supported by all the clues together.",
+      "Reasoning beats popularity, order, and excitement."
+    ],
+    "explanation": {
+      "summary": "The best answer is trustworthy because it fits every clue at the same time.",
+      "steps": [
+        "Deduction is stronger than guessing because the evidence holds the answer up.",
+        "If an answer relies on feelings alone, it is not a real deduction."
+      ],
+      "whyNow": "That is the habit the Pathfinder guild wants to grow session after session."
+    },
+    "sourceTrace": {
+      "sourceIds": [
+        10,
+        11,
+        15
+      ],
+      "note": "Reviewed reasoned-conclusion task aligned with deductive justification."
+    },
+    "reviewState": "approved",
+    "rewardLabel": "The main beacon shines without flicker."
+  }
+]
