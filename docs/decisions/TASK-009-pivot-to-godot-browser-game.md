@@ -24,6 +24,11 @@ The user’s bar is correct: a real game should be built in an actual game engin
 - Toolchain setup becomes part of the product critical path.
 - CI, deployment, and browser publishing must be rebuilt around Godot export.
 
+## Implementation Notes
+- Added a local Godot 4.6.1 bootstrap path with wrapper scripts for headless check and Web export.
+- Created the first Godot project skeleton and a browser-exportable vertical slice route scene.
+- Confirmed local headless boot and Godot Web export using the committed project files.
+
 ## Scope
 Task-specific
 

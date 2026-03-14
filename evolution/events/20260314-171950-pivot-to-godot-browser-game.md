@@ -8,6 +8,7 @@ The user explicitly rejected further frontend-only polish and requested that the
 
 ## Change
 Defined the Godot migration graph for `Sky of Many Lanterns: Echo Trail`, including toolchain bootstrap, data migration, route-scene implementation, Godot Web export, CI, and GitHub Pages deployment.
+Implemented the first migration slice: local Godot bootstrap scripts, a new in-repo Godot project, a playable vertical-slice route scene, and a successful local Web export.
 
 ## Decision Link
 - Task decision: [TASK-009-pivot-to-godot-browser-game.md](../../docs/decisions/TASK-009-pivot-to-godot-browser-game.md)
@@ -15,9 +16,11 @@ Defined the Godot migration graph for `Sky of Many Lanterns: Echo Trail`, includ
 ## Validation Evidence
 - `docs/plans/TASK-009-godot-web-game-migration-graph.md`
 - Official Godot Web export requirements reviewed
+- `npm run godot:check`
+- `npm run godot:export:web`
 
 ## Outcome
 Improved
 
 ## Follow-up
-- Bootstrap the Godot toolchain locally, create the project skeleton, and ship the first playable Web-exportable route slice.
+- Expand the Godot vertical slice into campaign data flow, then replace CI and Pages deployment with Godot Web export.
