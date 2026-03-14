@@ -28,6 +28,7 @@ The user’s bar is correct: a real game should be built in an actual game engin
 - Added a local Godot 4.6.1 bootstrap path with wrapper scripts for headless check and Web export.
 - Created the first Godot project skeleton and a browser-exportable vertical slice route scene.
 - Confirmed local headless boot and Godot Web export using the committed project files.
+- Replaced GitHub validation, Pages deploy, and release packaging flows to target the Godot Web build instead of the React dist output.
 
 ## Scope
 Task-specific
