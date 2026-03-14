@@ -8,12 +8,14 @@ The user rejected the current shipped product as not being a real game and reque
 
 ## Change
 Defined a new product direction for `Sky of Many Lanterns: Echo Trail`, including plot, player fantasy, level loop, upgrade ladder, and a full 20-level campaign structure.
+Implemented the first runtime slice for that direction: authored 20-level data, adventure progression state, deterministic shrine challenge binding, and level completion logic.
 
 ## Decision Link
 - Task decision: [TASK-008-pivot-to-pseudo-2d-adventure-game.md](../../docs/decisions/TASK-008-pivot-to-pseudo-2d-adventure-game.md)
 
 ## Validation Evidence
 - `docs/game-design/sky-of-many-lanterns-echo-trail.md`
+- `npm run test:unit`
 
 ## Outcome
 Improved
