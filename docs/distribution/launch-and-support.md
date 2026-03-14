@@ -7,6 +7,7 @@ Distribute the game in a way that minimizes player friction, makes the parent va
 - Production site: `https://nzpr.github.io/lgk/`
 - Instant-play demo: `https://nzpr.github.io/lgk/?demo=1`
 - GitHub repo: `https://github.com/nzpr/lgk`
+- Player guide: [how-to-play.md](./how-to-play.md)
 
 ## First Distribution Pass
 - Share the demo URL anywhere the goal is immediate play with no explanation.

@@ -37,6 +37,7 @@ The user’s bar is correct: a real game should be built in an actual game engin
 - Added a dedicated route-result panel so finished runs land with explicit score, reward, and next-step payoff instead of collapsing directly back to the atlas.
 - Added actual route-failure stakes when charge burns out before a route is complete, plus a retry flow, so resource pressure matters and the new powers have real tactical weight.
 - Added keyboard hotkeys for route and result actions so browser play is faster and lower-friction on desktop without changing the underlying game rules.
+- Added distribution-facing player documentation in `docs/distribution/` so the live build now has a concrete repo-side `how to play` reference.
 
 ## Scope
 Task-specific

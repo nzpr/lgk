@@ -15,6 +15,7 @@ Implemented the first presentation/polish slice on top of the campaign runtime: 
 Implemented the next gameplay slice: unlocked upgrades now behave as active route powers, their per-run state persists, and route completion now lands on a dedicated result panel with clearer reward and onward-flow prompts.
 Implemented the next stakes slice: route charge can now burn out into failure before completion, and failed runs land on an explicit retry/retreat panel rather than silently continuing.
 Implemented the next friction-reduction slice: keyboard shortcuts now drive route choices, confirms, and result-panel actions for faster desktop play.
+Implemented the player-guidance slice: added a distribution README plus a dedicated `how to play` guide so onboarding and external sharing no longer depend on chat context.
 
 ## Decision Link
 - Task decision: [TASK-009-pivot-to-godot-browser-game.md](../../docs/decisions/TASK-009-pivot-to-godot-browser-game.md)
@@ -34,3 +35,4 @@ Improved
 - Continue with moment-to-moment interaction depth, authored transitions, and more tactile feedback so the stronger presentation is matched by stronger play feel.
 - Continue with authored transitions, stronger encounter-specific interaction patterns, and more tactile audiovisual feedback on top of the new route-power-and-stakes layer.
 - Continue with authored transitions, stronger encounter-specific interaction patterns, and more tactile audiovisual feedback on top of the now-faster route-control loop.
+- Continue with authored transitions, stronger encounter-specific interaction patterns, and more tactile audiovisual feedback on top of the now-better-documented route-control loop.
