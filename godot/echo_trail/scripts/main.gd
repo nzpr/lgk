@@ -55,6 +55,56 @@ func _ready() -> void:
 	_load_or_create_state()
 	_show_title()
 
+func _unhandled_input(event: InputEvent) -> void:
+	if not (event is InputEventKey):
+		return
+	var key_event := event as InputEventKey
+	if not key_event.pressed or key_event.echo:
+		return
+
+	if route_panel.visible:
+		if key_event.keycode == KEY_ESCAPE:
+			_show_atlas()
+			get_viewport().set_input_as_handled()
+			return
+		if key_event.keycode in [KEY_ENTER, KEY_KP_ENTER, KEY_SPACE] and route_options_box.get_child_count() == 1:
+			_press_button_in(route_options_box, 0)
+			get_viewport().set_input_as_handled()
+			return
+		var route_option_index := _keycode_to_option_index(key_event.keycode)
+		if route_option_index >= 0:
+			_press_button_in(route_options_box, route_option_index)
+			get_viewport().set_input_as_handled()
+			return
+
+	if result_panel.visible:
+		if key_event.keycode == KEY_ESCAPE:
+			_show_atlas()
+			get_viewport().set_input_as_handled()
+			return
+		if key_event.keycode in [KEY_ENTER, KEY_KP_ENTER, KEY_SPACE]:
+			_press_button_in(result_actions_box, 0)
+			get_viewport().set_input_as_handled()
+			return
+		var result_option_index := _keycode_to_option_index(key_event.keycode)
+		if result_option_index >= 0:
+			_press_button_in(result_actions_box, result_option_index)
+			get_viewport().set_input_as_handled()
+
+func _keycode_to_option_index(keycode: Key) -> int:
+	var hotkeys := [KEY_1, KEY_2, KEY_3, KEY_4, KEY_5, KEY_6, KEY_7, KEY_8, KEY_9]
+	for index in hotkeys.size():
+		if hotkeys[index] == keycode:
+			return index
+	return -1
+
+func _press_button_in(container: VBoxContainer, index: int) -> void:
+	if index < 0 or index >= container.get_child_count():
+		return
+	var child = container.get_child(index)
+	if child is Button and not child.disabled:
+		child.emit_signal("pressed")
+
 func _build_ui() -> void:
 	background = ColorRect.new()
 	background.color = Color("09131f")
