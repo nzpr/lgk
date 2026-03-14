@@ -18,6 +18,7 @@ Replaced `npx playwright` usage in CI-sensitive paths with the checked-in local 
 Reordered the workflows so all npm-driven generation/build checks complete before Playwright browser installation, and invoked the final browser pass directly with Node to remove post-install npm dependency.
 Replaced post-install `npm run` workflow invocations with direct local binary and Node commands so GitHub-hosted validation depends only on the checked-out toolchain, not npm task orchestration state.
 Instrumented the content-generation workflow step to surface stderr through public GitHub Action annotations, because the hosted-run failure remained reproducible but the raw logs were not available through anonymous APIs.
+Confirmed the hosted-run failure was a hardcoded `/workspace` path in build/validation scripts, then rewired those scripts to resolve paths from their own file locations so GitHub-hosted checkouts can build and validate normally.
 
 ## Decision Link
 - ADR: [0001-local-first-logic-learning-web-app.md](../../docs/adr/0001-local-first-logic-learning-web-app.md)

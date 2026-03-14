@@ -1,7 +1,9 @@
 import { existsSync, readFileSync } from 'node:fs'
-import { resolve } from 'node:path'
+import { dirname, resolve } from 'node:path'
+import { fileURLToPath } from 'node:url'
 
-const distIndex = resolve('/workspace', 'dist/index.html')
+const scriptDir = dirname(fileURLToPath(import.meta.url))
+const distIndex = resolve(scriptDir, '../dist/index.html')
 
 if (!existsSync(distIndex)) {
   throw new Error('dist/index.html is missing. Run npm run build first.')

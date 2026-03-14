@@ -1,5 +1,6 @@
 import { mkdirSync, writeFileSync } from 'node:fs'
 import { dirname, resolve } from 'node:path'
+import { fileURLToPath } from 'node:url'
 
 const skillSources = {
   classification: [1, 3, 11],
@@ -960,7 +961,8 @@ const taskBank = [
   ...buildDeductionTasks(),
 ]
 
-const outputPath = resolve('/workspace', 'src/generated/taskBank.json')
+const scriptDir = dirname(fileURLToPath(import.meta.url))
+const outputPath = resolve(scriptDir, '../src/generated/taskBank.json')
 mkdirSync(dirname(outputPath), { recursive: true })
 writeFileSync(outputPath, `${JSON.stringify(taskBank, null, 2)}\n`)
 

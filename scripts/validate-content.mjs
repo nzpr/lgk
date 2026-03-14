@@ -1,8 +1,10 @@
 import { readFileSync } from 'node:fs'
-import { resolve } from 'node:path'
+import { dirname, resolve } from 'node:path'
+import { fileURLToPath } from 'node:url'
 
-const manifestPath = resolve('/workspace', 'in/04-input-corpus/manifest.json')
-const taskBankPath = resolve('/workspace', 'src/generated/taskBank.json')
+const scriptDir = dirname(fileURLToPath(import.meta.url))
+const manifestPath = resolve(scriptDir, '../in/04-input-corpus/manifest.json')
+const taskBankPath = resolve(scriptDir, '../src/generated/taskBank.json')
 
 const manifest = JSON.parse(readFileSync(manifestPath, 'utf8'))
 const taskBank = JSON.parse(readFileSync(taskBankPath, 'utf8'))

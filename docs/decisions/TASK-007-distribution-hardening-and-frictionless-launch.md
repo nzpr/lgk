@@ -7,7 +7,7 @@ TASK-007
 2026-03-14
 
 ## Context
-The product was locally validated and visually polished, but public distribution still had three hard blockers: GitHub Actions was failing on runners where port `4173` was already occupied, the built site was not safe for GitHub Pages subpath hosting because production assets and the web manifest still assumed a root deployment, and first-time evaluation still required setup instead of immediate play.
+The product was locally validated and visually polished, but public distribution still had three hard blockers: GitHub Actions was failing on runners where port `4173` was already occupied, the build and validation scripts assumed the repo lived at `/workspace` instead of resolving paths from the checkout, the built site was not safe for GitHub Pages subpath hosting because production assets and the web manifest still assumed a root deployment, and first-time evaluation still required setup instead of immediate play.
 
 ## Options Considered
 - Leave the current release shape in place and treat deployment friction as an ops follow-up.
