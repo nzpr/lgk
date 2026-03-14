@@ -123,6 +123,24 @@ function App() {
   const archiveTasks = taskBank.filter((task) =>
     archiveSkill === 'all' ? true : task.skill === archiveSkill,
   )
+  const recentSession = state.sessions.at(-1) ?? null
+  const recoveredArtifacts = state.world.artifacts.slice(-3).reverse()
+  const campCompanions = state.world.companions.slice(-3)
+  const fieldNote = run
+    ? currentTask
+      ? currentTask.hintLevel > 0
+        ? 'The route is still safe. Use the clue you trust most, then let Tala narrow the rest.'
+        : 'A steady first read beats a fast guess. One clean clue can relight the whole route.'
+      : 'One route at a time. The lanterns only care that you keep going.'
+    : recentSession
+      ? `Last route rhythm: ${recentSession.score}/16. Tala marked the next island because ${state.child?.name ?? 'your Pathfinder'} is ready for another calm push.`
+      : 'The guild fire is lit. Finish a first route and the camp journal will start filling itself in.'
+  const chapterProgressLabel = state.diagnosticComplete
+    ? `${Math.min(state.world.chapterProgress + 1, 3)} of 3 route pushes toward ${nextChapter.title}.`
+    : 'Complete the first reading to reveal the first travel route.'
+  const sceneLine = currentTask
+    ? `${skillLabels[currentTask.task.skill]} work keeps this stretch of sky moving.`
+    : ''
 
   function updateHousehold(next: HouseholdState) {
     setState(next)
@@ -372,12 +390,28 @@ function App() {
                   </div>
                 </div>
                 <div className="hero-map">
-                  <div className="map-card">
+                  <div className="map-card lantern-card">
+                    <span className="eyebrow">Tonight in the guild</span>
                     <h2>Sky of Many Lanterns</h2>
                     <p>
                       Restore routes, decode beacons, and help villages reconnect by solving calm,
                       clever logic missions.
                     </p>
+                    <div className="hero-metrics">
+                      <span>Warm expedition framing</span>
+                      <span>Grounded help with source traces</span>
+                      <span>Useful parent progress, not vague scores</span>
+                    </div>
+                    <div className="lantern-cluster" aria-hidden="true">
+                      <span className="lantern lantern-gold" />
+                      <span className="lantern lantern-blue" />
+                      <span className="lantern lantern-violet" />
+                      <span className="lantern lantern-jade" />
+                    </div>
+                    <div className="story-note">
+                      <strong>Tala&apos;s promise.</strong> Each mission should feel like helping
+                      the sky, never like filling in a worksheet.
+                    </div>
                     <div className="map-glow" />
                   </div>
                 </div>
@@ -552,6 +586,14 @@ function App() {
                     Task {run.currentIndex + 1} of {run.tasks.length}
                   </p>
                   <div className="mission-chip">{skillLabels[currentTask.task.skill]}</div>
+                  <div className="story-note session-note">
+                    <strong>Tala&apos;s field note.</strong> {fieldNote}
+                  </div>
+                  <div className="session-stats stats-stack">
+                    <span>{run.completed.length} clues settled</span>
+                    <span>{currentTask.hintLevel} support steps open</span>
+                    <span>{currentTask.attempts} passes on this clue</span>
+                  </div>
                   <div className="trace-box">
                     <strong>Grounded help</strong>
                     <p>{currentTask.task.sourceTrace.note}</p>
@@ -559,6 +601,10 @@ function App() {
                 </aside>
 
                 <section className="task-panel panel">
+                  <div className="task-scene">
+                    <span>Scene</span>
+                    <p>{sceneLine}</p>
+                  </div>
                   <header className="task-header">
                     <div>
                       <span className="eyebrow">{currentTask.task.title}</span>
@@ -711,28 +757,48 @@ function App() {
                         <span>{state.world.streakDays} session streak</span>
                       </div>
                     </div>
+                    <div className="story-note">
+                      <strong>Campfire board.</strong> {fieldNote}
+                    </div>
                   </div>
-                  <div className="map-constellation">
-                    {chapterPlan.map((item, index) => {
-                      const active = index === state.world.chapterIndex
-                      const cleared = index < state.world.chapterIndex
-                      return (
-                        <div
-                          key={item.id}
-                          className={[
-                            'map-node',
-                            active ? 'active' : '',
-                            cleared ? 'cleared' : '',
-                          ]
-                            .filter(Boolean)
-                            .join(' ')}
-                          style={{ background: regionColors[item.regionIndex - 1] }}
-                        >
-                          <strong>R{item.regionIndex}</strong>
-                          <span>{item.chapterNumber}</span>
+                  <div className="camp-scene">
+                    <div className="journal-card">
+                      <span className="eyebrow">Route journal</span>
+                      <h3>Camp keepsakes</h3>
+                      <p>{chapterProgressLabel}</p>
+                      <div className="journal-stats">
+                        <div>
+                          <strong>{state.world.routesRestored}</strong>
+                          <span>routes restored</span>
                         </div>
-                      )
-                    })}
+                        <div>
+                          <strong>{recoveredArtifacts[0] ?? 'First relic ahead'}</strong>
+                          <span>latest keepsake</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="map-constellation">
+                      {chapterPlan.map((item, index) => {
+                        const active = index === state.world.chapterIndex
+                        const cleared = index < state.world.chapterIndex
+                        return (
+                          <div
+                            key={item.id}
+                            className={[
+                              'map-node',
+                              active ? 'active' : '',
+                              cleared ? 'cleared' : '',
+                            ]
+                              .filter(Boolean)
+                              .join(' ')}
+                            style={{ background: regionColors[item.regionIndex - 1] }}
+                          >
+                            <strong>R{item.regionIndex}</strong>
+                            <span>{item.chapterNumber}</span>
+                          </div>
+                        )
+                      })}
+                    </div>
                   </div>
                 </section>
 
@@ -772,6 +838,46 @@ function App() {
                     <span className="eyebrow">Tomorrow preview</span>
                     <h3>{nextChapter.title}</h3>
                     <p>{nextChapter.briefing}</p>
+                  </article>
+                </section>
+
+                <section className="story-deck">
+                  <article className="panel stat-panel">
+                    <span className="eyebrow">Recovered artifacts</span>
+                    <h3>{recoveredArtifacts[0] ?? 'The first relic is still hidden ahead.'}</h3>
+                    <ul className="compact-list">
+                      {recoveredArtifacts.length === 0 && (
+                        <li>Finish three daily expeditions to unlock the first keepsake.</li>
+                      )}
+                      {recoveredArtifacts.map((artifact) => (
+                        <li key={artifact}>{artifact}</li>
+                      ))}
+                    </ul>
+                  </article>
+                  <article className="panel stat-panel">
+                    <span className="eyebrow">Companion notes</span>
+                    <h3>{campCompanions[0] ?? 'Tala is still scouting the first safe route.'}</h3>
+                    <ul className="compact-list">
+                      {campCompanions.length === 0 && (
+                        <li>A new companion joins after the first island opens.</li>
+                      )}
+                      {campCompanions.map((companion) => (
+                        <li key={companion}>{companion}</li>
+                      ))}
+                    </ul>
+                  </article>
+                  <article className="panel stat-panel">
+                    <span className="eyebrow">Lantern log</span>
+                    <h3>
+                      {recentSession
+                        ? `Last route score ${recentSession.score}/16`
+                        : 'Your first finished route will light the log.'}
+                    </h3>
+                    <p>
+                      {recentSession
+                        ? `${recentSession.type === 'diagnostic' ? 'Diagnostic read complete.' : 'Daily route complete.'} The guild is using that reading to shape the next expedition.`
+                        : 'Short, steady sessions matter more than perfect ones. The camp tracks rhythm, not pressure.'}
+                    </p>
                   </article>
                 </section>
 

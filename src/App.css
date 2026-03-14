@@ -1,8 +1,8 @@
 :root {
-  --bg-top: #10243a;
-  --bg-bottom: #f5dfb2;
-  --panel: rgba(10, 23, 38, 0.78);
-  --panel-soft: rgba(255, 246, 226, 0.14);
+  --bg-top: #0b1c31;
+  --bg-bottom: #f7d7a0;
+  --panel: rgba(8, 20, 35, 0.76);
+  --panel-soft: rgba(255, 246, 226, 0.12);
   --text-main: #f8f3e7;
   --text-muted: rgba(248, 243, 231, 0.74);
   --text-dark: #13243c;
@@ -16,7 +16,7 @@
   --region-3: linear-gradient(135deg, #b29cff, #6f58d6);
   --region-4: linear-gradient(135deg, #b0ffdc, #3cae8d);
   color: var(--text-main);
-  font-family: "Avenir Next", "Trebuchet MS", "Segoe UI", sans-serif;
+  font-family: "Optima", "Gill Sans", "Trebuchet MS", sans-serif;
   line-height: 1.45;
   font-weight: 500;
 }
@@ -30,8 +30,9 @@ body {
   min-width: 320px;
   min-height: 100vh;
   background:
-    radial-gradient(circle at top, rgba(255, 225, 154, 0.28), transparent 34%),
-    linear-gradient(180deg, var(--bg-top) 0%, #163653 38%, #244b66 65%, #e8c48f 100%);
+    radial-gradient(circle at 12% 14%, rgba(255, 223, 149, 0.26), transparent 24%),
+    radial-gradient(circle at 78% 12%, rgba(115, 191, 255, 0.18), transparent 22%),
+    linear-gradient(180deg, var(--bg-top) 0%, #112d47 34%, #204a67 65%, var(--bg-bottom) 100%);
 }
 
 button,
@@ -48,6 +49,7 @@ a {
   min-height: 100vh;
   position: relative;
   overflow: hidden;
+  isolation: isolate;
 }
 
 .sky-backdrop {
@@ -58,6 +60,30 @@ a {
     radial-gradient(circle at 80% 15%, rgba(128, 207, 255, 0.25), transparent 16%),
     radial-gradient(circle at 50% 72%, rgba(255, 196, 117, 0.16), transparent 24%);
   pointer-events: none;
+  opacity: 0.95;
+}
+
+.sky-backdrop::before,
+.sky-backdrop::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.sky-backdrop::before {
+  background-image:
+    radial-gradient(circle at 10% 18%, rgba(255, 255, 255, 0.8) 0 1px, transparent 1.6px),
+    radial-gradient(circle at 30% 28%, rgba(255, 255, 255, 0.65) 0 1px, transparent 1.4px),
+    radial-gradient(circle at 62% 16%, rgba(255, 255, 255, 0.75) 0 1px, transparent 1.4px),
+    radial-gradient(circle at 82% 30%, rgba(255, 255, 255, 0.7) 0 1px, transparent 1.4px);
+  opacity: 0.45;
+}
+
+.sky-backdrop::after {
+  background:
+    linear-gradient(180deg, transparent 0%, rgba(7, 16, 29, 0.14) 62%, rgba(7, 16, 29, 0.22) 100%),
+    radial-gradient(circle at 50% 108%, rgba(255, 203, 115, 0.22), transparent 28%);
 }
 
 .app-frame {
@@ -65,15 +91,19 @@ a {
   z-index: 1;
   width: min(1200px, calc(100vw - 24px));
   margin: 0 auto;
-  padding: 24px 0 56px;
+  padding: 28px 0 64px;
 }
 
 .panel,
 .hero-panel {
   border: 1px solid var(--border);
-  background: var(--panel);
+  background:
+    linear-gradient(180deg, rgba(255, 244, 220, 0.06), transparent 24%),
+    var(--panel);
   backdrop-filter: blur(18px);
-  box-shadow: 0 22px 70px rgba(5, 14, 24, 0.35);
+  box-shadow:
+    0 22px 70px rgba(5, 14, 24, 0.35),
+    inset 0 1px 0 rgba(255, 250, 237, 0.08);
 }
 
 .panel {
@@ -88,6 +118,8 @@ a {
   border-radius: 34px;
   padding: 28px;
   margin-top: 28px;
+  position: relative;
+  overflow: hidden;
 }
 
 .hero-copy h1,
@@ -109,6 +141,12 @@ a {
 .panel p,
 .muted {
   color: var(--text-muted);
+}
+
+.hero-copy {
+  display: grid;
+  align-content: center;
+  gap: 18px;
 }
 
 .eyebrow {
@@ -152,13 +190,15 @@ a {
   transition:
     transform 180ms ease,
     border-color 180ms ease,
-    background 180ms ease;
+    background 180ms ease,
+    box-shadow 180ms ease;
 }
 
 .primary-button {
   background: linear-gradient(135deg, #ffdd98, #f2a446);
   color: var(--text-dark);
   font-weight: 700;
+  box-shadow: 0 16px 32px rgba(242, 164, 70, 0.22);
 }
 
 .ghost-button,
@@ -173,6 +213,7 @@ a {
 .nav-pill:hover,
 .choice-card:hover {
   transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(5, 14, 24, 0.18);
 }
 
 .nav-pill.active {
@@ -193,9 +234,13 @@ a {
   border-radius: 26px;
   padding: 24px;
   background:
-    linear-gradient(160deg, rgba(255, 240, 204, 0.16), rgba(88, 132, 194, 0.16)),
+    linear-gradient(160deg, rgba(255, 240, 204, 0.18), rgba(88, 132, 194, 0.1)),
     rgba(7, 18, 33, 0.5);
   overflow: hidden;
+  display: grid;
+  align-content: start;
+  gap: 16px;
+  border: 1px solid rgba(255, 244, 221, 0.12);
 }
 
 .map-glow {
@@ -207,12 +252,122 @@ a {
   background: radial-gradient(circle, rgba(255, 205, 95, 0.65), transparent 62%);
 }
 
+.lantern-card::before,
+.journal-card::before {
+  content: "";
+  position: absolute;
+  inset: 16px;
+  border-radius: 22px;
+  border: 1px solid rgba(255, 244, 221, 0.08);
+  pointer-events: none;
+}
+
+.hero-metrics,
+.journal-stats {
+  display: grid;
+  gap: 10px;
+}
+
+.hero-metrics {
+  margin-top: 6px;
+}
+
+.hero-metrics span,
+.session-stats span,
+.trust-band span,
+.journal-stats div {
+  border-radius: 16px;
+  border: 1px solid rgba(255, 244, 221, 0.12);
+  background: rgba(255, 246, 226, 0.07);
+  padding: 10px 12px;
+}
+
+.trust-band span,
+.session-stats span {
+  white-space: nowrap;
+}
+
+.story-note,
+.task-scene {
+  border-radius: 22px;
+  border: 1px solid rgba(255, 244, 221, 0.12);
+  background: linear-gradient(180deg, rgba(255, 246, 226, 0.1), rgba(255, 246, 226, 0.04));
+  padding: 16px 18px;
+}
+
+.story-note strong,
+.task-scene span {
+  display: block;
+  margin-bottom: 6px;
+  color: rgba(255, 236, 195, 0.9);
+}
+
+.lantern-cluster {
+  position: absolute;
+  inset: auto 18px 18px auto;
+  width: 170px;
+  height: 180px;
+  pointer-events: none;
+}
+
+.lantern {
+  position: absolute;
+  width: 32px;
+  height: 44px;
+  border-radius: 16px 16px 18px 18px;
+  box-shadow: 0 0 24px currentColor;
+  animation: lantern-float 4.8s ease-in-out infinite;
+}
+
+.lantern::before {
+  content: "";
+  position: absolute;
+  top: -22px;
+  left: 50%;
+  width: 2px;
+  height: 22px;
+  background: rgba(255, 244, 221, 0.38);
+  transform: translateX(-50%);
+}
+
+.lantern-gold {
+  top: 58px;
+  left: 8px;
+  color: rgba(255, 208, 114, 0.82);
+  background: linear-gradient(180deg, rgba(255, 228, 153, 0.92), rgba(242, 154, 56, 0.84));
+}
+
+.lantern-blue {
+  top: 26px;
+  left: 78px;
+  color: rgba(143, 214, 255, 0.78);
+  background: linear-gradient(180deg, rgba(182, 233, 255, 0.9), rgba(61, 125, 216, 0.78));
+  animation-delay: 0.7s;
+}
+
+.lantern-violet {
+  top: 92px;
+  left: 114px;
+  color: rgba(178, 156, 255, 0.8);
+  background: linear-gradient(180deg, rgba(214, 200, 255, 0.92), rgba(111, 88, 214, 0.8));
+  animation-delay: 1.2s;
+}
+
+.lantern-jade {
+  top: 118px;
+  left: 54px;
+  color: rgba(176, 255, 220, 0.76);
+  background: linear-gradient(180deg, rgba(220, 255, 240, 0.92), rgba(60, 174, 141, 0.84));
+  animation-delay: 1.9s;
+}
+
 .topbar {
   display: flex;
   justify-content: space-between;
   align-items: end;
   gap: 16px;
   margin-bottom: 20px;
+  padding: 0 2px;
 }
 
 .session-layout,
@@ -249,10 +404,40 @@ a {
   align-items: center;
 }
 
+.camp-scene {
+  display: grid;
+  gap: 16px;
+}
+
+.journal-card {
+  position: relative;
+  border-radius: 24px;
+  padding: 20px;
+  background:
+    linear-gradient(180deg, rgba(255, 246, 226, 0.12), rgba(255, 246, 226, 0.03)),
+    rgba(8, 20, 35, 0.46);
+  border: 1px solid rgba(255, 244, 221, 0.12);
+  overflow: hidden;
+}
+
+.journal-stats {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 14px;
+}
+
+.journal-stats div {
+  display: grid;
+  gap: 4px;
+}
+
 .map-constellation {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 14px;
+  padding: 18px;
+  border-radius: 24px;
+  background: rgba(255, 246, 226, 0.05);
+  border: 1px solid rgba(255, 244, 221, 0.1);
 }
 
 .map-node {
@@ -263,6 +448,7 @@ a {
   display: grid;
   align-content: space-between;
   opacity: 0.55;
+  box-shadow: inset 0 1px 0 rgba(255, 250, 237, 0.25);
 }
 
 .map-node.active,
@@ -282,6 +468,13 @@ a {
 
 .dashboard-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-bottom: 18px;
+}
+
+.story-deck {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
   margin-bottom: 18px;
 }
 
@@ -312,6 +505,11 @@ a {
   padding: 16px;
 }
 
+.stat-panel {
+  border-radius: 24px;
+  padding: 22px;
+}
+
 .skill-card-head,
 .task-header,
 .history-item,
@@ -333,10 +531,14 @@ a {
   text-align: left;
   color: var(--text-main);
   cursor: pointer;
+  background:
+    linear-gradient(180deg, rgba(255, 246, 226, 0.08), rgba(255, 246, 226, 0.02)),
+    rgba(255, 246, 226, 0.03);
 }
 
 .choice-card.selected {
   border-color: rgba(255, 207, 114, 0.6);
+  box-shadow: 0 14px 28px rgba(242, 154, 56, 0.14);
 }
 
 .choice-card.correct {
@@ -427,9 +629,10 @@ input,
 select {
   border-radius: 18px;
   border: 1px solid rgba(255, 245, 221, 0.18);
-  background: rgba(6, 16, 28, 0.5);
+  background: rgba(6, 16, 28, 0.58);
   color: var(--text-main);
   padding: 14px 16px;
+  box-shadow: inset 0 1px 0 rgba(255, 250, 237, 0.06);
 }
 
 .parent-highlights {
@@ -466,6 +669,33 @@ select {
   margin-bottom: 18px;
 }
 
+.session-note {
+  margin: 14px 0;
+}
+
+.stats-stack {
+  display: grid;
+}
+
+.task-scene {
+  margin-bottom: 18px;
+}
+
+.task-scene p {
+  margin: 0;
+}
+
+@keyframes lantern-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
 @keyframes rise-in {
   from {
     opacity: 0;
@@ -483,6 +713,7 @@ select {
   .camp-hero,
   .session-layout,
   .dashboard-grid,
+  .story-deck,
   .skill-grid,
   .parent-layout,
   .qa-layout {
@@ -517,5 +748,10 @@ select {
   .topbar {
     align-items: start;
     flex-direction: column;
+  }
+
+  .journal-stats,
+  .hero-metrics {
+    grid-template-columns: 1fr;
   }
 }

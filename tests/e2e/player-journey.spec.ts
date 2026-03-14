@@ -58,7 +58,7 @@ test('supports a full household journey from onboarding through QA review', asyn
   await completeRun(page, 6)
 
   await expect(page.getByTestId('session-result')).toContainText('Session score')
-  await expect(page.getByText(/routes restored/i)).toBeVisible()
+  await expect(page.getByText(/routes restored/i).first()).toBeVisible()
 
   await page.getByTestId('nav-parent').click()
   await expect(page.getByRole('heading', { name: /Concrete progress for Nadia/i })).toBeVisible()
