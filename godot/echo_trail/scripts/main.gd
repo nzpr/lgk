@@ -15,6 +15,9 @@ var current_route: Dictionary = {}
 var current_index := 0
 var resolved: Array = []
 var shrine_results: Dictionary = {}
+var route_power_uses: Dictionary = {}
+var route_bonus_stars := 0
+var route_echo_revealed_landmark_id := ""
 var route_charge := STARTING_CHARGE
 var route_flow := STARTING_FLOW
 var route_peak := STARTING_FLOW
@@ -24,6 +27,7 @@ var background: ColorRect
 var title_panel: PanelContainer
 var atlas_panel: PanelContainer
 var route_panel: PanelContainer
+var result_panel: PanelContainer
 var ending_panel: PanelContainer
 var title_status_label: Label
 var title_continue_button: Button
@@ -34,11 +38,14 @@ var atlas_routes_box: VBoxContainer
 var route_title_label: Label
 var route_goal_label: Label
 var route_stats_label: Label
+var route_power_label: Label
 var route_description_label: Label
 var route_prompt_label: Label
 var route_view
 var route_options_box: VBoxContainer
 var route_feedback_label: Label
+var result_summary_label: Label
+var result_actions_box: VBoxContainer
 var ending_summary_label: Label
 
 func _ready() -> void:
@@ -115,6 +122,7 @@ func _build_ui() -> void:
 	route_title_label = _make_heading("")
 	route_goal_label = _make_body("")
 	route_stats_label = _make_body("")
+	route_power_label = _make_body("")
 	route_view = RouteView.new()
 	route_view.custom_minimum_size = Vector2(0, 320)
 	route_description_label = _make_body("")
@@ -125,12 +133,25 @@ func _build_ui() -> void:
 	route_box.add_child(route_title_label)
 	route_box.add_child(route_goal_label)
 	route_box.add_child(route_stats_label)
+	route_box.add_child(route_power_label)
 	route_box.add_child(route_view)
 	route_box.add_child(route_description_label)
 	route_box.add_child(route_prompt_label)
 	route_box.add_child(route_feedback_label)
 	route_box.add_child(route_options_box)
 	route_box.add_child(_make_button("Back to atlas", Callable(self, "_show_atlas")))
+
+	result_panel = _make_panel()
+	stack.add_child(result_panel)
+	var result_box := VBoxContainer.new()
+	result_box.add_theme_constant_override("separation", 12)
+	result_panel.add_child(result_box)
+	result_box.add_child(_make_heading("Route Rekindled"))
+	result_summary_label = _make_body("")
+	result_box.add_child(result_summary_label)
+	result_actions_box = VBoxContainer.new()
+	result_actions_box.add_theme_constant_override("separation", 8)
+	result_box.add_child(result_actions_box)
 
 	ending_panel = _make_panel()
 	stack.add_child(ending_panel)
@@ -268,6 +289,9 @@ func _reset_save() -> void:
 	current_index = 0
 	resolved = []
 	shrine_results = {}
+	route_power_uses = {}
+	route_bonus_stars = 0
+	route_echo_revealed_landmark_id = ""
 	route_charge = STARTING_CHARGE
 	route_flow = STARTING_FLOW
 	route_peak = STARTING_FLOW
@@ -281,6 +305,7 @@ func _set_active(panel: PanelContainer) -> void:
 	title_panel.visible = panel == title_panel
 	atlas_panel.visible = panel == atlas_panel
 	route_panel.visible = panel == route_panel
+	result_panel.visible = panel == result_panel
 	ending_panel.visible = panel == ending_panel
 
 func _show_title() -> void:
@@ -398,6 +423,12 @@ func _route_by_id(route_id: String) -> Dictionary:
 			return route
 	return {}
 
+func _route_by_index(route_index: int) -> Dictionary:
+	for route in campaign_levels:
+		if int(route.get("index", 0)) == route_index:
+			return route
+	return {}
+
 func _start_new_run(route: Dictionary) -> void:
 	current_route = route
 	current_index = 0
@@ -406,6 +437,9 @@ func _start_new_run(route: Dictionary) -> void:
 	route_peak = route_flow
 	route_relics = 0
 	shrine_results = {}
+	route_power_uses = {}
+	route_bonus_stars = 0
+	route_echo_revealed_landmark_id = ""
 	resolved = []
 	for _i in current_route.get("landmarks", []).size():
 		resolved.append(false)
@@ -429,6 +463,9 @@ func _hydrate_active_run(active_run: Dictionary) -> void:
 	route_relics = int(active_run.get("route_relics", 0))
 	resolved = active_run.get("resolved", [])
 	shrine_results = active_run.get("shrine_results", {})
+	route_power_uses = active_run.get("route_power_uses", {})
+	route_bonus_stars = int(active_run.get("route_bonus_stars", 0))
+	route_echo_revealed_landmark_id = str(active_run.get("route_echo_revealed_landmark_id", ""))
 	_update_route_view("The wind picks up where Mira left it.")
 	_set_active(route_panel)
 
@@ -444,6 +481,9 @@ func _sync_active_run() -> void:
 		"route_relics": route_relics,
 		"resolved": resolved,
 		"shrine_results": shrine_results,
+		"route_power_uses": route_power_uses,
+		"route_bonus_stars": route_bonus_stars,
+		"route_echo_revealed_landmark_id": route_echo_revealed_landmark_id,
 	}
 	_persist_state()
 
@@ -453,6 +493,9 @@ func _clear_active_run() -> void:
 	current_index = 0
 	resolved = []
 	shrine_results = {}
+	route_power_uses = {}
+	route_bonus_stars = 0
+	route_echo_revealed_landmark_id = ""
 
 func _update_route_view(feedback: String = "") -> void:
 	if current_route.is_empty():
@@ -473,6 +516,7 @@ func _update_route_view(feedback: String = "") -> void:
 		route_relics,
 		_upgrade_summary(),
 	]
+	route_power_label.text = _route_power_status(landmark)
 	route_description_label.text = "%s\n%s\nScene: %s" % [
 		landmark.get("title", ""),
 		landmark.get("description", ""),
@@ -493,6 +537,7 @@ func _update_route_view(feedback: String = "") -> void:
 		return
 
 	if landmark.get("kind", "") == "shrine":
+		_append_power_buttons(landmark)
 		route_prompt_label.text = "%s\nHint: %s" % [landmark.get("prompt", ""), _route_hint_text(landmark)]
 		for answer_index in landmark.get("answers", []).size():
 			var button := _make_button(str(landmark.get("answers", [])[answer_index]), Callable(self, "_answer_shrine").bind(answer_index))
@@ -501,6 +546,7 @@ func _update_route_view(feedback: String = "") -> void:
 
 	if landmark.get("choice", null) != null:
 		var choice: Dictionary = landmark.get("choice", {})
+		_append_power_buttons(landmark)
 		route_prompt_label.text = "%s\nCalm line: %s\nBright line: %s" % [
 			choice.get("prompt", ""),
 			choice.get("safe", {}).get("summary", ""),
@@ -511,13 +557,90 @@ func _update_route_view(feedback: String = "") -> void:
 		return
 
 	route_prompt_label.text = "Choose how Mira handles this landmark."
+	_append_power_buttons(landmark)
 	route_options_box.add_child(_make_button("Attune carefully", Callable(self, "_take_careful")))
 	route_options_box.add_child(_make_button("Surge through it", Callable(self, "_take_bold")))
 
 func _route_hint_text(landmark: Dictionary) -> String:
+	if route_echo_revealed_landmark_id == str(landmark.get("id", "")):
+		var answer_index := int(landmark.get("correct", 0))
+		var answers: Array = landmark.get("answers", [])
+		if answer_index >= 0 and answer_index < answers.size():
+			return "Echo Lens truth: %s" % str(answers[answer_index])
 	if _has_upgrade("echoLens") or int(current_route.get("index", 1)) <= 5:
 		return str(landmark.get("hint", "Trust the route pattern instead of the noise around it."))
 	return "Read the shrine cleanly. The best answer is the one fully supported by the route."
+
+func _append_power_buttons(landmark: Dictionary) -> void:
+	if _can_use_echo_lens(landmark):
+		route_options_box.add_child(_make_button("Echo Lens  |  reveal the true shrine answer", Callable(self, "_use_echo_lens")))
+	if _can_use_wind_thread(landmark):
+		route_options_box.add_child(_make_button("Wind Thread  |  steady the air around this crossing", Callable(self, "_use_wind_thread")))
+	if _can_use_bridge_seed(landmark):
+		route_options_box.add_child(_make_button("Bridge Seed  |  grow a foothold and recover resources", Callable(self, "_use_bridge_seed")))
+	if _can_use_spine_flame(landmark):
+		route_options_box.add_child(_make_button("Spine Flame  |  overcharge this beacon for a bonus star", Callable(self, "_use_spine_flame")))
+
+func _route_power_status(landmark: Dictionary) -> String:
+	var power_lines: Array[String] = []
+	if _has_upgrade("windThread"):
+		power_lines.append("Wind Thread: %s" % ("ready" if _can_use_wind_thread(landmark) else ("spent" if _is_power_used("windThread") else "waiting for a crossing")))
+	if _has_upgrade("echoLens"):
+		power_lines.append("Echo Lens: %s" % ("ready" if _can_use_echo_lens(landmark) else ("spent" if _is_power_used("echoLens") else "waiting for a shrine")))
+	if _has_upgrade("bridgeSeed"):
+		power_lines.append("Bridge Seed: %s" % ("ready" if _can_use_bridge_seed(landmark) else ("spent" if _is_power_used("bridgeSeed") else "waiting for a rough segment")))
+	if _has_upgrade("spineFlame"):
+		power_lines.append("Spine Flame: %s" % ("ready" if _can_use_spine_flame(landmark) else ("spent" if _is_power_used("spineFlame") else "waiting for a beacon")))
+	if power_lines.is_empty():
+		return "Route powers: none yet. District capstones unlock active traversal tools."
+	return "Route powers: %s" % "   ".join(power_lines)
+
+func _is_power_used(power_id: String) -> bool:
+	return bool(route_power_uses.get(power_id, false))
+
+func _mark_power_used(power_id: String) -> void:
+	route_power_uses[power_id] = true
+	_sync_active_run()
+
+func _can_use_echo_lens(landmark: Dictionary) -> bool:
+	return _has_upgrade("echoLens") and not _is_power_used("echoLens") and landmark.get("kind", "") == "shrine"
+
+func _can_use_wind_thread(landmark: Dictionary) -> bool:
+	return _has_upgrade("windThread") and not _is_power_used("windThread") and (landmark.get("kind", "") == "hazard" or landmark.get("choice", null) != null)
+
+func _can_use_bridge_seed(landmark: Dictionary) -> bool:
+	return _has_upgrade("bridgeSeed") and not _is_power_used("bridgeSeed") and landmark.get("kind", "") in ["hazard", "cache", "vista", "start"]
+
+func _can_use_spine_flame(landmark: Dictionary) -> bool:
+	return _has_upgrade("spineFlame") and not _is_power_used("spineFlame") and landmark.get("kind", "") == "beacon"
+
+func _use_echo_lens() -> void:
+	var landmark: Dictionary = current_route.get("landmarks", [])[current_index]
+	route_echo_revealed_landmark_id = str(landmark.get("id", ""))
+	_mark_power_used("echoLens")
+	_update_route_view("The Echo Lens cuts through the shrine noise and exposes the true route answer.")
+
+func _use_wind_thread() -> void:
+	_mark_power_used("windThread")
+	route_charge += 1
+	route_flow += 1
+	route_peak = max(route_peak, route_flow)
+	_update_route_view("The Wind Thread stitches the loose air into a stable crossing. Charge +1. Flow +1.")
+
+func _use_bridge_seed() -> void:
+	_mark_power_used("bridgeSeed")
+	route_charge += 1
+	route_relics += 1
+	route_flow += 1
+	route_peak = max(route_peak, route_flow)
+	_update_route_view("The Bridge Seed throws a living foothold across the gap. Charge +1. Relics +1. Flow +1.")
+
+func _use_spine_flame() -> void:
+	_mark_power_used("spineFlame")
+	route_flow += 2
+	route_peak = max(route_peak, route_flow)
+	route_bonus_stars = min(1, route_bonus_stars + 1)
+	_update_route_view("The Spine Flame erupts through the beacon housing. Flow surges and this route will score a bonus star.")
 
 func _apply_resolution(flow_delta: int, charge_delta: int, relic_delta: int, feedback: String, journal_success: bool = true) -> void:
 	route_charge = max(1, route_charge + charge_delta)
@@ -589,7 +712,10 @@ func _advance_route() -> void:
 func _finish_route() -> void:
 	var route_id: String = str(current_route.get("id", ""))
 	var route_title: String = str(current_route.get("title", "This route"))
-	var route_index := int(current_route.get("index", 0))
+	var route_index: int = int(current_route.get("index", 0))
+	var next_route: Dictionary = _route_by_index(route_index + 1)
+	var next_route_id: String = str(next_route.get("id", ""))
+	var new_upgrade_label := ""
 	var completion: Dictionary = {
 		"relics": route_relics,
 		"flow": route_peak,
@@ -603,6 +729,7 @@ func _finish_route() -> void:
 	save_state["completed_routes"] = completed_routes
 	save_state["unlocked_route_index"] = min(campaign_levels.size(), max(int(save_state.get("unlocked_route_index", 1)), int(current_route.get("index", 1)) + 1))
 	if current_route.get("reward_upgrade", null) != null and not _has_upgrade(str(current_route.get("reward_upgrade", ""))):
+		new_upgrade_label = _upgrade_label(str(current_route.get("reward_upgrade", "")))
 		var upgrades: Array = save_state.get("upgrades", [])
 		upgrades.append(str(current_route.get("reward_upgrade", "")))
 		save_state["upgrades"] = upgrades
@@ -610,22 +737,7 @@ func _finish_route() -> void:
 	var reward_text: String = str(current_route.get("reward", "The route wakes and the atlas grows brighter."))
 	_clear_active_run()
 	_persist_state()
-	if bool(save_state.get("ending_unlocked", false)):
-		_show_ending("%s restored with rank %s and %s★.\n%s" % [
-			route_title,
-			completion.get("rank", "A"),
-			str(completion.get("stars", 1)),
-			reward_text,
-		])
-	else:
-		_show_atlas()
-		atlas_summary_label.text = "%s\n%s restored with rank %s and %s★." % [
-			atlas_summary_label.text,
-			route_title,
-			completion.get("rank", "A"),
-			str(completion.get("stars", 1)),
-		]
-		atlas_summary_label.text = "%s\n%s" % [atlas_summary_label.text, reward_text]
+	_show_route_result(route_title, completion, reward_text, next_route_id, new_upgrade_label)
 
 func _stars_for_route() -> int:
 	var shrine_total := 0
@@ -635,7 +747,7 @@ func _stars_for_route() -> int:
 			shrine_total += 1
 			if bool(shrine_results.get(landmark.get("id", ""), false)):
 				shrine_correct += 1
-	return 1 + (1 if route_relics >= 3 else 0) + (1 if shrine_total > 0 and shrine_correct == shrine_total else 0)
+	return min(4, 1 + (1 if route_relics >= 3 else 0) + (1 if shrine_total > 0 and shrine_correct == shrine_total else 0) + route_bonus_stars)
 
 func _rank_for_peak(flow_peak: int) -> String:
 	if flow_peak >= 8:
@@ -709,3 +821,28 @@ func _show_ending(extra_text: String = "") -> void:
 	if extra_text != "":
 		ending_summary_label.text = "%s\n\n%s" % [ending_summary_label.text, extra_text]
 	_set_active(ending_panel)
+
+func _show_route_result(route_title: String, completion: Dictionary, reward_text: String, next_route_id: String, new_upgrade_label: String) -> void:
+	result_summary_label.text = "%s is relit.\nRank %s   Stars %s/4\nCharge left %d   Relics %d   Peak flow %d\n\n%s" % [
+		route_title,
+		completion.get("rank", "A"),
+		str(completion.get("stars", 1)),
+		int(completion.get("charge_left", 0)),
+		int(completion.get("relics", 0)),
+		int(completion.get("flow", 0)),
+		reward_text,
+	]
+	if new_upgrade_label != "":
+		result_summary_label.text = "%s\nUpgrade unlocked: %s" % [result_summary_label.text, new_upgrade_label]
+	for child in result_actions_box.get_children():
+		child.queue_free()
+	if bool(save_state.get("ending_unlocked", false)):
+		result_actions_box.add_child(_make_button("View the ending", Callable(self, "_show_ending").bind("%s restored with rank %s and %s★." % [
+			route_title,
+			completion.get("rank", "A"),
+			str(completion.get("stars", 1)),
+		])))
+	elif next_route_id != "":
+		result_actions_box.add_child(_make_button("Open the next route", Callable(self, "_open_route").bind(next_route_id)))
+	result_actions_box.add_child(_make_button("Return to the atlas", Callable(self, "_show_atlas")))
+	_set_active(result_panel)

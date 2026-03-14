@@ -33,6 +33,8 @@ The user’s bar is correct: a real game should be built in an actual game engin
 - Rebuilt the main Godot controller around campaign loading, save-backed progression, route resume, upgrades, and atlas-level completion states.
 - Reworked the Godot route renderer toward stronger pseudo-3D depth with moving skies, region-specific backdrops, landmark props, and a more world-like boardwalk composition.
 - Added district-grouped atlas presentation and a campaign ending panel so progression has clearer structure and payoff.
+- Converted campaign upgrades into active route powers so traversal, shrines, and beacon moments have more tactical player input.
+- Added a dedicated route-result panel so finished runs land with explicit score, reward, and next-step payoff instead of collapsing directly back to the atlas.
 
 ## Scope
 Task-specific
