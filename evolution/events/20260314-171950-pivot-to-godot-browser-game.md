@@ -11,6 +11,7 @@ Defined the Godot migration graph for `Sky of Many Lanterns: Echo Trail`, includ
 Implemented the first migration slice: local Godot bootstrap scripts, a new in-repo Godot project, a playable vertical-slice route scene, and a successful local Web export.
 Implemented the deployment migration slice: CI, Pages deploy, and release workflows now validate and package the Godot Web export path.
 Implemented the first campaign migration slice: exported the full 20-level authored route set into Godot data, refactored the main runtime to load it, and added persistent local save/resume plus route completion tracking.
+Implemented the first presentation/polish slice on top of the campaign runtime: the route renderer now stages stronger pseudo-3D scenery and ambient motion, atlas progression is grouped by district, and campaign completion has an explicit ending panel.
 
 ## Decision Link
 - Task decision: [TASK-009-pivot-to-godot-browser-game.md](../../docs/decisions/TASK-009-pivot-to-godot-browser-game.md)
@@ -27,4 +28,4 @@ Implemented the first campaign migration slice: exported the full 20-level autho
 Improved
 
 ## Follow-up
-- Continue with ending flow, route juice, camera polish, and stronger pseudo-3D scene readability on top of the now-persistent 20-level campaign runtime.
+- Continue with moment-to-moment interaction depth, authored transitions, and more tactile feedback so the stronger presentation is matched by stronger play feel.

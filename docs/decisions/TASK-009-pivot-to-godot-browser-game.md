@@ -31,6 +31,8 @@ The user’s bar is correct: a real game should be built in an actual game engin
 - Replaced GitHub validation, Pages deploy, and release packaging flows to target the Godot Web build instead of the React dist output.
 - Added a Godot campaign data export path that converts the authored 20-level route set into browser-shippable Godot JSON content.
 - Rebuilt the main Godot controller around campaign loading, save-backed progression, route resume, upgrades, and atlas-level completion states.
+- Reworked the Godot route renderer toward stronger pseudo-3D depth with moving skies, region-specific backdrops, landmark props, and a more world-like boardwalk composition.
+- Added district-grouped atlas presentation and a campaign ending panel so progression has clearer structure and payoff.
 
 ## Scope
 Task-specific

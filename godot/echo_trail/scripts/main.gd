@@ -24,6 +24,7 @@ var background: ColorRect
 var title_panel: PanelContainer
 var atlas_panel: PanelContainer
 var route_panel: PanelContainer
+var ending_panel: PanelContainer
 var title_status_label: Label
 var title_continue_button: Button
 var title_reset_button: Button
@@ -38,6 +39,7 @@ var route_prompt_label: Label
 var route_view
 var route_options_box: VBoxContainer
 var route_feedback_label: Label
+var ending_summary_label: Label
 
 func _ready() -> void:
 	campaign_levels = _load_campaign()
@@ -129,6 +131,18 @@ func _build_ui() -> void:
 	route_box.add_child(route_feedback_label)
 	route_box.add_child(route_options_box)
 	route_box.add_child(_make_button("Back to atlas", Callable(self, "_show_atlas")))
+
+	ending_panel = _make_panel()
+	stack.add_child(ending_panel)
+	var ending_box := VBoxContainer.new()
+	ending_box.add_theme_constant_override("separation", 12)
+	ending_panel.add_child(ending_box)
+	ending_box.add_child(_make_heading("The Lantern Spine"))
+	ending_box.add_child(_make_body("The sky web is awake again. This panel exists to make campaign completion feel like an ending, not just another atlas refresh."))
+	ending_summary_label = _make_body("")
+	ending_box.add_child(ending_summary_label)
+	ending_box.add_child(_make_button("Return to the atlas", Callable(self, "_show_atlas")))
+	ending_box.add_child(_make_button("Begin a new cycle", Callable(self, "_start_story")))
 
 func _make_panel() -> PanelContainer:
 	var panel := PanelContainer.new()
@@ -267,6 +281,7 @@ func _set_active(panel: PanelContainer) -> void:
 	title_panel.visible = panel == title_panel
 	atlas_panel.visible = panel == atlas_panel
 	route_panel.visible = panel == route_panel
+	ending_panel.visible = panel == ending_panel
 
 func _show_title() -> void:
 	_refresh_title()
@@ -302,8 +317,15 @@ func _refresh_atlas() -> void:
 	if not active_run.is_empty():
 		atlas_resume_button.text = "Resume %s" % _route_by_id(str(active_run.get("route_id", ""))).get("title", "current route")
 
+	var last_region := ""
 	for index in campaign_levels.size():
 		var route: Dictionary = campaign_levels[index]
+		if str(route.get("region", "")) != last_region:
+			last_region = str(route.get("region", ""))
+			var region_heading := _make_heading("%s  |  %s" % [last_region, _region_progress(last_region)])
+			region_heading.add_theme_font_size_override("font_size", 24)
+			region_heading.add_theme_color_override("font_color", Color("e6dcc5"))
+			atlas_routes_box.add_child(region_heading)
 		var route_id: String = str(route.get("id", ""))
 		var completion: Dictionary = save_state.get("completed_routes", {}).get(route_id, {})
 		var locked: bool = int(route.get("index", index + 1)) > int(save_state.get("unlocked_route_index", 1))
@@ -332,6 +354,9 @@ func _refresh_atlas() -> void:
 		detail.add_theme_font_size_override("font_size", 15)
 		detail.add_theme_color_override("font_color", Color("b4c6d1"))
 		atlas_routes_box.add_child(detail)
+
+	if bool(save_state.get("ending_unlocked", false)):
+		atlas_routes_box.add_child(_make_button("View the campaign ending", Callable(self, "_show_ending")))
 
 func _start_story() -> void:
 	save_state = _fresh_state()
@@ -564,6 +589,7 @@ func _advance_route() -> void:
 func _finish_route() -> void:
 	var route_id: String = str(current_route.get("id", ""))
 	var route_title: String = str(current_route.get("title", "This route"))
+	var route_index := int(current_route.get("index", 0))
 	var completion: Dictionary = {
 		"relics": route_relics,
 		"flow": route_peak,
@@ -580,18 +606,26 @@ func _finish_route() -> void:
 		var upgrades: Array = save_state.get("upgrades", [])
 		upgrades.append(str(current_route.get("reward_upgrade", "")))
 		save_state["upgrades"] = upgrades
-	save_state["ending_unlocked"] = int(current_route.get("index", 0)) >= campaign_levels.size()
+	save_state["ending_unlocked"] = route_index >= campaign_levels.size()
 	var reward_text: String = str(current_route.get("reward", "The route wakes and the atlas grows brighter."))
 	_clear_active_run()
 	_persist_state()
-	_show_atlas()
-	atlas_summary_label.text = "%s\n%s restored with rank %s and %s★." % [
-		atlas_summary_label.text,
-		route_title,
-		completion.get("rank", "A"),
-		str(completion.get("stars", 1)),
-	]
-	atlas_summary_label.text = "%s\n%s" % [atlas_summary_label.text, reward_text]
+	if bool(save_state.get("ending_unlocked", false)):
+		_show_ending("%s restored with rank %s and %s★.\n%s" % [
+			route_title,
+			completion.get("rank", "A"),
+			str(completion.get("stars", 1)),
+			reward_text,
+		])
+	else:
+		_show_atlas()
+		atlas_summary_label.text = "%s\n%s restored with rank %s and %s★." % [
+			atlas_summary_label.text,
+			route_title,
+			completion.get("rank", "A"),
+			str(completion.get("stars", 1)),
+		]
+		atlas_summary_label.text = "%s\n%s" % [atlas_summary_label.text, reward_text]
 
 func _stars_for_route() -> int:
 	var shrine_total := 0
@@ -654,3 +688,24 @@ func _best_flow() -> int:
 	for result in save_state.get("completed_routes", {}).values():
 		best = max(best, int(result.get("flow", 0)))
 	return best
+
+func _region_progress(region: String) -> String:
+	var complete := 0
+	var total := 0
+	for route in campaign_levels:
+		if str(route.get("region", "")) != region:
+			continue
+		total += 1
+		if save_state.get("completed_routes", {}).has(route.get("id", "")):
+			complete += 1
+	return "%d/%d routes lit" % [complete, total]
+
+func _show_ending(extra_text: String = "") -> void:
+	ending_summary_label.text = "All four districts are awake again.\nRelics recovered: %d\nBest flow: %d\nUpgrades: %s" % [
+		_total_relics(),
+		_best_flow(),
+		_upgrade_summary(),
+	]
+	if extra_text != "":
+		ending_summary_label.text = "%s\n\n%s" % [ending_summary_label.text, extra_text]
+	_set_active(ending_panel)
