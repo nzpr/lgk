@@ -44,6 +44,7 @@ var route_prompt_label: Label
 var route_view
 var route_options_box: VBoxContainer
 var route_feedback_label: Label
+var result_title_label: Label
 var result_summary_label: Label
 var result_actions_box: VBoxContainer
 var ending_summary_label: Label
@@ -146,7 +147,8 @@ func _build_ui() -> void:
 	var result_box := VBoxContainer.new()
 	result_box.add_theme_constant_override("separation", 12)
 	result_panel.add_child(result_box)
-	result_box.add_child(_make_heading("Route Rekindled"))
+	result_title_label = _make_heading("Route Rekindled")
+	result_box.add_child(result_title_label)
 	result_summary_label = _make_body("")
 	result_box.add_child(result_summary_label)
 	result_actions_box = VBoxContainer.new()
@@ -643,12 +645,15 @@ func _use_spine_flame() -> void:
 	_update_route_view("The Spine Flame erupts through the beacon housing. Flow surges and this route will score a bonus star.")
 
 func _apply_resolution(flow_delta: int, charge_delta: int, relic_delta: int, feedback: String, journal_success: bool = true) -> void:
-	route_charge = max(1, route_charge + charge_delta)
+	route_charge = max(0, route_charge + charge_delta)
 	route_relics = max(0, route_relics + relic_delta)
 	route_flow = max(0, route_flow + flow_delta)
 	route_peak = max(route_peak, route_flow)
 	resolved[current_index] = true
 	_sync_active_run()
+	if route_charge <= 0 and current_index < current_route.get("landmarks", []).size() - 1:
+		_show_route_failure(feedback)
+		return
 	_update_route_view(feedback if journal_success else "%s The route still yields, but it stings on the way through." % feedback)
 
 func _take_careful() -> void:
@@ -823,6 +828,7 @@ func _show_ending(extra_text: String = "") -> void:
 	_set_active(ending_panel)
 
 func _show_route_result(route_title: String, completion: Dictionary, reward_text: String, next_route_id: String, new_upgrade_label: String) -> void:
+	result_title_label.text = "Route Rekindled"
 	result_summary_label.text = "%s is relit.\nRank %s   Stars %s/4\nCharge left %d   Relics %d   Peak flow %d\n\n%s" % [
 		route_title,
 		completion.get("rank", "A"),
@@ -844,5 +850,23 @@ func _show_route_result(route_title: String, completion: Dictionary, reward_text
 		])))
 	elif next_route_id != "":
 		result_actions_box.add_child(_make_button("Open the next route", Callable(self, "_open_route").bind(next_route_id)))
+	result_actions_box.add_child(_make_button("Return to the atlas", Callable(self, "_show_atlas")))
+	_set_active(result_panel)
+
+func _show_route_failure(feedback: String) -> void:
+	var failed_route_id := str(current_route.get("id", ""))
+	var failed_route_title := str(current_route.get("title", "This route"))
+	_clear_active_run()
+	_persist_state()
+	result_title_label.text = "Lantern Lost"
+	result_summary_label.text = "%s collapses before Mira can finish the route.\nPeak flow %d   Relics carried %d\n\n%s\n\nThe lantern guttered out. Retry the route or return to the atlas to regroup." % [
+		failed_route_title,
+		route_peak,
+		route_relics,
+		feedback,
+	]
+	for child in result_actions_box.get_children():
+		child.queue_free()
+	result_actions_box.add_child(_make_button("Retry this route", Callable(self, "_open_route").bind(failed_route_id)))
 	result_actions_box.add_child(_make_button("Return to the atlas", Callable(self, "_show_atlas")))
 	_set_active(result_panel)

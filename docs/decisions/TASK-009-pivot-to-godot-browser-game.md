@@ -35,6 +35,7 @@ The user’s bar is correct: a real game should be built in an actual game engin
 - Added district-grouped atlas presentation and a campaign ending panel so progression has clearer structure and payoff.
 - Converted campaign upgrades into active route powers so traversal, shrines, and beacon moments have more tactical player input.
 - Added a dedicated route-result panel so finished runs land with explicit score, reward, and next-step payoff instead of collapsing directly back to the atlas.
+- Added actual route-failure stakes when charge burns out before a route is complete, plus a retry flow, so resource pressure matters and the new powers have real tactical weight.
 
 ## Scope
 Task-specific
