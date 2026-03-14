@@ -20,7 +20,7 @@ First harden the release path. Then add a zero-signup demo entry and the minimum
 Distribution materials are useless if the public build is brittle. Once deployment is deterministic, the next highest-leverage move is to eliminate evaluation friction and package the product with the copy, metadata, and support docs needed for external sharing.
 
 ## Consequences
-The release stack is now safer for GitHub-hosted distribution and more reliable on shared runners. Reviewers can enter the product instantly through a scripted demo household, and launch operators have reusable copy, link strategy, and support guidance for distribution.
+The release stack is now safer for GitHub-hosted distribution and more reliable on shared runners. Reviewers can enter the product instantly through a scripted demo household, launch operators have reusable copy, link strategy, and support guidance for distribution, and GitHub Actions now exposes validation failures at a finer grain instead of collapsing them into a single opaque step.
 
 ## Scope
 Task-specific
@@ -28,4 +28,4 @@ Task-specific
 ## Links
 - Related ADR: [0001-local-first-logic-learning-web-app.md](../adr/0001-local-first-logic-learning-web-app.md)
 - Related evolution event: [20260314-110125-distribution-hardening-and-frictionless-launch.md](../../evolution/events/20260314-110125-distribution-hardening-and-frictionless-launch.md)
-- Evidence (files/tests): `vite.config.ts`, `index.html`, `public/manifest.webmanifest`, `public/robots.txt`, `public/sitemap.xml`, `public/social-card.svg`, `src/App.tsx`, `src/lib/engine.ts`, `src/lib/engine.test.ts`, `tests/e2e/player-journey.spec.ts`, `docs/distribution/launch-and-support.md`, `docs/distribution/store-listing-copy.md`, `playwright.config.ts`, `scripts/run-e2e.mjs`, `.github/workflows/ci.yml`, `.github/workflows/deploy-pages.yml`, `.github/workflows/release.yml`, `CI=true PLAYWRIGHT_BROWSERS_PATH=.playwright-browsers npm run validate`
+- Evidence (files/tests): `vite.config.ts`, `index.html`, `public/manifest.webmanifest`, `public/robots.txt`, `public/sitemap.xml`, `public/social-card.svg`, `src/App.tsx`, `src/lib/engine.ts`, `src/lib/engine.test.ts`, `tests/e2e/player-journey.spec.ts`, `docs/distribution/launch-and-support.md`, `docs/distribution/store-listing-copy.md`, `playwright.config.ts`, `scripts/run-e2e.mjs`, `.github/workflows/ci.yml`, `.github/workflows/deploy-pages.yml`, `.github/workflows/release.yml`, `CI=true PLAYWRIGHT_BROWSERS_PATH=.playwright-browsers npm run validate`, `CI=true PLAYWRIGHT_BROWSERS_PATH=.playwright-browsers npm run test:e2e`

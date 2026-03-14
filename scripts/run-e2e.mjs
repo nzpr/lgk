@@ -124,7 +124,7 @@ async function main() {
       ['playwright', 'test', '--config', 'playwright.config.ts'],
       {
         PLAYWRIGHT_BROWSERS_PATH: process.env.PLAYWRIGHT_BROWSERS_PATH ?? '.playwright-browsers',
-        E2E_BASE_URL: `http://localhost:${port}`,
+        E2E_BASE_URL: previewUrl,
       },
     )
     process.exitCode = code

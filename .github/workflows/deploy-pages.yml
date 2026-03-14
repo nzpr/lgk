@@ -19,6 +19,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
+      CI: true
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
       PLAYWRIGHT_BROWSERS_PATH: .playwright-browsers
     steps:
@@ -37,8 +38,26 @@ jobs:
       - name: Install Playwright browsers
         run: npx playwright install --with-deps chromium
 
-      - name: Validate and build product
-        run: npm run validate
+      - name: Generate content
+        run: npm run generate:content
+
+      - name: Lint app
+        run: npm run lint
+
+      - name: Run unit tests
+        run: npm run test:unit
+
+      - name: Validate reviewed content
+        run: node scripts/validate-content.mjs
+
+      - name: Build product
+        run: npm run build
+
+      - name: Smoke check dist output
+        run: npm run smoke
+
+      - name: Run browser journey tests
+        run: npm run test:e2e
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

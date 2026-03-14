@@ -12,6 +12,8 @@ Reworked the Playwright E2E runner to allocate an open preview port dynamically 
 Updated the release workflow to publish with a maintained release action instead of assuming the GitHub CLI exists on the runner.
 Added a no-signup demo household path that can be entered from the landing page or a direct `?demo=1` link.
 Added launch-facing metadata and distribution materials: social card, robots/sitemap, store listing copy, and launch/support notes.
+Aligned the E2E base URL with the preview server address to avoid localhost resolution mismatches on GitHub-hosted runners.
+Split CI and deploy validation into explicit gates so future failures show the exact broken stage instead of a single opaque validation step.
 
 ## Decision Link
 - ADR: [0001-local-first-logic-learning-web-app.md](../../docs/adr/0001-local-first-logic-learning-web-app.md)
