@@ -22,8 +22,8 @@ if [[ -x "${LEGACY_EDITOR_BIN}" ]]; then
   cp -f "${LEGACY_EDITOR_BIN}" "${EDITOR_BIN}"
   chmod +x "${EDITOR_BIN}"
 elif [[ ! -x "${EDITOR_BIN}" ]]; then
-  curl -L "${EDITOR_URL}" -o "${EDITOR_DIR}/godot.zip"
-  unzip -o "${EDITOR_DIR}/godot.zip" -d "${EDITOR_DIR}"
+  curl -fsSL "${EDITOR_URL}" -o "${EDITOR_DIR}/godot.zip"
+  unzip -oq "${EDITOR_DIR}/godot.zip" -d "${EDITOR_DIR}"
   chmod +x "${EDITOR_BIN}"
 fi
 
@@ -31,10 +31,10 @@ if [[ "${GODOT_SKIP_TEMPLATES:-0}" != "1" ]] && [[ ! -f "${EXPORT_DIR}/web_relea
   if [[ -d "${LEGACY_TEMPLATES_DIR}" ]]; then
     cp -R "${LEGACY_TEMPLATES_DIR}/." "${EXPORT_DIR}/"
   else
-    curl -L "${TEMPLATES_URL}" -o "${TEMPLATES_DIR}/export_templates.tpz"
+    curl -fsSL "${TEMPLATES_URL}" -o "${TEMPLATES_DIR}/export_templates.tpz"
     rm -rf "${TEMPLATES_DIR}/unzipped"
     mkdir -p "${TEMPLATES_DIR}/unzipped"
-    unzip -o "${TEMPLATES_DIR}/export_templates.tpz" -d "${TEMPLATES_DIR}/unzipped"
+    unzip -oq "${TEMPLATES_DIR}/export_templates.tpz" -d "${TEMPLATES_DIR}/unzipped"
     cp -R "${TEMPLATES_DIR}/unzipped/templates/." "${EXPORT_DIR}/"
   fi
 fi
