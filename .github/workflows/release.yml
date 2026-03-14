@@ -14,6 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
       PLAYWRIGHT_BROWSERS_PATH: .playwright-browsers
     steps:
       - name: Checkout
@@ -47,10 +48,7 @@ jobs:
 
       - name: Publish GitHub release
         if: startsWith(github.ref, 'refs/tags/')
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-        run: |
-          gh release create "${GITHUB_REF_NAME}" \
-            "sky-of-many-lanterns-${GITHUB_REF_NAME}.tar.gz" \
-            --title "Sky of Many Lanterns ${GITHUB_REF_NAME}" \
-            --generate-notes
+        uses: softprops/action-gh-release@v2
+        with:
+          files: sky-of-many-lanterns-${{ github.ref_name }}.tar.gz
+          generate_release_notes: true

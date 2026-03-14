@@ -9,7 +9,7 @@ if (!existsSync(distIndex)) {
 
 const html = readFileSync(distIndex, 'utf8')
 
-for (const needle of ['Sky of Many Lanterns', 'manifest.webmanifest']) {
+for (const needle of ['Sky of Many Lanterns', 'manifest.webmanifest', './assets/']) {
   if (!html.includes(needle)) {
     throw new Error(`Smoke check failed: dist/index.html is missing "${needle}"`)
   }

@@ -1,7 +1,8 @@
 import { spawn } from 'node:child_process'
+import { createServer } from 'node:net'
 import process from 'node:process'
 
-const PREVIEW_URL = 'http://127.0.0.1:4173'
+const DEFAULT_PORT = 4173
 const TIMEOUT_MS = 120_000
 
 function npmCommand() {
@@ -37,6 +38,33 @@ async function waitForServer(url, timeoutMs) {
   throw new Error(`Preview server did not become ready at ${url} within ${timeoutMs}ms`)
 }
 
+function findOpenPort(startPort) {
+  return new Promise((resolve, reject) => {
+    const tryPort = (port) => {
+      const server = createServer()
+      server.unref()
+      server.on('error', () => {
+        server.close()
+        tryPort(port + 1)
+      })
+      server.listen(port, '127.0.0.1', () => {
+        const address = server.address()
+        const resolvedPort =
+          address && typeof address === 'object' ? address.port : port
+        server.close((error) => {
+          if (error) {
+            reject(error)
+            return
+          }
+          resolve(resolvedPort)
+        })
+      })
+    }
+
+    tryPort(startPort)
+  })
+}
+
 function runCommand(command, args, extraEnv = {}) {
   return new Promise((resolve, reject) => {
     const child = spawn(command, args, {
@@ -60,7 +88,9 @@ function runCommand(command, args, extraEnv = {}) {
 }
 
 async function main() {
-  const preview = spawn(npmCommand(), ['run', 'preview'], {
+  const port = await findOpenPort(DEFAULT_PORT)
+  const previewUrl = `http://127.0.0.1:${port}`
+  const preview = spawn(npmCommand(), ['run', 'preview', '--', '--port', String(port), '--strictPort'], {
     cwd: process.cwd(),
     stdio: 'inherit',
     env: process.env,
@@ -88,11 +118,14 @@ async function main() {
   })
 
   try {
-    await waitForServer(PREVIEW_URL, TIMEOUT_MS)
+    await waitForServer(previewUrl, TIMEOUT_MS)
     const code = await runCommand(
       npxCommand(),
       ['playwright', 'test', '--config', 'playwright.config.ts'],
-      { PLAYWRIGHT_BROWSERS_PATH: process.env.PLAYWRIGHT_BROWSERS_PATH ?? '.playwright-browsers' },
+      {
+        PLAYWRIGHT_BROWSERS_PATH: process.env.PLAYWRIGHT_BROWSERS_PATH ?? '.playwright-browsers',
+        E2E_BASE_URL: `http://localhost:${port}`,
+      },
     )
     process.exitCode = code
   } finally {

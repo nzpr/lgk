@@ -8,3 +8,4 @@
 | 2026-03-14T10:06:22+00:00 | [20260314-100622-execute-product-graph.md](./20260314-100622-execute-product-graph.md) | execute product graph |
 | 2026-03-14T11:35:00+00:00 | [20260314-113500-harden-qa-and-release-automation.md](./20260314-113500-harden-qa-and-release-automation.md) | harden QA and release automation |
 | 2026-03-14T11:42:01+00:00 | [20260314-114201-polish-player-experience-and-ship-v1.md](./20260314-114201-polish-player-experience-and-ship-v1.md) | polish player experience and ship v1 |
+| 2026-03-14T11:01:25+00:00 | [20260314-110125-distribution-hardening-and-frictionless-launch.md](./20260314-110125-distribution-hardening-and-frictionless-launch.md) | distribution hardening and frictionless launch |
