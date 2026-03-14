@@ -32,9 +32,6 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Install Playwright browsers
-        run: ./node_modules/.bin/playwright install --with-deps chromium
-
       - name: Generate content
         run: npm run generate:content
 
@@ -53,8 +50,11 @@ jobs:
       - name: Smoke check dist output
         run: npm run smoke
 
+      - name: Install Playwright browsers
+        run: ./node_modules/.bin/playwright install --with-deps chromium
+
       - name: Run browser journey tests
-        run: npm run test:e2e
+        run: node scripts/run-e2e.mjs
 
       - name: Upload Playwright report
         if: always()
