@@ -3,3 +3,4 @@
 | Date | Task | File | Summary |
 |------|------|------|---------|
 | 2026-03-14 | TASK-001 | [TASK-001-move-package-into-in-folder.md](./TASK-001-move-package-into-in-folder.md) | move package into in folder |
+| 2026-03-14 | TASK-003 | [TASK-003-execution-graph-and-product-build.md](./TASK-003-execution-graph-and-product-build.md) | execution graph and product build |
