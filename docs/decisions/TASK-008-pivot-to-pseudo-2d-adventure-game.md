@@ -28,6 +28,7 @@ The pivot now includes a dedicated campaign runtime:
 - an atlas screen with authored route cards and journal continuity
 - a pseudo-2D route scene with visible landmarks, route choices, shrine encounters, and persistence
 - browser coverage for demo entry, full first-route completion, and in-progress reload recovery
+- route-style decisions on traversal landmarks, adding a real careful-vs-bold play layer and route-flow ranking
 
 ## Scope
 Task-specific

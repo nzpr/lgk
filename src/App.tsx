@@ -9,6 +9,8 @@ import {
   createAdventureState,
   finishCurrentLevel,
   getCurrentLevel,
+  getFlowStatus,
+  getLandmarkApproaches,
   getLevelCompletion,
   getRunLandmark,
   getRunTask,
@@ -18,7 +20,7 @@ import {
   startLevel,
 } from './game/engine'
 import { loadAdventureState, resetAdventureState, saveAdventureState } from './game/storage'
-import type { AdventureState } from './game/types'
+import type { AdventureState, LandmarkApproachId } from './game/types'
 
 type Screen = 'landing' | 'atlas' | 'level' | 'ending'
 
@@ -74,6 +76,7 @@ function App() {
   const currentLevel = getCurrentLevel(state.currentLevelId)
   const currentLandmark = getRunLandmark(state)
   const currentTask = getRunTask(state)
+  const currentApproaches = currentLandmark ? getLandmarkApproaches(currentLandmark) : null
   const currentLandmarkState =
     currentLandmark && state.run ? state.run.landmarkStates[currentLandmark.id] : null
   const unlockedLevels = getUnlockedLevels(state)
@@ -108,8 +111,8 @@ function App() {
     setScreen(state.endingUnlocked ? 'ending' : 'atlas')
   }
 
-  function inspectLandmark() {
-    setState((previous) => resolveLandmark(previous))
+  function inspectLandmark(approachId: LandmarkApproachId) {
+    setState((previous) => resolveLandmark(previous, approachId))
   }
 
   function makeChoice(choiceType: 'safe' | 'risky') {
@@ -273,6 +276,7 @@ function App() {
                   <div className="atlas-level-card__footer">
                     <strong>{'★'.repeat(completion.stars)}</strong>
                     <span>{completion.relicsFound} relics</span>
+                    <span>{completion.rank} rank</span>
                   </div>
                 )}
                 <button
@@ -324,6 +328,7 @@ function App() {
     const readyToFinish = currentLandmark.kind === 'beacon' && currentLandmarkState.resolved
     const levelProgress = ((state.run.currentLandmarkIndex + 1) / currentLevel.landmarks.length) * 100
     const showChoiceHints = state.upgrades.includes('echoLens') || currentLevel.index <= 5
+    const flowStatus = getFlowStatus(state.run.flow)
 
     return (
       <main className="screen level-screen">
@@ -337,6 +342,11 @@ function App() {
             <div className="stat-card">
               <span>Lantern charge</span>
               <strong>{state.run.charge}</strong>
+            </div>
+            <div className="stat-card">
+              <span>Route flow</span>
+              <strong>{state.run.flow}</strong>
+              <small>{flowStatus}</small>
             </div>
             <div className="stat-card">
               <span>Relics in route</span>
@@ -401,6 +411,18 @@ function App() {
               <p className="muted">{currentLandmark.sceneDetail}</p>
             </div>
 
+            <div className="encounter-strip">
+              <span>Route flow: {flowStatus}</span>
+              <span>Peak {state.run.peakFlow}</span>
+              <span>
+                {currentLandmark.kind === 'shrine'
+                  ? 'Shrine encounter'
+                  : currentLandmark.choice
+                    ? 'Branch encounter'
+                    : 'Traversal encounter'}
+              </span>
+            </div>
+
             {routeChoice && !currentLandmarkState.resolved && (
               <div className="choice-cluster">
                 <p className="prompt-text">{routeChoice.prompt}</p>
@@ -411,6 +433,31 @@ function App() {
                 <button className="primary-button" data-testid="choice-risky" onClick={() => makeChoice('risky')}>
                   <strong>{routeChoice.risky.label}</strong>
                   {showChoiceHints && <span>{routeChoice.risky.summary}</span>}
+                </button>
+              </div>
+            )}
+
+            {currentApproaches && !currentLandmarkState.resolved && (
+              <div className="choice-cluster">
+                <p className="prompt-text">
+                  Choose how Mira handles this landmark. The careful line preserves the run. The
+                  bold line spends more for stronger flow and relic pressure.
+                </p>
+                <button
+                  className="ghost-button"
+                  data-testid="approach-careful"
+                  onClick={() => inspectLandmark('careful')}
+                >
+                  <strong>{currentApproaches.careful.label}</strong>
+                  <span>{currentApproaches.careful.summary}</span>
+                </button>
+                <button
+                  className="primary-button"
+                  data-testid="approach-bold"
+                  onClick={() => inspectLandmark('bold')}
+                >
+                  <strong>{currentApproaches.bold.label}</strong>
+                  <span>{currentApproaches.bold.summary}</span>
                 </button>
               </div>
             )}
@@ -440,12 +487,6 @@ function App() {
                 <strong>{currentLandmarkState.correct ? 'Shrine opened' : 'Shrine forced open'}</strong>
                 <p>{currentLandmarkState.correct ? shrineTask.explanation.summary : shrineTask.explanation.whyNow}</p>
               </div>
-            )}
-
-            {!routeChoice && !shrineTask && !currentLandmarkState.resolved && (
-              <button className="primary-button" data-testid="inspect-landmark" onClick={inspectLandmark}>
-                {currentLandmark.kind === 'beacon' ? 'Relight the beacon' : 'Inspect the site'}
-              </button>
             )}
 
             {readyToAdvance && (
@@ -504,6 +545,10 @@ function App() {
             <div className="stat-card">
               <span>Upgrades found</span>
               <strong>{state.upgrades.length}</strong>
+            </div>
+            <div className="stat-card">
+              <span>Best route rank</span>
+              <strong>{state.completedLevels.at(-1)?.rank ?? 'A'}</strong>
             </div>
           </div>
           <div className="hero-actions">

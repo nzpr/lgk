@@ -7,6 +7,7 @@ export type AdventureUpgrade =
   | 'spineFlame'
 
 export type LandmarkKind = 'start' | 'vista' | 'hazard' | 'cache' | 'shrine' | 'beacon'
+export type LandmarkApproachId = 'careful' | 'bold'
 
 export interface RouteChoice {
   id: string
@@ -15,6 +16,16 @@ export interface RouteChoice {
   outcome: string
   chargeDelta: number
   relicDelta: number
+  journalText: string
+}
+
+export interface LandmarkApproach {
+  id: LandmarkApproachId
+  label: string
+  summary: string
+  chargeDelta: number
+  relicDelta: number
+  flowDelta: number
   journalText: string
 }
 
@@ -28,6 +39,10 @@ export interface LevelLandmark {
   relicDelta?: number
   journalText: string
   challengeSkill?: Skill
+  approaches?: {
+    careful: LandmarkApproach
+    bold: LandmarkApproach
+  }
   choice?: {
     prompt: string
     safe: RouteChoice
@@ -75,6 +90,8 @@ export interface LevelRun {
   levelId: string
   charge: number
   relicsFound: number
+  flow: number
+  peakFlow: number
   currentLandmarkIndex: number
   landmarkStates: Record<
     string,
@@ -96,6 +113,8 @@ export interface LevelCompletion {
   relicsFound: number
   sparksEarned: number
   stars: number
+  flowPeak: number
+  rank: 'B' | 'A' | 'S' | 'SS'
   completedAt: string
 }
 

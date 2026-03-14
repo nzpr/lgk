@@ -4,6 +4,8 @@ import { adventureLevels } from './data'
 import type {
   AdventureLevel,
   AdventureState,
+  LandmarkApproach,
+  LandmarkApproachId,
   AdventureUpgrade,
   JournalEntry,
   LevelCompletion,
@@ -14,9 +16,88 @@ import type {
 } from './types'
 
 const STARTING_CHARGE = 5
+const STARTING_FLOW = 1
 
 function nowIso() {
   return new Date().toISOString()
+}
+
+function nextFlow(flow: number, delta: number) {
+  return Math.max(0, flow + delta)
+}
+
+function updateFlow(run: LevelRun, delta: number) {
+  const flow = nextFlow(run.flow, delta)
+  return {
+    flow,
+    peakFlow: Math.max(run.peakFlow, flow),
+  }
+}
+
+function defaultApproachesForLandmark(landmark: LevelLandmark): {
+  careful: LandmarkApproach
+  bold: LandmarkApproach
+} | null {
+  if (landmark.kind === 'shrine' || landmark.choice) {
+    return null
+  }
+
+  const labels = {
+    start: {
+      careful: ['Attune to the route', 'Read the air and start cleanly.'],
+      bold: ['Launch into the wind', 'Build speed early for a hotter run.'],
+    },
+    vista: {
+      careful: ['Survey the vista', 'Study the route and preserve charge.'],
+      bold: ['Glide the high line', 'Trade calm for relic reach.'],
+    },
+    cache: {
+      careful: ['Search the cache', 'Recover what is safe to carry.'],
+      bold: ['Rip the cache open', 'Grab more, but risk losing charge.'],
+    },
+    beacon: {
+      careful: ['Kindle the beacon', 'Relight it with a steady pulse.'],
+      bold: ['Overdrive the beacon', 'Force a blazing finish for extra flow.'],
+    },
+    hazard: {
+      careful: ['Test the footing', 'Reduce the route strain first.'],
+      bold: ['Punch through the hazard', 'Take the shock and keep momentum.'],
+    },
+  }[landmark.kind]
+
+  return landmark.approaches ?? {
+    careful: {
+      id: 'careful',
+      label: labels.careful[0],
+      summary: labels.careful[1],
+      chargeDelta: landmark.chargeDelta ?? 0,
+      relicDelta: landmark.relicDelta ?? 0,
+      flowDelta: 1,
+      journalText: landmark.journalText,
+    },
+    bold: {
+      id: 'bold',
+      label: labels.bold[0],
+      summary: labels.bold[1],
+      chargeDelta: (landmark.chargeDelta ?? 0) - 1,
+      relicDelta: (landmark.relicDelta ?? 0) + 1,
+      flowDelta: 2,
+      journalText: `${landmark.journalText} Mira pushes harder than the route expects and comes out brighter for it.`,
+    },
+  }
+}
+
+function rankForFlowPeak(flowPeak: number): 'B' | 'A' | 'S' | 'SS' {
+  if (flowPeak >= 8) {
+    return 'SS'
+  }
+  if (flowPeak >= 6) {
+    return 'S'
+  }
+  if (flowPeak >= 4) {
+    return 'A'
+  }
+  return 'B'
 }
 
 function createJournalEntry(level: AdventureLevel, title: string, text: string): JournalEntry {
@@ -97,6 +178,8 @@ export function createAdventureDemoState(): AdventureState {
         relicsFound: 2,
         sparksEarned: 3,
         stars: 3,
+        flowPeak: 5,
+        rank: 'A',
         completedAt: new Date('2026-03-14T09:00:00.000Z').toISOString(),
       },
       true,
@@ -140,6 +223,8 @@ export function startLevel(state: AdventureState, levelId: string): AdventureSta
     levelId,
     charge: STARTING_CHARGE + (state.upgrades.includes('echoLens') ? 1 : 0),
     relicsFound: 0,
+    flow: STARTING_FLOW,
+    peakFlow: STARTING_FLOW,
     currentLandmarkIndex: 0,
     landmarkStates,
     tasks,
@@ -189,7 +274,17 @@ function updateRun(state: AdventureState, updater: (run: LevelRun) => LevelRun):
   }
 }
 
-export function resolveLandmark(state: AdventureState): AdventureState {
+export function getLandmarkApproaches(landmark: LevelLandmark): {
+  careful: LandmarkApproach
+  bold: LandmarkApproach
+} | null {
+  return defaultApproachesForLandmark(landmark)
+}
+
+export function resolveLandmark(
+  state: AdventureState,
+  approachId: LandmarkApproachId = 'careful',
+): AdventureState {
   const level = getRunLevel(state)
   const landmark = getRunLandmark(state)
   if (!state.run || !level || !landmark) {
@@ -201,10 +296,13 @@ export function resolveLandmark(state: AdventureState): AdventureState {
     return state
   }
 
+  const approaches = getLandmarkApproaches(landmark)
+  const approach = approaches?.[approachId]
   const nextState = updateRun(state, (run) => ({
     ...run,
-    charge: Math.max(1, run.charge + (landmark.chargeDelta ?? 0)),
-    relicsFound: run.relicsFound + (landmark.relicDelta ?? 0),
+    charge: Math.max(1, run.charge + (approach?.chargeDelta ?? landmark.chargeDelta ?? 0)),
+    relicsFound: run.relicsFound + (approach?.relicDelta ?? landmark.relicDelta ?? 0),
+    ...updateFlow(run, approach?.flowDelta ?? 1),
     landmarkStates: {
       ...run.landmarkStates,
       [landmark.id]: {
@@ -215,7 +313,7 @@ export function resolveLandmark(state: AdventureState): AdventureState {
   }))
 
   return appendJournal(nextState, [
-    createJournalEntry(level, landmark.title, landmark.journalText),
+    createJournalEntry(level, landmark.title, approach?.journalText ?? landmark.journalText),
   ])
 }
 
@@ -230,6 +328,7 @@ export function chooseRoute(state: AdventureState, choice: RouteChoice): Adventu
     ...run,
     charge: Math.max(1, run.charge + choice.chargeDelta),
     relicsFound: run.relicsFound + choice.relicDelta,
+    ...updateFlow(run, choice.id === 'risky' ? 2 : 1),
     landmarkStates: {
       ...run.landmarkStates,
       [landmark.id]: {
@@ -258,6 +357,7 @@ export function answerShrine(state: AdventureState, answerIndex: number): Advent
     ...run,
     charge: Math.max(1, run.charge + (correct ? 0 : -1)),
     relicsFound: run.relicsFound + (correct ? 1 : 0),
+    ...updateFlow(run, correct ? 2 : -2),
     landmarkStates: {
       ...run.landmarkStates,
       [landmark.id]: {
@@ -344,8 +444,10 @@ export function finishCurrentLevel(state: AdventureState): AdventureState {
     levelId: level.id,
     chargeLeft: state.run.charge,
     relicsFound: state.run.relicsFound,
-    sparksEarned: 2 + stars,
+    sparksEarned: 2 + stars + Math.max(0, Math.floor(state.run.peakFlow / 3)),
     stars,
+    flowPeak: state.run.peakFlow,
+    rank: rankForFlowPeak(state.run.peakFlow),
     completedAt: nowIso(),
   })
 }
@@ -357,6 +459,22 @@ export function getUpgradeLabel(upgrade: AdventureUpgrade): string {
     bridgeSeed: 'Bridge Seed',
     spineFlame: 'Spine Flame',
   }[upgrade]
+}
+
+export function getFlowStatus(flow: number): string {
+  if (flow >= 7) {
+    return 'Skyfire'
+  }
+  if (flow >= 5) {
+    return 'Bright'
+  }
+  if (flow >= 3) {
+    return 'Settled'
+  }
+  if (flow >= 1) {
+    return 'Faint'
+  }
+  return 'Broken'
 }
 
 export function getLevelCompletion(state: AdventureState, levelId: string): LevelCompletion | null {

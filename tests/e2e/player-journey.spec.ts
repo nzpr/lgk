@@ -6,13 +6,13 @@ async function completeFirstRoute(page: Page) {
   await expect(page.getByRole('heading', { name: /Fallen Ferry/i })).toBeVisible()
 
   await page.getByTestId('advance-route').click()
-  await page.getByTestId('inspect-landmark').click()
+  await page.getByTestId('approach-bold').click()
   await page.getByTestId('advance-route').click()
   await page.getByTestId('answer-0').click()
   await page.getByTestId('advance-route').click()
   await page.getByTestId('choice-safe').click()
   await page.getByTestId('advance-route').click()
-  await page.getByTestId('inspect-landmark').click()
+  await page.getByTestId('approach-careful').click()
   await page.getByTestId('complete-route').click()
 }
 
@@ -45,7 +45,7 @@ test('persists an in-progress route across reloads with no resume friction', asy
   await page.getByTestId('level-card-fallen-ferry').click()
 
   await page.getByTestId('advance-route').click()
-  await page.getByTestId('inspect-landmark').click()
+  await page.getByTestId('approach-bold').click()
 
   await page.reload()
 
