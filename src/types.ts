@@ -139,6 +139,9 @@ export interface ParentSummary {
   struggleSkill: Skill
   nextFocus: Skill
   weeklyDigest: string
+  strongestNote: string
+  struggleNote: string
+  nextAction: string
 }
 
 export interface SourceBook {

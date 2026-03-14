@@ -25,6 +25,7 @@ export const SKILLS: Skill[] = [
 ]
 
 export const taskBank = taskBankJson as Task[]
+export const taskLookup = Object.fromEntries(taskBank.map((task) => [task.id, task]))
 
 export function createInitialWorld(): WorldState {
   return {
@@ -312,6 +313,13 @@ export function getParentSummary(state: HouseholdState): ParentSummary {
   const weakest = [...ordered].reverse()
   const chapter = getCurrentChapter(state)
   const recentSessions = state.sessions.filter((session) => session.type === 'daily').slice(-7)
+  const recentOutcomes = recentSessions.slice(-2).flatMap((session) => session.outcomes.slice(0, 2))
+  const strongestExample =
+    recentOutcomes.find((outcome) => outcome.skill === ordered[0] && outcome.correct) ??
+    recentOutcomes[0]
+  const struggleExample =
+    recentOutcomes.find((outcome) => outcome.skill === weakest[0] && !outcome.correct) ??
+    recentOutcomes.at(-1)
 
   return {
     recentSessions: recentSessions.length,
@@ -319,6 +327,13 @@ export function getParentSummary(state: HouseholdState): ParentSummary {
     struggleSkill: weakest[0],
     nextFocus: weakest[1] ?? chapter.focusSkill,
     weeklyDigest: `${state.child?.name ?? 'Your child'} pushed ${chapter.region} forward, looked strongest in ${getSkillLabel(ordered[0]).toLowerCase()}, and still needs a little more support with ${getSkillLabel(weakest[0]).toLowerCase()}.`,
+    strongestNote: strongestExample
+      ? `Recent evidence: ${taskLookup[strongestExample.taskId]?.title ?? 'A recent mission'} was handled with growing confidence.`
+      : 'Recent evidence will appear after the first expedition.',
+    struggleNote: struggleExample
+      ? `Current friction: ${taskLookup[struggleExample.taskId]?.title ?? 'A recent mission'} still needed support.`
+      : 'Current friction will appear after the first expedition.',
+    nextAction: `Next week, keep sessions short and let ${state.child?.name ?? 'your child'} spend extra time on ${getSkillLabel(weakest[1] ?? chapter.focusSkill).toLowerCase()}.`,
   }
 }
 

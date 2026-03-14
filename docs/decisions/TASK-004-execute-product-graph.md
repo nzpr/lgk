@@ -7,20 +7,20 @@ TASK-004
 2026-03-14
 
 ## Context
-The execution graph in `plan.md` is now the source of truth. Slice A needs to deliver the foundation nodes: runtime architecture, content schema, progression model, visual/runtime scaffold, and a runnable web shell that later slices can build on without rework.
+The execution graph in `plan.md` is now the source of truth. Slice A delivered the foundation runtime and content backbone. Slice B now needs to deliver the playable-core nodes: stronger onboarding continuity, adaptive session handling, world-state payoff, and more concrete parent value.
 
 ## Options Considered
-- Rebuild the foundation ad hoc in a single large product commit.
-- Execute the foundation nodes as a validated slice with traceability, then commit and push before moving into the playable-core nodes.
+- Let the foundation shell stand mostly unchanged until the full product is nearly done.
+- Deepen the playable-core nodes now, validate them, and ship them as the next graph slice before parent/QA/release polish.
 
 ## Decision
-Execute Slice A as the first production slice: local-first React/Vite runtime, generated content bank, validation commands, learner/state engine, and the initial app shell needed for onboarding and session work.
+Execute the graph in slices. Slice A shipped the runtime foundation. Slice B deepens the playable core with momentum protection, tomorrow-preview continuity, stronger parent evidence, and a traceable content explorer to support QA and downstream safety nodes.
 
 ## Reasoning
-These nodes unblock almost every downstream node in the graph. Shipping them as one validated slice gives the team a stable runtime and content backbone before deeper UX, parent value, QA, and release work.
+The product would still feel too skeletal if the team jumped straight from the runtime shell to release mechanics. Slice B closes the biggest experience gap: it makes the child loop feel more like a game and the parent loop feel more specific and trustworthy.
 
 ## Consequences
-The repo gains a runnable application and deterministic content/runtime model early. Later slices can stay focused on product feel and release quality instead of fighting scaffolding and data-shape churn.
+The repo now has both a stable runtime and a more believable product loop. The remaining work can focus on QA/review safety, deployment, and handoff instead of core-loop credibility.
 
 ## Scope
 Task-specific
@@ -28,4 +28,4 @@ Task-specific
 ## Links
 - Related ADR: [0001-local-first-logic-learning-web-app.md](../adr/0001-local-first-logic-learning-web-app.md)
 - Related evolution event: [20260314-100622-execute-product-graph.md](../../evolution/events/20260314-100622-execute-product-graph.md)
-- Evidence (files/tests): `plan.md`, `package.json`, `scripts/generate-task-bank.mjs`, `scripts/validate-content.mjs`, `src/lib/engine.ts`, `src/App.tsx`, `npm run generate:content`, `npm run lint`, `npm run test`, `npm run build`
+- Evidence (files/tests): `plan.md`, `src/App.tsx`, `src/lib/engine.ts`, `src/types.ts`, `npm run lint`, `npm run test`, `npm run build`

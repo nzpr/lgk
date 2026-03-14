@@ -14,6 +14,7 @@ import {
   getParentSummary,
   selectDailyTasks,
   selectDiagnosticTasks,
+  taskBank,
 } from './lib/engine'
 import { loadState, resetState, saveState } from './lib/storage'
 import type {
@@ -105,17 +106,23 @@ function App() {
     goal: 'Calm daily practice',
   })
   const [flagReason, setFlagReason] = useState('')
+  const [archiveSkill, setArchiveSkill] = useState<'all' | keyof typeof skillLabels>('all')
 
   useEffect(() => {
     saveState(state)
   }, [state])
 
   const chapter = getCurrentChapter(state)
+  const nextChapter =
+    chapterPlan[Math.min(state.world.chapterIndex + 1, chapterPlan.length - 1)]
   const parentSummary = getParentSummary(state)
   const badges = getBadgeSkills(state)
   const currentTask = run?.tasks[run.currentIndex] ?? null
   const sourceLines = currentTask ? buildSourceLines(currentTask.task, sourceLookup) : []
   const completionRatio = run ? (run.currentIndex + 1) / run.tasks.length : 0
+  const archiveTasks = taskBank.filter((task) =>
+    archiveSkill === 'all' ? true : task.skill === archiveSkill,
+  )
 
   function updateHousehold(next: HouseholdState) {
     setState(next)
@@ -259,8 +266,12 @@ function App() {
     }
 
     const nextCompleted = [...run.completed, outcome]
+    const shouldShortenMission =
+      run.type === 'daily' &&
+      nextCompleted.length >= 4 &&
+      nextCompleted.slice(-2).every((item) => !item.correct || item.hintLevel === 3)
 
-    if (run.currentIndex === run.tasks.length - 1) {
+    if (run.currentIndex === run.tasks.length - 1 || shouldShortenMission) {
       const session = buildSessionRecord(
         run.type,
         run.objective,
@@ -291,7 +302,9 @@ function App() {
           run.type === 'diagnostic'
             ? 'Diagnostic complete'
             : `${chapterAfter.region}: ${chapterAfter.title}`,
-        landmark,
+        landmark: shouldShortenMission
+          ? `${landmark} Tala shortened the last stretch so the mission could still end in confidence.`
+          : landmark,
       })
       setView('camp')
       return
@@ -720,6 +733,11 @@ function App() {
                       ))}
                     </ul>
                   </article>
+                  <article className="panel stat-panel">
+                    <span className="eyebrow">Tomorrow preview</span>
+                    <h3>{nextChapter.title}</h3>
+                    <p>{nextChapter.briefing}</p>
+                  </article>
                 </section>
 
                 <section className="panel skill-panel">
@@ -759,6 +777,11 @@ function App() {
                   <span className="eyebrow">Weekly guild report</span>
                   <h2>Concrete progress for {state.parent.name}</h2>
                   <p>{parentSummary.weeklyDigest}</p>
+                  <div className="feedback-box">
+                    <strong>{parentSummary.strongestNote}</strong>
+                    <p>{parentSummary.struggleNote}</p>
+                    <p className="muted">{parentSummary.nextAction}</p>
+                  </div>
                   <div className="parent-highlights">
                     <div>
                       <strong>{parentSummary.recentSessions}</strong>
@@ -821,6 +844,40 @@ function App() {
                           <code>{JSON.stringify(event.detail)}</code>
                         </article>
                       ))}
+                  </div>
+                </section>
+                <section className="panel">
+                  <span className="eyebrow">Content explorer</span>
+                  <h2>Reviewed runtime task bank</h2>
+                  <div className="session-actions">
+                    <button
+                      className={archiveSkill === 'all' ? 'nav-pill active' : 'nav-pill'}
+                      onClick={() => setArchiveSkill('all')}
+                    >
+                      All
+                    </button>
+                    {Object.entries(skillLabels).map(([skill, label]) => (
+                      <button
+                        key={skill}
+                        className={archiveSkill === skill ? 'nav-pill active' : 'nav-pill'}
+                        onClick={() => setArchiveSkill(skill as keyof typeof skillLabels)}
+                      >
+                        {label}
+                      </button>
+                    ))}
+                  </div>
+                  <div className="history-list">
+                    {archiveTasks.slice(0, 8).map((task) => (
+                      <article key={task.id} className="history-item">
+                        <div>
+                          <strong>{task.title}</strong>
+                          <p>
+                            {skillLabels[task.skill]} · difficulty {task.difficulty} · {task.reviewState}
+                          </p>
+                        </div>
+                        <span>Sources {task.sourceTrace.sourceIds.join(', ')}</span>
+                      </article>
+                    ))}
                   </div>
                 </section>
                 <section className="panel">
