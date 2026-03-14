@@ -16,6 +16,7 @@ Implemented the next gameplay slice: unlocked upgrades now behave as active rout
 Implemented the next stakes slice: route charge can now burn out into failure before completion, and failed runs land on an explicit retry/retreat panel rather than silently continuing.
 Implemented the next friction-reduction slice: keyboard shortcuts now drive route choices, confirms, and result-panel actions for faster desktop play.
 Implemented the player-guidance slice: added a distribution README plus a dedicated `how to play` guide so onboarding and external sharing no longer depend on chat context.
+Implemented the repo-entry slice: added a root `README.md` so the repository front page states the game’s logic-learning purpose, references the source logic-book corpus, and exposes the live game and play docs immediately.
 
 ## Decision Link
 - Task decision: [TASK-009-pivot-to-godot-browser-game.md](../../docs/decisions/TASK-009-pivot-to-godot-browser-game.md)

@@ -38,6 +38,7 @@ The user’s bar is correct: a real game should be built in an actual game engin
 - Added actual route-failure stakes when charge burns out before a route is complete, plus a retry flow, so resource pressure matters and the new powers have real tactical weight.
 - Added keyboard hotkeys for route and result actions so browser play is faster and lower-friction on desktop without changing the underlying game rules.
 - Added distribution-facing player documentation in `docs/distribution/` so the live build now has a concrete repo-side `how to play` reference.
+- Added a root [`README.md`](../../README.md) so the repo landing page explains the game’s real purpose: teaching kids logic through play, grounded in the project’s logic-book corpus, with direct links to the game and play docs.
 
 ## Scope
 Task-specific
