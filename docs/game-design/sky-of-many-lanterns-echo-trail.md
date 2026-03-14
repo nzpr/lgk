@@ -20,7 +20,7 @@ The wild beacons react to weather, roots, and memory. Mira learns to work with t
 The final district is a shattered celestial machine suspended over empty sky. Mira restores the last route, turns the observatory back into a bridge between districts, and chooses to reopen the world for travelers instead of sealing it to keep it safe.
 
 ## Core Game Feel
-- Side-on pseudo-2D presentation with layered parallax backgrounds, foreground silhouettes, and a traveler moving along hand-authored stage landmarks.
+- Side-on pseudo-2D presentation with a pseudo-3D diorama look: layered parallax backgrounds, perspective route boards, atmospheric depth haze, and a traveler moving along hand-authored stage landmarks.
 - Discovery-first flow: each level should feel like entering a new place with its own silhouette, hazard, and relic.
 - World verbs are simple but meaningful: `move`, `inspect`, `attune`, `repair`, `unlock`.
 - Logic challenges still exist, but they appear as shrines, mechanisms, and route seals inside the world.

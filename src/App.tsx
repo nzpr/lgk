@@ -182,6 +182,18 @@ function App() {
                 into silence.
               </p>
             </div>
+            <div className="hero-diorama" aria-hidden="true">
+              <div className="hero-diorama__sun" />
+              <div className="hero-diorama__cloud hero-diorama__cloud--a" />
+              <div className="hero-diorama__cloud hero-diorama__cloud--b" />
+              <div className="hero-diorama__island hero-diorama__island--far" />
+              <div className="hero-diorama__island hero-diorama__island--mid" />
+              <div className="hero-diorama__island hero-diorama__island--front" />
+              <div className="hero-diorama__spire" />
+              <div className="hero-diorama__lantern hero-diorama__lantern--a" />
+              <div className="hero-diorama__lantern hero-diorama__lantern--b" />
+              <div className="hero-diorama__lantern hero-diorama__lantern--c" />
+            </div>
             <div className="level-preview-grid">
               {adventureLevels.slice(0, 10).map((level) => (
                 <article key={level.id} className="level-preview-card">
@@ -262,6 +274,12 @@ function App() {
                   } as CSSProperties
                 }
               >
+                <div className="atlas-level-card__diorama" aria-hidden="true">
+                  <div className="atlas-level-card__sun" />
+                  <div className="atlas-level-card__ridge atlas-level-card__ridge--far" />
+                  <div className="atlas-level-card__ridge atlas-level-card__ridge--mid" />
+                  <div className="atlas-level-card__ridge atlas-level-card__ridge--front" />
+                </div>
                 <div className="atlas-level-card__top">
                   <span className="atlas-level-card__index">Route {level.index}</span>
                   <span className="atlas-level-card__region">{level.region}</span>
@@ -377,12 +395,20 @@ function App() {
           }
         >
           <div className="scene-background">
+            <div className="scene-sun" />
+            <div className="scene-haze scene-haze--top" />
             <div className="scene-layer far" />
             <div className="scene-layer mid" />
             <div className="scene-layer ground" />
+            <div className="scene-boardwalk" />
+            <div className="scene-boardwalk scene-boardwalk--rails" />
             <div className="route-line" />
+            <div className="scene-floater scene-floater--a" />
+            <div className="scene-floater scene-floater--b" />
+            <div className="scene-floater scene-floater--c" />
             {currentLevel.landmarks.map((landmark, index) => {
               const landmarkState = state.run!.landmarkStates[landmark.id]
+              const depth = Math.abs(index - state.run!.currentLandmarkIndex)
               return (
                 <button
                   key={landmark.id}
@@ -392,7 +418,14 @@ function App() {
                     index === state.run!.currentLandmarkIndex ? 'current' : '',
                     landmarkState.resolved ? 'resolved' : '',
                   ].join(' ')}
-                  style={{ left: `${12 + index * 19}%` }}
+                  style={
+                    {
+                      left: `${12 + index * 19}%`,
+                      '--landmark-depth': depth,
+                      '--landmark-scale': Math.max(0.76, 1 - depth * 0.08),
+                      '--landmark-lift': `${Math.max(0, 14 - depth * 4)}px`,
+                    } as CSSProperties
+                  }
                 >
                   <span>{landmark.title}</span>
                 </button>

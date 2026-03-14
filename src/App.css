@@ -288,6 +288,118 @@ button {
   font-family: "Palatino Linotype", Georgia, serif;
 }
 
+.hero-diorama {
+  position: relative;
+  min-height: 240px;
+  border-radius: 26px;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(255, 238, 198, 0.16), transparent 28%),
+    linear-gradient(180deg, rgba(16, 34, 54, 0.1), rgba(7, 16, 28, 0.58)),
+    linear-gradient(180deg, #16304d 0%, #284b69 60%, #7b5b45 100%);
+  border: 1px solid rgba(255, 240, 208, 0.12);
+}
+
+.hero-diorama__sun,
+.hero-diorama__cloud,
+.hero-diorama__island,
+.hero-diorama__spire,
+.hero-diorama__lantern {
+  position: absolute;
+}
+
+.hero-diorama__sun {
+  top: 24px;
+  right: 36px;
+  width: 112px;
+  height: 112px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(255, 236, 184, 0.95), rgba(255, 209, 120, 0.72) 54%, transparent 72%);
+  filter: blur(1px);
+}
+
+.hero-diorama__cloud {
+  height: 20px;
+  border-radius: 999px;
+  background: rgba(255, 248, 232, 0.12);
+  filter: blur(1px);
+}
+
+.hero-diorama__cloud--a {
+  top: 46px;
+  left: 36px;
+  width: 120px;
+}
+
+.hero-diorama__cloud--b {
+  top: 84px;
+  left: 118px;
+  width: 82px;
+}
+
+.hero-diorama__island {
+  left: 50%;
+  border-radius: 48% 52% 62% 38% / 46% 44% 56% 54%;
+  transform: translateX(-50%);
+  box-shadow: 0 18px 30px rgba(5, 12, 20, 0.28);
+}
+
+.hero-diorama__island--far {
+  bottom: 94px;
+  width: 180px;
+  height: 44px;
+  background: linear-gradient(180deg, #557596, #334d67);
+}
+
+.hero-diorama__island--mid {
+  bottom: 58px;
+  width: 236px;
+  height: 60px;
+  background: linear-gradient(180deg, #7f916f, #4b614f);
+}
+
+.hero-diorama__island--front {
+  bottom: 18px;
+  width: 302px;
+  height: 88px;
+  background: linear-gradient(180deg, #8a6844, #4d3726);
+}
+
+.hero-diorama__spire {
+  bottom: 92px;
+  left: 50%;
+  width: 44px;
+  height: 112px;
+  margin-left: -14px;
+  background: linear-gradient(180deg, #e9d6a1, #85643c 74%, #523c28 100%);
+  clip-path: polygon(42% 0, 58% 0, 78% 16%, 78% 88%, 100% 100%, 0 100%, 22% 88%, 22% 16%);
+  filter: drop-shadow(0 10px 20px rgba(6, 12, 20, 0.28));
+}
+
+.hero-diorama__lantern {
+  bottom: 112px;
+  width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(255, 236, 188, 0.98), rgba(255, 194, 92, 0.72) 62%, transparent 70%);
+  box-shadow: 0 0 18px rgba(255, 214, 122, 0.48);
+  animation: lantern-drift 5.2s ease-in-out infinite;
+}
+
+.hero-diorama__lantern--a {
+  left: 64px;
+}
+
+.hero-diorama__lantern--b {
+  left: 148px;
+  animation-delay: 1.2s;
+}
+
+.hero-diorama__lantern--c {
+  right: 74px;
+  animation-delay: 2.1s;
+}
+
 .level-preview-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -334,6 +446,11 @@ button {
   font-size: 1.4rem;
 }
 
+.stat-card small {
+  color: rgba(246, 240, 223, 0.7);
+  font-size: 0.8rem;
+}
+
 .atlas-actions {
   grid-column: 1 / -1;
 }
@@ -356,6 +473,7 @@ button {
     linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 32%),
     linear-gradient(180deg, var(--level-sky-top), var(--level-sky-bottom));
   box-shadow: var(--shadow);
+  transform-style: preserve-3d;
 }
 
 .atlas-level-card::before {
@@ -382,6 +500,56 @@ button {
 .atlas-level-card > * {
   position: relative;
   z-index: 1;
+}
+
+.atlas-level-card__diorama {
+  position: relative;
+  min-height: 88px;
+  margin: -4px -4px 2px;
+  border-radius: 18px;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 26%),
+    linear-gradient(180deg, rgba(8, 17, 28, 0.08), rgba(8, 17, 28, 0.3)),
+    linear-gradient(180deg, color-mix(in srgb, var(--level-sky-top) 92%, white), var(--level-sky-bottom));
+  border: 1px solid rgba(255, 240, 208, 0.12);
+  transform: translateZ(10px);
+}
+
+.atlas-level-card__sun,
+.atlas-level-card__ridge {
+  position: absolute;
+}
+
+.atlas-level-card__sun {
+  top: 12px;
+  right: 18px;
+  width: 54px;
+  height: 54px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(255, 241, 197, 0.96), color-mix(in srgb, var(--level-accent) 78%, white) 56%, transparent 72%);
+}
+
+.atlas-level-card__ridge {
+  inset: auto 0 0;
+}
+
+.atlas-level-card__ridge--far {
+  height: 42%;
+  background: color-mix(in srgb, var(--level-sky-top) 48%, #152638);
+  clip-path: polygon(0 72%, 16% 58%, 30% 64%, 42% 48%, 58% 62%, 72% 44%, 84% 56%, 100% 40%, 100% 100%, 0 100%);
+}
+
+.atlas-level-card__ridge--mid {
+  height: 34%;
+  background: color-mix(in srgb, var(--level-sky-bottom) 42%, #2b465f);
+  clip-path: polygon(0 64%, 18% 54%, 34% 60%, 46% 42%, 62% 56%, 78% 38%, 92% 46%, 100% 40%, 100% 100%, 0 100%);
+}
+
+.atlas-level-card__ridge--front {
+  height: 22%;
+  background: linear-gradient(180deg, rgba(42, 31, 25, 0.2), rgba(42, 31, 25, 0.62));
+  clip-path: polygon(0 42%, 20% 36%, 38% 44%, 56% 28%, 70% 36%, 86% 24%, 100% 32%, 100% 100%, 0 100%);
 }
 
 .atlas-level-card.locked {
@@ -455,14 +623,16 @@ button {
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 20%),
     var(--panel-strong);
+  border-color: rgba(255, 232, 186, 0.16);
 }
 
 .scene-background {
   position: relative;
-  min-height: 330px;
+  min-height: 370px;
   border-radius: 24px;
   overflow: hidden;
   background: linear-gradient(180deg, var(--scene-sky-top), var(--scene-sky-bottom));
+  perspective: 1100px;
 }
 
 .scene-background::before,
@@ -481,6 +651,34 @@ button {
 .scene-background::after {
   background:
     linear-gradient(180deg, transparent 0%, rgba(10, 18, 29, 0.08) 60%, rgba(10, 18, 29, 0.22) 100%);
+}
+
+.scene-sun,
+.scene-haze,
+.scene-boardwalk,
+.scene-floater {
+  position: absolute;
+}
+
+.scene-sun {
+  top: 22px;
+  right: 8%;
+  width: 132px;
+  height: 132px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(255, 244, 208, 0.96), rgba(255, 208, 122, 0.74) 54%, transparent 72%);
+  opacity: 0.82;
+}
+
+.scene-haze {
+  left: 0;
+  right: 0;
+  height: 84px;
+  background: linear-gradient(180deg, rgba(255, 244, 212, 0.14), transparent);
+}
+
+.scene-haze--top {
+  top: 0;
 }
 
 .scene-layer {
@@ -510,23 +708,77 @@ button {
   clip-path: polygon(0 44%, 16% 36%, 28% 42%, 42% 28%, 58% 36%, 74% 24%, 86% 32%, 100% 20%, 100% 100%, 0 100%);
 }
 
+.scene-boardwalk {
+  left: 8%;
+  right: 8%;
+  bottom: 10%;
+  height: 120px;
+  border-radius: 26px;
+  background:
+    linear-gradient(180deg, rgba(255, 235, 188, 0.12), rgba(54, 35, 24, 0.6)),
+    linear-gradient(90deg, rgba(24, 16, 10, 0.5), rgba(139, 99, 62, 0.6), rgba(24, 16, 10, 0.5));
+  transform: rotateX(72deg);
+  transform-origin: center bottom;
+  box-shadow:
+    0 30px 36px rgba(6, 12, 20, 0.26),
+    inset 0 1px 0 rgba(255, 244, 214, 0.14);
+}
+
+.scene-boardwalk--rails {
+  height: 134px;
+  bottom: 8.5%;
+  background:
+    linear-gradient(90deg, transparent 8%, rgba(255, 231, 182, 0.36) 8% 9%, transparent 9% 91%, rgba(255, 231, 182, 0.36) 91% 92%, transparent 92%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent);
+}
+
 .route-line {
   position: absolute;
   left: 8%;
   right: 8%;
-  bottom: 18%;
-  height: 10px;
+  bottom: 21%;
+  height: 12px;
   border-radius: 999px;
   background:
     linear-gradient(90deg, rgba(255, 218, 135, 0.74), color-mix(in srgb, var(--scene-accent) 74%, white), rgba(255, 244, 208, 0.7));
   box-shadow:
     0 0 18px rgba(255, 213, 122, 0.35),
     0 0 28px rgba(255, 213, 122, 0.14);
+  transform: perspective(1000px) rotateX(67deg);
+  transform-origin: center center;
+}
+
+.scene-floater {
+  width: 72px;
+  height: 18px;
+  border-radius: 999px;
+  background: rgba(255, 248, 232, 0.18);
+  filter: blur(1px);
+  animation: floater-drift 10s linear infinite;
+}
+
+.scene-floater--a {
+  top: 88px;
+  left: 14%;
+}
+
+.scene-floater--b {
+  top: 124px;
+  right: 18%;
+  width: 94px;
+  animation-delay: -3s;
+}
+
+.scene-floater--c {
+  top: 170px;
+  left: 46%;
+  width: 58px;
+  animation-delay: -5s;
 }
 
 .scene-landmark {
   position: absolute;
-  bottom: 14%;
+  bottom: calc(14% + var(--landmark-lift, 0px));
   width: 84px;
   min-height: 84px;
   margin-left: -42px;
@@ -542,6 +794,10 @@ button {
   border-color: rgba(255, 240, 208, 0.14);
   color: var(--text-main);
   cursor: default;
+  transform:
+    translateY(calc(var(--landmark-depth, 0) * 2px))
+    scale(var(--landmark-scale, 1));
+  box-shadow: 0 16px 30px rgba(4, 10, 18, 0.24);
 }
 
 .scene-landmark::before {
@@ -582,7 +838,9 @@ button {
 
 .scene-landmark.current {
   outline: 2px solid rgba(128, 216, 255, 0.6);
-  transform: translateY(-3px);
+  transform:
+    translateY(-4px)
+    scale(calc(var(--landmark-scale, 1) + 0.04));
 }
 
 .scene-landmark.shrine::before {
@@ -600,11 +858,12 @@ button {
 .traveler {
   position: absolute;
   left: var(--traveler-position);
-  bottom: 15%;
-  width: 50px;
-  height: 88px;
+  bottom: 18%;
+  width: 58px;
+  height: 94px;
   margin-left: -18px;
   animation: traveler-bob 2.6s ease-in-out infinite;
+  filter: drop-shadow(0 14px 20px rgba(5, 10, 18, 0.32));
 }
 
 .traveler__body {
@@ -649,6 +908,19 @@ button {
   font-size: clamp(2rem, 4vw, 3.1rem);
 }
 
+.encounter-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.encounter-strip span {
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255, 248, 232, 0.08);
+  border: 1px solid rgba(255, 240, 208, 0.1);
+}
+
 .prompt-text {
   font-size: 1rem;
   color: rgba(255, 242, 212, 0.92);
@@ -666,6 +938,8 @@ button {
   gap: 4px;
   align-items: start;
   justify-items: start;
+  border-radius: 22px;
+  padding: 16px 18px;
 }
 
 .choice-cluster button span {
@@ -674,6 +948,12 @@ button {
 
 .choice-cluster .ghost-button span {
   color: var(--text-soft);
+}
+
+.choice-cluster .ghost-button,
+.choice-cluster .primary-button {
+  width: 100%;
+  justify-items: start;
 }
 
 .shrine-panel {
@@ -732,6 +1012,31 @@ button {
   }
 }
 
+@keyframes lantern-drift {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes floater-drift {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(18px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
 @media (max-width: 900px) {
   .landing-hero,
   .atlas-top {
@@ -740,6 +1045,10 @@ button {
 
   .landing-copy h1 {
     max-width: none;
+  }
+
+  .hero-diorama {
+    min-height: 210px;
   }
 
   .scene-background {
@@ -801,7 +1110,7 @@ button {
   .route-line {
     left: 4%;
     right: 4%;
-    bottom: 16%;
+    bottom: 19%;
   }
 
   .traveler {
@@ -813,7 +1122,7 @@ button {
     width: 58px;
     min-height: 64px;
     margin-left: -29px;
-    bottom: 13%;
+    bottom: calc(13% + var(--landmark-lift, 0px));
   }
 
   .scene-landmark::before {

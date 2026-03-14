@@ -11,6 +11,7 @@ Defined a new product direction for `Sky of Many Lanterns: Echo Trail`, includin
 Implemented the first runtime slice for that direction: authored 20-level data, adventure progression state, deterministic shrine challenge binding, and level completion logic.
 Implemented the second runtime slice: replaced the old household-dashboard shell with a dedicated pseudo-2D adventure presentation, atlas progression screen, persistent route play, and end-to-end browser coverage for the new loop.
 Implemented a gameplay-improvement slice: non-shrine landmarks now offer careful-vs-bold traversal choices, route flow builds and ranks a run, and save migration keeps older players compatible with the new state shape.
+Implemented a visual-polish slice: the game now uses a pseudo-3D diorama presentation with a layered hero scene, stronger atlas route cards, a perspective route boardwalk, animated atmospheric props, and depth-scaled landmarks.
 
 ## Decision Link
 - Task decision: [TASK-008-pivot-to-pseudo-2d-adventure-game.md](../../docs/decisions/TASK-008-pivot-to-pseudo-2d-adventure-game.md)
