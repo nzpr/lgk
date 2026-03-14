@@ -9,3 +9,4 @@
 | 2026-03-14T11:35:00+00:00 | [20260314-113500-harden-qa-and-release-automation.md](./20260314-113500-harden-qa-and-release-automation.md) | harden QA and release automation |
 | 2026-03-14T11:42:01+00:00 | [20260314-114201-polish-player-experience-and-ship-v1.md](./20260314-114201-polish-player-experience-and-ship-v1.md) | polish player experience and ship v1 |
 | 2026-03-14T11:01:25+00:00 | [20260314-110125-distribution-hardening-and-frictionless-launch.md](./20260314-110125-distribution-hardening-and-frictionless-launch.md) | distribution hardening and frictionless launch |
+| 2026-03-14T16:42:26+00:00 | [20260314-164226-pivot-to-pseudo-2d-adventure-game.md](./20260314-164226-pivot-to-pseudo-2d-adventure-game.md) | pivot to pseudo-2d adventure game |

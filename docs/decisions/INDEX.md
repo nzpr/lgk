@@ -8,3 +8,4 @@
 | 2026-03-14 | TASK-005 | [TASK-005-harden-qa-and-release-automation.md](./TASK-005-harden-qa-and-release-automation.md) | harden QA and release automation |
 | 2026-03-14 | TASK-006 | [TASK-006-polish-player-experience-and-ship-v1.md](./TASK-006-polish-player-experience-and-ship-v1.md) | polish player experience and ship v1 |
 | 2026-03-14 | TASK-007 | [TASK-007-distribution-hardening-and-frictionless-launch.md](./TASK-007-distribution-hardening-and-frictionless-launch.md) | distribution hardening and frictionless launch |
+| 2026-03-14 | TASK-008 | [TASK-008-pivot-to-pseudo-2d-adventure-game.md](./TASK-008-pivot-to-pseudo-2d-adventure-game.md) | pivot to pseudo-2d adventure game |
