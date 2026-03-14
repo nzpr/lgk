@@ -31,6 +31,16 @@ test.beforeEach(async ({ page }) => {
   })
 })
 
+test('offers an instant-play demo with no setup friction', async ({ page }) => {
+  await page.goto('/')
+
+  await page.getByTestId('start-demo').click()
+
+  await expect(page.getByText(/Instant-play demo/i)).toBeVisible()
+  await expect(page.getByRole('heading', { name: /Lantern Reach:/i })).toBeVisible()
+  await expect(page.getByTestId('start-expedition')).toBeVisible()
+})
+
 test('supports a full household journey from onboarding through QA review', async ({ page }) => {
   await page.goto('/')
 

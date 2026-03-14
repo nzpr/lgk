@@ -10,6 +10,8 @@ Public distribution work exposed two real blockers: failing GitHub Actions runs 
 Made the built app subpath-safe by switching production asset and manifest paths to relative outputs.
 Reworked the Playwright E2E runner to allocate an open preview port dynamically and pass that URL into the browser test config.
 Updated the release workflow to publish with a maintained release action instead of assuming the GitHub CLI exists on the runner.
+Added a no-signup demo household path that can be entered from the landing page or a direct `?demo=1` link.
+Added launch-facing metadata and distribution materials: social card, robots/sitemap, store listing copy, and launch/support notes.
 
 ## Decision Link
 - ADR: [0001-local-first-logic-learning-web-app.md](../../docs/adr/0001-local-first-logic-learning-web-app.md)
@@ -22,4 +24,4 @@ Updated the release workflow to publish with a maintained release action instead
 Improved
 
 ## Follow-up
-- Add zero-friction demo entry, launch materials, and external distribution docs in the next slice of the same task.
+- Push the distribution slice, verify the new GitHub Actions runs, and confirm the live GitHub Pages URL is serving the latest build.

@@ -63,6 +63,146 @@ export function createInitialState(): HouseholdState {
   }
 }
 
+export function createDemoState(): HouseholdState {
+  const startedAt = new Date('2026-03-14T08:00:00.000Z').toISOString()
+  const stateWithProfiles: HouseholdState = {
+    ...createInitialState(),
+    parent: {
+      name: 'Demo household',
+      email: 'demo@lanternguild.local',
+      acceptedPrivacyAt: startedAt,
+    },
+    child: {
+      name: 'Mika',
+      age: 9,
+      goal: 'Calm daily practice',
+    },
+  }
+
+  const scriptedSessions: SessionRecord[] = [
+    buildSessionRecord(
+      'diagnostic',
+      'Read the lantern network and discover where your Pathfinder starts strongest.',
+      'Lantern Reach',
+      1,
+      [
+        {
+          taskId: 'classification-repair-tools-odd',
+          skill: 'classification',
+          correct: true,
+          attempts: 1,
+          hintLevel: 0,
+          completedAt: new Date('2026-03-14T08:12:00.000Z').toISOString(),
+        },
+        {
+          taskId: 'patterns-banner-stitch',
+          skill: 'patterns',
+          correct: true,
+          attempts: 1,
+          hintLevel: 0,
+          completedAt: new Date('2026-03-14T08:13:00.000Z').toISOString(),
+        },
+      ],
+      startedAt,
+      new Date('2026-03-14T08:14:00.000Z').toISOString(),
+    ),
+    buildSessionRecord(
+      'daily',
+      'Relight the bridge signals before dusk.',
+      'Lantern Reach',
+      1,
+      [
+        {
+          taskId: 'ifthen-bridge-switch-basic',
+          skill: 'ifThen',
+          correct: true,
+          attempts: 1,
+          hintLevel: 1,
+          completedAt: new Date('2026-03-14T08:30:00.000Z').toISOString(),
+        },
+        {
+          taskId: 'deduction-glider-docks-solve',
+          skill: 'deduction',
+          correct: true,
+          attempts: 1,
+          hintLevel: 0,
+          completedAt: new Date('2026-03-14T08:31:00.000Z').toISOString(),
+        },
+      ],
+      new Date('2026-03-14T08:24:00.000Z').toISOString(),
+      new Date('2026-03-14T08:32:00.000Z').toISOString(),
+    ),
+    buildSessionRecord(
+      'daily',
+      'Calm the stair bridge and reopen the route.',
+      'Lantern Reach',
+      2,
+      [
+        {
+          taskId: 'contradiction-bridge-messages-which',
+          skill: 'contradiction',
+          correct: false,
+          attempts: 2,
+          hintLevel: 2,
+          completedAt: new Date('2026-03-14T08:50:00.000Z').toISOString(),
+        },
+        {
+          taskId: 'patterns-amber-route-missing',
+          skill: 'patterns',
+          correct: true,
+          attempts: 1,
+          hintLevel: 0,
+          completedAt: new Date('2026-03-14T08:51:00.000Z').toISOString(),
+        },
+      ],
+      new Date('2026-03-14T08:44:00.000Z').toISOString(),
+      new Date('2026-03-14T08:52:00.000Z').toISOString(),
+    ),
+    buildSessionRecord(
+      'daily',
+      'Recover the signal garden route notes.',
+      'Lantern Reach',
+      3,
+      [
+        {
+          taskId: 'classification-village-supplies-fit',
+          skill: 'classification',
+          correct: true,
+          attempts: 1,
+          hintLevel: 0,
+          completedAt: new Date('2026-03-14T09:10:00.000Z').toISOString(),
+        },
+        {
+          taskId: 'ifthen-storm-beacon-basic',
+          skill: 'ifThen',
+          correct: true,
+          attempts: 1,
+          hintLevel: 0,
+          completedAt: new Date('2026-03-14T09:11:00.000Z').toISOString(),
+        },
+      ],
+      new Date('2026-03-14T09:04:00.000Z').toISOString(),
+      new Date('2026-03-14T09:12:00.000Z').toISOString(),
+    ),
+  ]
+
+  let nextState = stateWithProfiles
+  for (const session of scriptedSessions) {
+    nextState = applyCompletedSession(nextState, session)
+  }
+
+  nextState = addAnalyticsEvent(nextState, 'demo_loaded', {
+    sessions: scriptedSessions.length,
+    chapterIndex: nextState.world.chapterIndex,
+  })
+  nextState = addAnalyticsEvent(nextState, 'distribution_ready', {
+    mode: 'demo',
+    instantPlay: true,
+  })
+
+  return nextState
+}
+
 export function getCurrentChapter(state: HouseholdState): ChapterDefinition {
   return chapterPlan[Math.min(state.world.chapterIndex, chapterPlan.length - 1)]
 }

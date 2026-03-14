@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest'
 import {
   applyCompletedSession,
   buildSessionRecord,
+  createDemoState,
   createInitialState,
   getCurrentChapter,
   getParentSummary,
@@ -57,6 +58,19 @@ describe('content selection', () => {
 
     expect(tasks[0]?.skill).toBe('classification')
     expect(tasks.some((task) => task.id === candidate.id)).toBe(false)
+  })
+})
+
+describe('demo state', () => {
+  it('creates a playable household with progress and analytics', () => {
+    const demoState = createDemoState()
+
+    expect(demoState.parent?.name).toBe('Demo household')
+    expect(demoState.child?.name).toBe('Mika')
+    expect(demoState.diagnosticComplete).toBe(true)
+    expect(demoState.sessions.length).toBeGreaterThanOrEqual(4)
+    expect(demoState.analytics.some((event) => event.type === 'demo_loaded')).toBe(true)
+    expect(demoState.world.routesRestored).toBeGreaterThan(0)
   })
 })
 

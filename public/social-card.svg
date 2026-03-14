@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="115" y1="62" x2="1029" y2="575" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0D2339"/>
+      <stop offset=".5" stop-color="#1F4A67"/>
+      <stop offset="1" stop-color="#F2C17A"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(904 145) rotate(112) scale(338 253)">
+      <stop stop-color="#FFE6A5" stop-opacity=".9"/>
+      <stop offset="1" stop-color="#FFE6A5" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="lantern" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#FFE6A5"/>
+      <stop offset="1" stop-color="#F29A38"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" rx="42" fill="url(#bg)"/>
+  <circle cx="904" cy="145" r="230" fill="url(#glow)"/>
+  <circle cx="155" cy="122" r="3" fill="#FFF9EC" fill-opacity=".75"/>
+  <circle cx="196" cy="176" r="2.5" fill="#FFF9EC" fill-opacity=".62"/>
+  <circle cx="1037" cy="96" r="2.5" fill="#FFF9EC" fill-opacity=".72"/>
+  <circle cx="1094" cy="184" r="2" fill="#FFF9EC" fill-opacity=".65"/>
+  <g opacity=".88">
+    <path d="M855 159V93" stroke="#FFF4DD" stroke-opacity=".4" stroke-width="4"/>
+    <rect x="814" y="159" width="82" height="116" rx="38" fill="url(#lantern)"/>
+    <rect x="804" y="267" width="102" height="42" rx="21" fill="#F8F3E7"/>
+    <path d="M830 346H880C880 373.614 857.614 396 830 396C802.386 396 780 373.614 780 346H830Z" fill="#F8F3E7"/>
+  </g>
+  <g opacity=".78">
+    <path d="M967 254V205" stroke="#FFF4DD" stroke-opacity=".4" stroke-width="4"/>
+    <rect x="936" y="254" width="62" height="90" rx="30" fill="#9ADFFF"/>
+    <rect x="928" y="338" width="78" height="30" rx="15" fill="#F8F3E7"/>
+  </g>
+  <g opacity=".74">
+    <path d="M735 282V241" stroke="#FFF4DD" stroke-opacity=".35" stroke-width="4"/>
+    <rect x="708" y="282" width="54" height="78" rx="26" fill="#B8F6DD"/>
+    <rect x="701" y="353" width="68" height="26" rx="13" fill="#F8F3E7"/>
+  </g>
+  <rect x="72" y="76" width="612" height="478" rx="36" fill="#081423" fill-opacity=".28" stroke="#FFF4DD" stroke-opacity=".12"/>
+  <text x="112" y="150" fill="#FFECC3" font-family="Optima, 'Gill Sans', serif" font-size="24" letter-spacing="6">CALM DAILY LOGIC ADVENTURE</text>
+  <text x="112" y="252" fill="#FFF9EC" font-family="Palatino Linotype, Georgia, serif" font-size="84" font-weight="700">
+    <tspan x="112" dy="0">Sky of Many</tspan>
+    <tspan x="112" dy="90">Lanterns</tspan>
+  </text>
+  <text x="112" y="395" fill="#F8F3E7" font-family="Optima, 'Gill Sans', sans-serif" font-size="32">
+    <tspan x="112" dy="0">Short expeditions. Grounded hints.</tspan>
+    <tspan x="112" dy="44">Parent-trustworthy progress. Instant-play demo.</tspan>
+  </text>
+  <rect x="112" y="466" width="212" height="56" rx="28" fill="#FFE0A0"/>
+  <text x="154" y="502" fill="#13243C" font-family="Optima, 'Gill Sans', sans-serif" font-size="28" font-weight="700">Play instantly</text>
+</svg>

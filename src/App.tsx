@@ -8,6 +8,7 @@ import {
   applyCompletedSession,
   buildSessionRecord,
   buildSourceLines,
+  createDemoState,
   createInitialState,
   getBadgeSkills,
   getCurrentChapter,
@@ -84,11 +85,19 @@ function determineInitialView(state: HouseholdState): AppView {
   return 'camp'
 }
 
+function buildInitialHouseholdState(): HouseholdState {
+  const params = new URLSearchParams(window.location.search)
+  if (params.get('demo') === '1') {
+    return createDemoState()
+  }
+
+  return loadState() ?? createInitialState()
+}
+
 function App() {
-  const [state, setState] = useState<HouseholdState>(() => loadState() ?? createInitialState())
-  const [view, setView] = useState<AppView>(() =>
-    determineInitialView(loadState() ?? createInitialState()),
-  )
+  const [initialState] = useState<HouseholdState>(buildInitialHouseholdState)
+  const [state, setState] = useState<HouseholdState>(initialState)
+  const [view, setView] = useState<AppView>(() => determineInitialView(initialState))
   const [run, setRun] = useState<ActiveRun | null>(null)
   const [sessionResult, setSessionResult] = useState<{
     score: number
@@ -111,6 +120,17 @@ function App() {
   useEffect(() => {
     saveState(state)
   }, [state])
+
+  useEffect(() => {
+    if (!window.location.search.includes('demo=1')) {
+      return
+    }
+
+    const nextUrl = window.location.hash
+      ? `${window.location.pathname}${window.location.hash}`
+      : window.location.pathname
+    window.history.replaceState({}, '', nextUrl)
+  }, [])
 
   const chapter = getCurrentChapter(state)
   const nextChapter =
@@ -179,6 +199,14 @@ function App() {
 
     updateHousehold(nextState)
     setView('diagnostic-briefing')
+  }
+
+  function startDemoExperience() {
+    const demoState = createDemoState()
+    setState(demoState)
+    setRun(null)
+    setSessionResult(null)
+    setView('camp')
   }
 
   function answerCurrentTask(index: number) {
@@ -382,10 +410,18 @@ function App() {
                     >
                       Start the household setup
                     </button>
+                    <button
+                      className="ghost-button"
+                      data-testid="start-demo"
+                      onClick={startDemoExperience}
+                    >
+                      Play the demo instantly
+                    </button>
                     <div className="trust-band">
                       <span>10-minute sessions</span>
                       <span>5 logic strands</span>
                       <span>Parent-managed</span>
+                      <span>No-signup demo</span>
                     </div>
                   </div>
                 </div>
@@ -741,6 +777,13 @@ function App() {
                 <section className="camp-hero panel">
                   <div>
                     <span className="eyebrow">Pathfinder base</span>
+                    {state.parent.email === 'demo@lanternguild.local' && (
+                      <div className="story-note">
+                        <strong>Instant-play demo.</strong> This household is preloaded so a player
+                        can feel the loop immediately. Reset the local state any time to start a real
+                        family setup.
+                      </div>
+                    )}
                     <h2>{chapter.region}: {chapter.title}</h2>
                     <p>{chapter.briefing}</p>
                     <div className="hero-actions">

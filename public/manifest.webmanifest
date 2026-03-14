@@ -6,6 +6,15 @@
   "display": "standalone",
   "background_color": "#10243a",
   "theme_color": "#10243a",
+  "categories": ["education", "games", "kids"],
+  "shortcuts": [
+    {
+      "name": "Play demo",
+      "short_name": "Demo",
+      "description": "Open the instant-play demo household.",
+      "url": "./?demo=1"
+    }
+  ],
   "icons": [
     {
       "src": "./favicon.svg",
